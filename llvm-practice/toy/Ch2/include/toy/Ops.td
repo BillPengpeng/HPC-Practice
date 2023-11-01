@@ -109,6 +109,29 @@ def AddOp : Toy_Op<"add"> {
 }
 
 //===----------------------------------------------------------------------===//
+// OrOp
+//===----------------------------------------------------------------------===//
+
+def OrOp : Toy_Op<"add"> {
+  let summary = "element-wise logic Or operation";
+  let description = [{
+    The "or" operation performs element-wise logic or between two tensors.
+    The shapes of the tensor operands are expected to match.
+  }];
+
+  let arguments = (ins F64Tensor:$lhs, F64Tensor:$rhs);
+  let results = (outs F64Tensor);
+
+  // Indicate that the operation has a custom parser and printer method.
+  let hasCustomAssemblyFormat = 1;
+
+  // Allow building an AddOp with from the two input operands.
+  let builders = [
+    OpBuilder<(ins "Value":$lhs, "Value":$rhs)>
+  ];
+}
+
+//===----------------------------------------------------------------------===//
 // FuncOp
 //===----------------------------------------------------------------------===//
 
