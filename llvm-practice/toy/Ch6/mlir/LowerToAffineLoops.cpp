@@ -82,6 +82,10 @@ static void lowerOpToLoops(Operation *op, ValueRange operands,
         // and the loop induction variables. This function will return the value
         // to store at the current index.
         Value valueToStore = processIteration(nestedBuilder, operands, ivs);
+        // 将"toy.or" Op的结果从Int转换为Float
+        if(nestedBuilder.getI64Type() == valueToStore.getType()) {
+          valueToStore = nestedBuilder.create<arith::UIToFPOp>(loc, nestedBuilder.getF64Type(), valueToStore);
+        }
         nestedBuilder.create<affine::AffineStoreOp>(loc, valueToStore, alloc,
                                                     ivs);
       });
@@ -105,7 +109,7 @@ struct BinaryOpLowering : public ConversionPattern {
                   ConversionPatternRewriter &rewriter) const final {
     auto loc = op->getLoc();
     lowerOpToLoops(op, operands, rewriter,
-                   [loc](OpBuilder &builder, ValueRange memRefOperands,
+                   [loc, op](OpBuilder &builder, ValueRange memRefOperands,
                          ValueRange loopIvs) {
                      // Generate an adaptor for the remapped operands of the
                      // BinaryOp. This allows for using the nice named accessors
@@ -119,6 +123,14 @@ struct BinaryOpLowering : public ConversionPattern {
                      auto loadedRhs = builder.create<affine::AffineLoadOp>(
                          loc, binaryAdaptor.getRhs(), loopIvs);
 
+                    // patch to support "toy.or" operation.
+                      auto opname = op->getName();
+                      if (opname.getStringRef().str() == "toy.or") {
+                        auto castLhs = builder.create<arith::FPToUIOp>(loc, builder.getI64Type(), loadedLhs);
+                        auto castRhs = builder.create<arith::FPToUIOp>(loc, builder.getI64Type(), loadedRhs);
+                        return builder.create<LoweredBinaryOp>(loc, castLhs, castRhs);
+                      }
+
                      // Create the binary operation performed on the loaded
                      // values.
                      return builder.create<LoweredBinaryOp>(loc, loadedLhs,
@@ -129,6 +141,7 @@ struct BinaryOpLowering : public ConversionPattern {
 };
 using AddOpLowering = BinaryOpLowering<toy::AddOp, arith::AddFOp>;
 using MulOpLowering = BinaryOpLowering<toy::MulOp, arith::MulFOp>;
+using OrOpLowering = BinaryOpLowering<toy::OrOp, arith::OrIOp>;
 
 //===----------------------------------------------------------------------===//
 // ToyToAffine RewritePatterns: Constant operations
@@ -330,7 +343,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
   // this lowering. In our case, we are lowering to a combination of the
   // `Affine`, `Arith`, `Func`, and `MemRef` dialects.
   target.addLegalDialect<affine::AffineDialect, BuiltinDialect,
-                         arith::ArithDialect, func::FuncDialect,
+                         arith::ArithDialect, func::FuncDialect, 
                          memref::MemRefDialect>();
 
   // We also define the Toy dialect as Illegal so that the conversion will fail
@@ -348,7 +361,7 @@ void ToyToAffineLoweringPass::runOnOperation() {
   // Now that the conversion target has been defined, we just need to provide
   // the set of patterns that will lower the Toy operations.
   RewritePatternSet patterns(&getContext());
-  patterns.add<AddOpLowering, ConstantOpLowering, FuncOpLowering, MulOpLowering,
+  patterns.add<AddOpLowering, ConstantOpLowering, FuncOpLowering, MulOpLowering, OrOpLowering,
                PrintOpLowering, ReturnOpLowering, TransposeOpLowering>(
       &getContext());
 
