@@ -199,6 +199,8 @@ private:
       return builder.create<OrOp>(location, lhs, rhs);
     case '+':
       return builder.create<AddOp>(location, lhs, rhs);
+    case '&':
+      return builder.create<AddOp>(location, lhs, rhs);
     case '*':
       return builder.create<MulOp>(location, lhs, rhs);
     }
