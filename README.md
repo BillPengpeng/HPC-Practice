@@ -9,7 +9,7 @@ Toy实践一：HPC-Practice/llvm-practice/toy/Ch2/，参考《MLIR入门教程-T
 Toy实践二：HPC-Practice/llvm-practice/toy/Ch6/，参考《MLIR入门教程-Toy扩展实践-2-Interface使用》(https://zhuanlan.zhihu.com/p/441471026?utm_id=0)。
 
 Toy实践三：HPC-Practice/llvm-practice/toy/Ch6/
-          参考《MLIR-Toy-实践-3-Dialect转换》(https://zhuanlan.zhihu.com/p/444428735?utm_id=0),《MLIR-Toy-实践-4-转换到LLVM IR运行》(https://zhuanlan.zhihu.com/p/447202920)，参考《关于MLIR的学习实践分析与思考》(https://zhuanlan.zhihu.com/p/599281935)
+          参考《MLIR-Toy-实践-3-Dialect转换》(https://zhuanlan.zhihu.com/p/444428735?utm_id=0)、《MLIR-Toy-实践-4-转换到LLVM IR运行》(https://zhuanlan.zhihu.com/p/447202920)、《关于MLIR的学习实践分析与思考》(https://zhuanlan.zhihu.com/p/599281935)
 
 ## ONNX-MLIR部分
 ONNX-MLIR将ONNX模型接入到MLIR中，并且提供了编译工具以及Python/C Runtime。
