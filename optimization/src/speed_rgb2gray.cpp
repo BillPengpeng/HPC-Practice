@@ -13,7 +13,9 @@
 #include <intrin.h>    //(include immintrin.h)*/
 
 //#include <emmintrin.h>
+#ifdef LINUX
 #include <immintrin.h>
+#endif
 
 #include <opencv2/opencv.hpp>
 #include <future>
@@ -82,6 +84,7 @@ void RGB2Y_3(unsigned char *Src, unsigned char *Dest, int Width, int Height, int
 }
 
 //sse 一次处理12个
+#ifdef LINUX
 void RGB2Y_4(unsigned char *Src, unsigned char *Dest, int Width, int Height, int Stride) {
 	const int B_WT = int(0.114 * 256 + 0.5);
 	const int G_WT = int(0.587 * 256 + 0.5);
@@ -210,6 +213,7 @@ void debug2(__m256i var) {
 		val[28], val[29], val[30], val[31]);
 }
 
+
 // AVX2
 constexpr double B_WEIGHT = 0.114;
 constexpr double G_WEIGHT = 0.587;
@@ -317,6 +321,7 @@ void RGB2Y_7(unsigned char *Src, unsigned char *Dest, int width, int height, int
 	for (int j = 0; j < i; ++j)
 		fut[j].wait();
 }
+#endif
 
 int main() {
     std::cout << "--------------------start speed_rgb2gray--------------------" << std::endl;
@@ -356,6 +361,7 @@ int main() {
 	duration = (cv::getTickCount() - st) / cv::getTickFrequency() * 10;
 	printf("openmp RGB2Y_3 %.5f ms \n", duration);
 
+#ifdef LINUX
     st = cv::getTickCount();
 	for (int i = 0; i < 100; i++) {
 		RGB2Y_4(Src, Dest, Width, Height, Stride);
@@ -383,6 +389,7 @@ int main() {
 	}
 	duration = (cv::getTickCount() - st) / cv::getTickFrequency() * 10;
 	printf("avx2 + std::async异步编程 RGB2Y_7 %.5f ms \n", duration);
+#endif
 	
 	Mat dst(Height, Width, CV_8UC1, Dest);
 	imwrite("../image/res.jpg", dst);
