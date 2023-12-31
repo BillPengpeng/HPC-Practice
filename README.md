@@ -21,3 +21,4 @@ ONNX-MLIR将ONNX模型接入到MLIR中，并且提供了编译工具以及Python
 - [NCNN源码分析03-类Mat](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析03-类Mat.md)
 - [NCNN源码分析04-from_pixels实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-from_pixels实现.md)
 - [NCNN源码分析05-yuv420sp2rgb实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-yuv420sp2rgb实现.md)
+- [NCNN源码分析06-resize实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-resize实现.md)
