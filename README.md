@@ -12,6 +12,7 @@
 - [NCNN源码分析05-yuv420sp2rgb实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-yuv420sp2rgb实现.md)
 - [NCNN源码分析06-resize实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-resize实现.md)
 - [NCNN源码分析07-kanna_rotate实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析07-kanna_rotate实现.md)
+- NCNN源码分析08-激活函数，[ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析08-激活函数之relu算子.md)。
 
 ## 2. 部署工具链
 
