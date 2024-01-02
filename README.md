@@ -8,11 +8,8 @@
 - [NCNN源码分析01-ncnn模型加载](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析01-ncnn模型加载.md)
 - [NCNN源码分析02-CPU内存管理](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析02-CPU内存管理.md)
 - [NCNN源码分析03-类Mat](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析03-类Mat.md)
-- [NCNN源码分析04-from_pixels实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-from_pixels实现.md)
-- [NCNN源码分析05-yuv420sp2rgb实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-yuv420sp2rgb实现.md)
-- [NCNN源码分析06-resize实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-resize实现.md)
-- [NCNN源码分析07-kanna_rotate实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析07-kanna_rotate实现.md)
-- NCNN源码分析08-激活函数，[ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析08-激活函数之relu算子.md)。
+- NCNN源码分析04-图像处理函数，[from_pixels](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之from_pixels.md)，[yuv420sp2rgb](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之yuv420sp2rgb.md)，[resize](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之resize.md)，[kanna_rotate](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之kanna_rotate.md)
+- NCNN源码分析05-激活函数，[BN](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bn算子.md)，[ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之relu算子.md)。
 
 ## 2. 部署工具链
 

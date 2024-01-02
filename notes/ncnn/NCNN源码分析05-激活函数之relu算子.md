@@ -373,4 +373,119 @@ int ReLU_arm::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
     return 0;
 }
 
+// BF16推理情况
+int ReLU_arm::forward_inplace_bf16s(Mat& bottom_top_blob, const Option& opt) const
+{
+    // ...
+
+    if (slope == 0.f)
+    {
+        #pragma omp parallel for num_threads(opt.num_threads)
+        for (int q = 0; q < channels; q++)
+        {
+            // BF16情况，采用unsigned short*
+            unsigned short* ptr = bottom_top_blob.channel(q);
+
+            int i = 0;
+#if __ARM_NEON
+            float32x4_t _zero = vdupq_n_f32(0.f);
+            for (; i + 15 < size; i += 16)
+            {
+#if NCNN_GNU_INLINE_ASM
+#if __aarch64__
+                // ...
+#else  // __aarch64__
+                // ...
+#endif // __aarch64__
+#else  // NCNN_GNU_INLINE_ASM
+                uint16x8_t _p = vld1q_u16(ptr);
+                uint16x8_t _q = vld1q_u16(ptr + 8);
+                // 左移16位
+                float32x4_t _p0 = bfloat2float(vget_low_u16(_p));
+                float32x4_t _p1 = bfloat2float(vget_high_u16(_p));
+                float32x4_t _p2 = bfloat2float(vget_low_u16(_q));
+                float32x4_t _p3 = bfloat2float(vget_high_u16(_q));
+                _p0 = vmaxq_f32(_p0, _zero);
+                _p1 = vmaxq_f32(_p1, _zero);
+                _p2 = vmaxq_f32(_p2, _zero);
+                _p3 = vmaxq_f32(_p3, _zero);
+                // 右移16位
+                _p = vcombine_u16(float2bfloat(_p0), float2bfloat(_p1));
+                _q = vcombine_u16(float2bfloat(_p2), float2bfloat(_p3));
+                vst1q_u16(ptr, _p);
+                vst1q_u16(ptr + 8, _q);
+                ptr += 16;
+#endif // NCNN_GNU_INLINE_ASM
+            }
+            // ...
+#endif // __ARM_NEON
+            for (; i < size; i++)
+            {
+                float v = bfloat16_to_float32(ptr[0]);
+                if (v < 0.f)
+                    ptr[0] = float32_to_bfloat16(0.f);
+                ptr += 1;
+            }
+        }
+    }
+    else
+    {
+        #pragma omp parallel for num_threads(opt.num_threads)
+        for (int q = 0; q < channels; q++)
+        {
+            unsigned short* ptr = bottom_top_blob.channel(q);
+
+            int i = 0;
+#if __ARM_NEON
+            float32x4_t _zero = vdupq_n_f32(0.f);
+            float32x4_t _slope = vdupq_n_f32(slope);
+            for (; i + 15 < size; i += 16)
+            {
+#if NCNN_GNU_INLINE_ASM
+#if __aarch64__
+                // ...
+#else  // __aarch64__
+                // ...
+#endif // __aarch64__
+#else  // NCNN_GNU_INLINE_ASM
+                uint16x8_t _p = vld1q_u16(ptr);
+                uint16x8_t _q = vld1q_u16(ptr + 8);
+                float32x4_t _p0 = bfloat2float(vget_low_u16(_p));
+                float32x4_t _p1 = bfloat2float(vget_high_u16(_p));
+                float32x4_t _p2 = bfloat2float(vget_low_u16(_q));
+                float32x4_t _p3 = bfloat2float(vget_high_u16(_q));
+                uint32x4_t _lemask0 = vcleq_f32(_p0, _zero);
+                uint32x4_t _lemask1 = vcleq_f32(_p1, _zero);
+                uint32x4_t _lemask2 = vcleq_f32(_p2, _zero);
+                uint32x4_t _lemask3 = vcleq_f32(_p3, _zero);
+                float32x4_t _ps0 = vmulq_f32(_p0, _slope);
+                float32x4_t _ps1 = vmulq_f32(_p1, _slope);
+                float32x4_t _ps2 = vmulq_f32(_p2, _slope);
+                float32x4_t _ps3 = vmulq_f32(_p3, _slope);
+                _p0 = vbslq_f32(_lemask0, _ps0, _p0);
+                _p1 = vbslq_f32(_lemask1, _ps1, _p1);
+                _p2 = vbslq_f32(_lemask2, _ps2, _p2);
+                _p3 = vbslq_f32(_lemask3, _ps3, _p3);
+                _p = vcombine_u16(float2bfloat(_p0), float2bfloat(_p1));
+                _q = vcombine_u16(float2bfloat(_p2), float2bfloat(_p3));
+                vst1q_u16(ptr, _p);
+                vst1q_u16(ptr + 8, _q);
+                ptr += 16;
+#endif // NCNN_GNU_INLINE_ASM
+            }
+            // ...
+#endif // __ARM_NEON
+            for (; i < size; i++)
+            {
+                float v = bfloat16_to_float32(ptr[0]);
+                if (v < 0.f)
+                    ptr[0] = float32_to_bfloat16(v * slope);
+                ptr += 1;
+            }
+        }
+    }
+
+    return 0;
+}
+
 ```
