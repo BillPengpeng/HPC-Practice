@@ -5,6 +5,14 @@ BN的基本公式为：f(x) = (x - mean(x)) / sqrt(var(x) + ε) * γ + β。NCNN
 ```
 // src/layer/batchnorm.cpp
 
+BatchNorm::BatchNorm()
+{
+    // 单输入
+    one_blob_only = true;
+    
+    // 支持inplace
+    support_inplace = true;
+}
 int BatchNorm::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 {
     // 具体a b计算公式
@@ -151,6 +159,22 @@ int BatchNorm_x86::forward_inplace(Mat& bottom_top_blob, const Option& opt) cons
 
 ```
 // src/layer/arm/batchnorm_arm.cpp
+
+BatchNorm_arm::BatchNorm_arm()
+{
+#if __ARM_NEON
+    // 支持packing
+    support_packing = true;
+#if NCNN_ARM82
+    support_fp16_storage = cpu_support_arm_asimdhp();
+#endif
+#endif // __ARM_NEON
+
+#if NCNN_BF16
+    // 支持BF16
+    support_bf16_storage = true;
+#endif
+}
 
 int BatchNorm_arm::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 {

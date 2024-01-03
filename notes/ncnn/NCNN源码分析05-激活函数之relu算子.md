@@ -74,7 +74,7 @@ int ReLU::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 ReLU_x86::ReLU_x86()
 {
 #if __SSE2__
-    // 支持pack，用于SIMD指令
+    // 支持packing
     support_packing = true;
 #endif // __SSE2__
 }
@@ -207,6 +207,22 @@ int ReLU_x86::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 
 ```
 // src/layer/arm/relu_arm.cpp
+
+ReLU_arm::ReLU_arm()
+{
+#if __ARM_NEON
+    // 支持pack
+    support_packing = true;
+#if NCNN_ARM82
+    support_fp16_storage = cpu_support_arm_asimdhp();
+#endif
+#endif // __ARM_NEON
+
+#if NCNN_BF16
+    // 支持BF16
+    support_bf16_storage = true;
+#endif
+}
 
 int ReLU_arm::forward_inplace(Mat& bottom_top_blob, const Option& opt) const
 {
