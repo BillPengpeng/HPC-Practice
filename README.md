@@ -17,14 +17,16 @@
 [AbsVal](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之absval算子.md)，
 [Bias](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bias算子.md)，
 [Batchnorm](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bn算子.md)，
+[Clip](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之clip算子.md)，
 [ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之relu算子.md)
 
 | Name |  one_blob_only | support_inplace | support_packing | support_bf16_storage | int8 forward | 
 | ---  |  --- | --- | --- | --- | --- |
 | AbsVal       |     True      |      True       |      True     |      False      |      ?       |
 | Bias         |     True      |      True       |      False    |      False      |      ?       |
-| Batchnorm    |     True      |      True       |      False    |      True       |      ?       |
-| ReLU         |     True      |      True       |      False    |      True       |     True     |
+| Batchnorm    |     True      |      True       |      True     |      True       |      ?       |
+| Clip         |     True      |      True       |      True     |      True       |      ?       |
+| ReLU         |     True      |      True       |      True     |      True       |     True     |
 
 ## 2. 部署工具链
 
