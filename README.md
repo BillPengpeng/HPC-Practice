@@ -15,18 +15,20 @@
 [kanna_rotate](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之kanna_rotate.md)
 - NCNN源码分析05-基础算子，
 [AbsVal](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之absval算子.md)，
+[Batchnorm](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bn算子.md)，
 [Bias](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bias算子.md)，
 [Binaryop](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之binaryop算子.md)，
-[Batchnorm](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bn算子.md)，
+[Bnll](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bnll算子.md)，
 [Clip](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之clip算子.md)，
 [ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之relu算子.md)
 
 | Name |  one_blob_only | support_inplace | support_packing | support_bf16_storage | int8 forward | 
 | ---  |  --- | --- | --- | --- | --- |
 | AbsVal       |     True      |      True       |      True     |      False      |      ?       |
+| Batchnorm    |     True      |      True       |      True     |      True       |      ?       |
 | Bias         |     True      |      True       |      False    |      False      |      ?       |
 | Binaryop     |     False     |      False      |      True     |      True       |      ?       |
-| Batchnorm    |     True      |      True       |      True     |      True       |      ?       |
+| Bnll         |     True      |      True       |      True     |      False      |      ?       |
 | Clip         |     True      |      True       |      True     |      True       |      ?       |
 | ReLU         |     True      |      True       |      True     |      True       |     True     |
 
