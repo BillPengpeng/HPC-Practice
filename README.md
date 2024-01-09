@@ -13,7 +13,7 @@
 [yuv420sp2rgb](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之yuv420sp2rgb.md)，
 [resize](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之resize.md)，
 [kanna_rotate](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析04-图像处理函数之kanna_rotate.md)
-- NCNN源码分析05-基础算子，
+- NCNN源码分析05-基础简单算子，
 [AbsVal](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之absval算子.md)，
 [Batchnorm](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bn算子.md)，
 [Bias](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析05-激活函数之bias算子.md)，
@@ -31,6 +31,9 @@
 | Bnll         |     True      |      True       |      True     |      False      |      ?       |
 | Clip         |     True      |      True       |      True     |      True       |      ?       |
 | ReLU         |     True      |      True       |      True     |      True       |     True     |
+
+- NCNN源码分析06-密集计算算子，
+[convolution与convolutiondepthwise基础实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-convolution与convolutiondepthwise基础实现.md)
 
 ## 2. 部署工具链
 
