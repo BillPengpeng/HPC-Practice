@@ -33,7 +33,8 @@
 | ReLU         |     True      |      True       |      True     |      True       |     True     |
 
 - NCNN源码分析06-密集计算算子，
-[convolution与convolutiondepthwise基础实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-convolution与convolutiondepthwise基础实现.md)。
+[convolution与convolutiondepthwise基础实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-convolution与convolutiondepthwise基础实现.md)，
+[deconvolution与deconvolutiondepthwise基础实现](https://github.com/BillPengpeng/HPC-Practice/tree/master/notes/ncnn/NCNN源码分析06-deconvolution与deconvolutiondepthwise基础实现.md)。
 
 ## 2. 部署工具链
 

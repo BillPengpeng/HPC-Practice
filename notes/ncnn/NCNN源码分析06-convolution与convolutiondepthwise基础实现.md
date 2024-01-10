@@ -345,7 +345,7 @@ int ConvolutionDepthWise::forward(const Mat& bottom_blob, Mat& top_blob, const O
 ## 卷积运算函数
 卷积运算函数实现是两卷积算子的核心，主要流程是：
 1. kernel offsets计算，统计卷积核每个像素相对于左上角原点的相对坐标
-2. 卷积运算循环，convolution函数为outch×outh×inch×maxk的O(n^4)复杂度的for循环，convolutiondepthwise分两种情况，depth-wise为group×outh×inch×maxk的O(n^4)复杂度的for循环，否则为group×outch_g×outh×inch×maxk的O(n^5)复杂度的for循环。
+2. 卷积运算循环，convolution函数为outch×输出h×输出w×inch×maxk的O(n^5)复杂度的for循环，convolutiondepthwise分两种情况，depth-wise为group×输出h×输出w×maxk的O(n^4)复杂度的for循环，否则为group×outch_g×输出h×输出w×inch×maxk的O(n^6)复杂度的for循环。
 
 ```
 // src/layer/convolution.cpp
