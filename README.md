@@ -41,6 +41,9 @@
 ### 2.1 10-414-714_Deep_Learning_Systems
 [Deep Learning Systems](https://dlsyscourse.org/)
 
+### 2.2 CUDA
+[Deep Learning Systems](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+C-AC-01+V1/)
+
 ## 3. AI编译
 
 ### 3.1 MLIR
