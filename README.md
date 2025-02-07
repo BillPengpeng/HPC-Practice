@@ -27,12 +27,12 @@
 ### 1.2 MLIR [link](https://mlir.llvm.org/getting_started/)
 
 - 基本实践，
-[Toy扩展](https://github.com/BillPengpeng/HPC-Practice/tree/master/ai-compiler/llvm-practice/toy/Ch6)，参考博文：[MLIR入门教程-Toy扩展实践-1-添加一个新Op](https://zhuanlan.zhihu.com/p/441237921)、[MLIR入门教程-Toy扩展实践-2-Interface使用](https://zhuanlan.zhihu.com/p/441471026?utm_id=0)、[MLIR-Toy-实践-4-转换到LLVM IR运行](https://zhuanlan.zhihu.com/p/447202920)、[关于MLIR的学习实践分析与思考](https://zhuanlan.zhihu.com/p/599281935)
+[Toy扩展](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ai-compiler/llvm-practice/toy/Ch6)，参考博文：[MLIR入门教程-Toy扩展实践-1-添加一个新Op](https://zhuanlan.zhihu.com/p/441237921)、[MLIR入门教程-Toy扩展实践-2-Interface使用](https://zhuanlan.zhihu.com/p/441471026?utm_id=0)、[MLIR-Toy-实践-4-转换到LLVM IR运行](https://zhuanlan.zhihu.com/p/447202920)、[关于MLIR的学习实践分析与思考](https://zhuanlan.zhihu.com/p/599281935)
 
 ### 1.3 ONNX-MLIR [link](https://github.com/onnx/onnx-mlir)
 
 - 基本实践，
-[mnist_example](https://github.com/BillPengpeng/HPC-Practice/tree/master/ai-compiler/onnx-mlir/mnist_example)
+[mnist_example](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ai-compiler/onnx-mlir/mnist_example)
 
 ## 2. 国内外相关课程
 
