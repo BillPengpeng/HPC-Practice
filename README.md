@@ -36,9 +36,10 @@
 
 ## 2. 国内外相关课程
 
-### 2.1 AI
+### 2.1 AI 
 
 - 相关课程，[10-414-714_Deep_Learning_Systems](https://dlsyscourse.org/)，[Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
+- LLM Notes，[LLM基础](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/LLM笔记01-LLM基础.md)
 
 ### 2.2 CUDA
 
