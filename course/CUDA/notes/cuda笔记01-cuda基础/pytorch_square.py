@@ -38,7 +38,7 @@ print("Profiling torch.square")
 print("=============")
 
 # Now profile each function using pytorch profiler
-with torch.profiler.profile() as prof:
+with torch.autograd.profiler.profile(use_cuda=True) as prof:
     torch.square(b)
 
 print(prof.key_averages().table(sort_by="cuda_time_total", row_limit=10))
@@ -58,5 +58,6 @@ print("=============")
 
 with torch.profiler.profile() as prof:
     square_3(b)
+prof.export_chrome_trace("trace.json")
 
 print(prof.key_averages().table(sort_by="cuda_time_total", row_limit=10))

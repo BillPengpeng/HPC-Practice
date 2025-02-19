@@ -38,13 +38,15 @@
 
 ### 2.1 AI 
 
-- 相关课程，[10-414-714_Deep_Learning_Systems](https://dlsyscourse.org/)，[Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
+- Related course，[10-414-714_Deep_Learning_Systems](https://dlsyscourse.org/)，[Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
 - LLM Notes，[LLM基础](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/LLM_notes_01_LLM基础.md)
-- 10-414-714 Notes，[Lecture1-6](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/10-414-714_notes_01.md)
+- 10-414-714 Notes，[Lecture1-6](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/10-414-714_notes_01.md),
+                    [Lecture7/9-11](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/10-414-714_notes_02.md)
 
 ### 2.2 CUDA
 
-- 相关课程，[Getting_Started_with_Accelerated_Computing_in_CUDA_C_C++](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+C-AC-01+V1/)，[CUDA MODE](https://github.com/gpu-mode/lectures)
-
+- Related course，[Getting_Started_with_Accelerated_Computing_in_CUDA_C_C++](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+C-AC-01+V1/)，[CUDA MODE](https://github.com/gpu-mode/lectures)
+- Related github, [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
+- CUDA MODE Notes, [Lecture1/2/4](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.ipynb)
 
 
