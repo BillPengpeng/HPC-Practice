@@ -1,26 +1,25 @@
 # HPC-Practice
 
-## 1. 深度学习部署
+## 1. AI Deployment
 
 ### 1.1 NCNN [link](https://github.com/Tencent/ncnn)
 - 基础使用，
 [模型加载](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析01-ncnn模型加载.md)，
 [内存管理](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析02-CPU内存管理.md)，
 [类Mat](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析03-类Mat.md)
-- 图像处理函数，
+- mat_pixel，
 [from_pixels](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析04-图像处理函数之from_pixels.md)，
 [yuv420sp2rgb](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析04-图像处理函数之yuv420sp2rgb.md)，
 [resize](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析04-图像处理函数之resize.md)，
 [kanna_rotate](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析04-图像处理函数之kanna_rotate.md)
-- 基础简单算子，
+- operator，
 [AbsVal](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之absval算子.md)，
 [Batchnorm](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之bn算子.md)，
 [Bias](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之bias算子.md)，
 [Binaryop](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之binaryop算子.md)，
 [Bnll](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之bnll算子.md)，
 [Clip](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之clip算子.md)，
-[ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之relu算子.md)
-- 密集计算算子，
+[ReLU](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析05-激活函数之relu算子.md),
 [convolutione](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析06-convolution与convolutiondepthwise基础实现.md)，
 [deconvolution](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ncnn/notes/NCNN源码分析06-deconvolution与deconvolutiondepthwise基础实现.md)
 
@@ -34,7 +33,7 @@
 - 基本实践，
 [mnist_example](https://github.com/BillPengpeng/HPC-Practice/tree/master/deployment/ai-compiler/onnx-mlir/mnist_example)
 
-## 2. 国内外相关课程
+## 2. Related course
 
 ### 2.1 AI 
 
@@ -48,5 +47,5 @@
 - Related course，[Getting_Started_with_Accelerated_Computing_in_CUDA_C_C++](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+C-AC-01+V1/)，[CUDA MODE](https://github.com/gpu-mode/lectures)
 - Related github, [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
 - CUDA MODE Notes, [Lecture1/2/4](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.ipynb)
-
+- CUDA Kernal Notes, [cuda-kernel-easy](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda源码分析01-cuda-kernel-easy/01-cuda-kernel-easy.ipynb)
 
