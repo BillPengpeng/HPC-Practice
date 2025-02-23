@@ -46,6 +46,6 @@
 
 - Related course，[Getting_Started_with_Accelerated_Computing_in_CUDA_C_C++](https://learn.nvidia.com/courses/course-detail?course_id=course-v1:DLI+C-AC-01+V1/)，[CUDA MODE](https://github.com/gpu-mode/lectures)
 - Related github, [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
-- CUDA MODE Notes, [Lecture1/2/4](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.ipynb)
-- CUDA Kernal Notes, [cuda-kernel-easy](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda源码分析01-cuda-kernel-easy/01-cuda-kernel-easy.ipynb)
+- CUDA MODE Notes, [Lecture1/2/4](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
+- CUDA Kernal Notes, [cuda-kernel-easy](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda源码分析01-cuda-kernel-easy/01-cuda-kernel-easy.md)，[cuda-kernel-medium](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda源码分析02-cuda-kernel-medium/02-cuda-kernel-medium.md) 
 
