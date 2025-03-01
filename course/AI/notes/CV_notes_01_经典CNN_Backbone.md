@@ -1,4 +1,4 @@
-本文总结典型的有监督训练范式的CNN Backbone。
+本文持续总结典型的有监督训练范式的CNN Backbone。
 
 ## VGG（2014）
 
