@@ -1,7 +1,8 @@
 
 ## 1. Getting Started with ANTLR v4
 
-参考文献：[Getting Started with ANTLR v4](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
+[Getting Started with ANTLR v4](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
+[antlr online](http://lab.antlr.org/)
 
 ### 1.1 antlr4-tools使用
 

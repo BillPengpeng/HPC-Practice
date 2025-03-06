@@ -15,6 +15,7 @@
 - CV Notes，
   - [经典CNN_Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
   - [经典CNN_Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
+  - [经典Transformer_Backbone之一：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
 
 ## 2 Parallel Programming
 
@@ -31,8 +32,8 @@
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
-## 3 Computer System
-
+## 3 Computer System 
+  
 - Related course
   - [ICS-PA2024](http://www.why.ink:8080/ICS/2024/Main_Page)
 - ICS-PA2024 Notes
