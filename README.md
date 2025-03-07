@@ -13,9 +13,10 @@
   - [Lecture1-6: Softmax / Backprop / Automatic Differentiation / Optimization](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/10-414-714_notes_01.md)
   - [Lecture7/9-11: NN Library Abstractions / Normalization and Regularization](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/10-414-714_notes_02.md)
 - CV Notes，
-  - [经典CNN_Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
-  - [经典CNN_Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
+  - [经典CNN Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
+  - [经典CNN Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
   - [经典Transformer_Backbone之一：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
+  - [经典自监督学习算法之一：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_04_经典自监督算法.md)
 
 ## 2 Parallel Programming
 
