@@ -38,7 +38,8 @@
 - Related course
   - [ICS-PA2024](http://www.why.ink:8080/ICS/2024/Main_Page)
 - ICS-PA2024 Notes
-  - [Lecture1-2: NEMU简介 / Linux和C语言拾遗](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
+  - [Lecture1-2: NEMU简介 / Linux和C语言拾遗](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_01.md)
+  - [Lecture3-4: NEMU编译运行 / NEMU代码导读](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_02.md)
 
 ## 4 Compiler
 - Related course
