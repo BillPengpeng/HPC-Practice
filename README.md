@@ -16,7 +16,8 @@
   - [经典CNN Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
   - [经典CNN Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
   - [经典Transformer_Backbone之一：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
-  - [经典自监督学习算法之一：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_04_经典自监督算法.md)
+  - [经典对比学习自监督算法：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_04_经典对比学习自监督算法.md)
+  - [经典MIM自监督算法：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_05_经典MIM自监督算法.md)
 
 ## 2 Parallel Programming
 
@@ -38,8 +39,9 @@
 - Related course
   - [ICS-PA2024](http://www.why.ink:8080/ICS/2024/Main_Page)
 - ICS-PA2024 Notes
-  - [Lecture1-2: NEMU简介 / Linux和C语言拾遗](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_01.md)
-  - [Lecture3-4: NEMU编译运行 / NEMU代码导读](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_02.md)
+  - [Lecture1-3: NEMU简介 / Linux和C语言拾遗](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_01.md)
+  - [Lecture4-5: NEMU编译运行 / NEMU代码导读](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_02.md)
+  - [Lecture6-7: 数据的机器级表述 / ABI与内联汇编](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_03.md)
 
 ## 4 Compiler
 - Related course
