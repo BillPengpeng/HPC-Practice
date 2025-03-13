@@ -15,9 +15,10 @@
 - CV Notes，
   - [经典CNN Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
   - [经典CNN Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
-  - [经典Transformer_Backbone之一：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
+  - [经典Transformer_Backbone：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
   - [经典对比学习自监督算法：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_04_经典对比学习自监督算法.md)
   - [经典MIM自监督算法：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_05_经典MIM自监督算法.md)
+  - [经典多模态自监督算法：CLIP / Chinese CLIP / BLIP V1 & V2](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/AI/notes/CV_notes_06_经典多模态自监督算法.md)
 
 ## 2 Parallel Programming
 
