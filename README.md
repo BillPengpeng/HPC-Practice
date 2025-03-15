@@ -43,6 +43,7 @@
   - [Lecture1-3: NEMU简介 / Linux和C语言拾遗](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_01.md)
   - [Lecture4-5: NEMU编译运行 / NEMU代码导读](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_02.md)
   - [Lecture6-7: 数据的机器级表述 / ABI与内联汇编](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_03.md)
+  - [Lecture8-9: I/O设备 / 链接与加载](https://github.com/BillPengpeng/HPC-Practice/tree/master/course/Computer_System/notes/PA_ICS2024_notes_04.md)
 
 ## 4 Compiler
 - Related course
