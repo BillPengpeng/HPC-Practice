@@ -7,8 +7,10 @@
   - [Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
 - Related link
   - [mmpretrain](https://github.com/open-mmlab/mmpretrain/tree/main)
+  - [transformers](https://github.com/huggingface/transformers)
 - LLM Notes
   - [LLM基础: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/notes/LLM_notes_01_LLM基础.md)
+  - [Hugging_Face_Bert架构: Bert模型架构 / Bert下游任务架构结构](./course/AI/notes/LLM_notes_02_Hugging_Face_Bert模型架构.md)
 - 10-414-714 Notes，
   - [Lecture1-6: Softmax / Backprop / Automatic Differentiation / Optimization](./course/AI/notes/10-414-714_notes_01.md)
   - [Lecture7/9-11: NN Library Abstractions / Normalization and Regularization](./course/AI/notes/10-414-714_notes_02.md)
