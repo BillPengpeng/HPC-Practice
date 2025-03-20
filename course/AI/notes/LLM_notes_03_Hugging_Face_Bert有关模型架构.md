@@ -296,7 +296,124 @@ class BertOutput(nn.Module):
 - **FFN 是独立结构**：在 BERT 中由两个子模块分步实现，专门用于非线性特征变换。  
 - **设计动机**：通过分离自注意力与 FFN 的残差路径，增强模型的模块化和训练鲁棒性。
 
-### 1.4 BertEncoder
+### 1.4 BertLayer
+
+这段代码实现了BERT模型的一个Transformer层，支持作为编码器或解码器使用。
+#### 1. 类初始化 (__init__)
+```python
+class BertLayer(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.chunk_size_feed_forward = config.chunk_size_feed_forward  # 前馈分块大小
+        self.seq_len_dim = 1  # 序列长度维度
+        self.attention = BertAttention(config)  # 自注意力模块
+        self.is_decoder = config.is_decoder  # 是否是解码器
+        self.add_cross_attention = config.add_cross_attention  # 是否添加交叉注意力
+        
+        # 交叉注意力校验与初始化
+        if self.add_cross_attention:
+            if not self.is_decoder:
+                raise ValueError("解码器才允许交叉注意力")
+            self.crossattention = BertAttention(config, position_embedding_type="absolute")  # 绝对位置编码
+            
+        self.intermediate = BertIntermediate(config)  # 中间层（线性+激活）
+        self.output = BertOutput(config)  # 输出层（线性+LayerNorm）
+```
+
+#### 2. 前向传播 (forward)
+**2.1 自注意力处理**  
+```python
+self_attn_past_key_value = past_key_value[:2] if past_key_value else None
+self_attention_outputs = self.attention(
+    hidden_states,
+    attention_mask,
+    head_mask,
+    output_attentions=output_attentions,
+    past_key_value=self_attn_past_key_value
+)
+attention_output = self_attention_outputs[0]
+```
+
+**流程说明：**
+1. 从`past_key_value`获取自注意力的历史键值对
+2. 执行自注意力计算，输出包含：
+   - `attention_output`: 自注意力后的隐藏状态
+   - 可能的注意力权重
+   - 当前时间步的键值对（解码器用）
+
+**2.2 解码器处理**
+```python
+if self.is_decoder:
+    outputs = self_attention_outputs[1:-1]
+    present_key_value = self_attention_outputs[-1]
+else:
+    outputs = self_attention_outputs[1:]
+```
+
+**分支逻辑：**
+- **解码器模式**：保存当前键值对 (`present_key_value`) 用于后续时间步
+- **编码器模式**：仅保留注意力权重（如果需要）
+
+**2.3 交叉注意力处理**
+```python
+if self.is_decoder and encoder_hidden_states:
+    cross_attn_past_key_value = past_key_value[-2:] if past_key_value else None
+    cross_attention_outputs = self.crossattention(
+        attention_output,
+        ...  # 编码器相关输入
+    )
+    attention_output = cross_attention_outputs[0]
+    present_key_value += cross_attention_outputs[-1]
+```
+
+**核心功能：**
+- 使用编码器输出 (`encoder_hidden_states`) 进行交叉注意力计算
+- 合并自注意力与交叉注意力的键值对缓存
+
+**2.4 前馈网络**
+```python
+layer_output = apply_chunking_to_forward(
+    self.feed_forward_chunk, 
+    self.chunk_size_feed_forward,
+    self.seq_len_dim,
+    attention_output
+)
+```
+
+**关键技术：**
+- `apply_chunking_to_forward`：将前馈计算分块进行，防止大矩阵内存溢出
+- `feed_forward_chunk`实际执行：
+  ```python
+  def feed_forward_chunk(self, attention_output):
+      intermediate_output = self.intermediate(attention_output)  # 线性层+GeLU激活
+      layer_output = self.output(intermediate_output, attention_output)  # 线性层+残差连接+LayerNorm
+      return layer_output
+  ```
+
+#### 3. 输出处理
+```python
+outputs = (layer_output,) + outputs
+if self.is_decoder:
+    outputs = outputs + (present_key_value,)
+return outputs
+```
+
+**输出结构：**
+- 主输出：经过所有处理的隐藏状态
+- 可选输出：注意力权重、当前时间步键值对（解码器）
+
+#### 4. 结构示意图
+```mermaid
+graph TD
+    A[输入隐藏状态] --> B[自注意力]
+    B --> C{是解码器?}
+    C -->|是| D[交叉注意力]
+    C -->|否| E[前馈网络]
+    D --> E
+    E --> F[输出]
+```
+
+### 1.5 BertEncoder
 
 #### **1. 类定义与初始化**
 **核心成员**
@@ -377,7 +494,7 @@ if output_hidden_states:
 - **调试与分析**：通过 `output_hidden_states` 和 `output_attentions` 获取中间结果，用于可视化或模型诊断。
 - **计算代价**：保存这些结果会略微增加显存和计算时间。
 
-### 1.5 BertPooler
+### 1.6 BertPooler
 
 #### **1. 功能概述**
 `BertPooler` 是 BERT 模型中用于 **生成句子/序列级别表示** 的模块，其核心操作是从 Transformer 编码器的最终输出中提取 **[CLS] Token 的隐藏状态**，并通过线性变换与激活函数生成聚合表示。该表示通常用于下游任务（如分类、句子相似度）。
@@ -445,7 +562,7 @@ def forward(self, hidden_states: torch.Tensor) -> torch.Tensor:
 - **替代方案**：  
   对于长文本或特定领域任务，可尝试其他池化策略（如动态加权平均）作为补充。
 
-### 1.6 BertLMPredictionHead / BertOnlyMLMHead / BertOnlyNSPHead / BertPreTrainingHeads
+### 1.7 BertLMPredictionHead / BertOnlyMLMHead / BertOnlyNSPHead / BertPreTrainingHeads
 
 #### **1. BertLMPredictionHead**
 **功能**：掩码语言模型（MLM）预测头，用于预测被遮蔽的Token。
@@ -558,7 +675,7 @@ class BertPreTrainingHeads(nn.Module):
 - **扩展性**：可轻松添加新任务头（如实体识别）进行多任务学习。
 通过这种设计，BERT在预训练阶段有效学习通用语言表示，为下游任务提供强大的特征基础。
 
-### 1.7 BertForPreTraining
+### 1.8 BertForPreTraining
 
 #### **1. 类定义与初始化**  
 
@@ -1404,3 +1521,583 @@ loss = outputs.loss       # 分类损失
 3. **高效正则化**：分类器前 Dropout 提升模型鲁棒性。
 4. **易扩展性**：通过调整 `num_labels` 适配不同类别数的任务。
 该模型广泛应用于需要 Token 级别语义理解的任务，是信息抽取、句法分析等场景的核心组件。
+
+## 3. Bert衍生模型
+
+### 3.1 RobertaForCausalLM
+
+#### **1. 类定义与功能定位**
+- **继承关系**：
+  ```python
+  class RobertaForCausalLM(RobertaPreTrainedModel, GenerationMixin)
+  ```
+  - **`RobertaPreTrainedModel`**：RoBERTa 预训练模型的基类，提供参数初始化与加载能力。
+  - **`GenerationMixin`**：为模型注入自回归生成能力（如 `generate()` 方法），支持束搜索、采样等解码策略。
+- **功能**：基于 RoBERTa 架构的 **因果语言模型**，用于生成式任务（如文本续写、对话生成），通过预测下一个 Token 进行训练和推理。
+
+#### **2. 关键组件初始化**
+**模型结构**
+```python
+def __init__(self, config):
+    super().__init__(config)
+    # 检查是否为解码器模式（生成任务必需）
+    if not config.is_decoder:
+        logger.warning("若需独立使用，需设置 `is_decoder=True`")
+    
+    # RoBERTa 主干网络（无池化层）
+    self.roberta = RobertaModel(config, add_pooling_layer=False)
+    # 语言模型头（LM Head）
+    self.lm_head = RobertaLMHead(config)
+```
+- **`RobertaLMHead`**：通常为线性层 + 激活函数（如 Gelu） + LayerNorm，将隐藏状态映射到词表空间。
+- **`_tied_weights_keys`**：声明权重绑定，词嵌入矩阵与 LM Head 共享参数以节省内存。
+
+**输出嵌入管理**
+```python
+def get_output_embeddings(self):
+    return self.lm_head.decoder  # 返回 LM Head 的解码器（词表投影层）
+
+def set_output_embeddings(self, new_embeddings):
+    self.lm_head.decoder = new_embeddings  # 更新解码器权重
+```
+- **权重共享**：通过绑定 `lm_head.decoder.weight` 与 `roberta.embeddings.word_embeddings.weight`，减少参数量并提升训练稳定性。
+
+#### **3. 前向传播 (`forward`)**
+**输入参数**
+- **生成控制**：
+  - `past_key_values`：缓存历史层的键值对，加速自回归生成。
+  - `use_cache`：是否启用缓存（训练时通常关闭，推理时开启）。
+- **标签处理**：
+  - `labels`：形状 `(batch_size, sequence_length)`，计算从左到右的语言模型损失（交叉熵），`-100` 表示忽略位置。
+
+**处理流程**
+**a. 禁用缓存（若提供标签）**：
+   ```python
+   if labels is not None:
+       use_cache = False  # 训练时无需缓存
+   ```
+**b. RoBERTa 编码**：
+   ```python
+   outputs = self.roberta(...)  # 输出包含隐藏状态、注意力权重、缓存等
+   sequence_output = outputs[0]  # 最终层隐藏状态 (batch_size, seq_len, hidden_size)
+   ```
+**c. LM Head 预测**：
+   ```python
+   prediction_scores = self.lm_head(sequence_output)  # (batch_size, seq_len, vocab_size)
+   ```
+**d. 损失计算**（若提供标签）：
+   ```python
+   lm_loss = self.loss_function(prediction_scores, labels, ...)  # 通常为带掩码的交叉熵
+   ```
+
+**输出格式**
+- **字典模式** (`return_dict=True`)：返回 `CausalLMOutputWithCrossAttentions` 对象，包含损失、logits、缓存等。
+- **元组模式**：返回 `(loss, logits, ...)` 元组。
+
+#### **4. 生成相关功能**
+**缓存重排序 (`_reorder_cache`)**
+```python
+def _reorder_cache(self, past_key_values, beam_idx):
+    # 按 beam_idx 重新排列各层的缓存键值对
+    reordered_past = ()
+    for layer_past in past_key_values:
+        reordered_past += (tuple(past_state.index_select(0, beam_idx) for past_state in layer_past),)
+    return reordered_past
+```
+- **作用**：在束搜索（Beam Search）中，根据选中的候选路径（`beam_idx`）调整缓存，保持生成一致性。
+- **示例**：束宽为 3 时，`beam_idx` 可能为 `[2, 0, 1]`，将缓存按此顺序重排。
+
+#### **5. 与标准 RoBERTa 的差异**
+| **特性**               | **RobertaForCausalLM**               | **标准 RoBERTa (RobertaForMaskedLM)** |
+|------------------------|---------------------------------------|----------------------------------------|
+| **任务类型**           | 因果语言建模（生成下一个 Token）       | 掩码语言建模（预测被遮蔽 Token）        |
+| **注意力掩码**         | 因果掩码（下三角矩阵）                 | 双向注意力（全连接）                    |
+| **模型配置**           | `is_decoder=True`                     | `is_decoder=False`                     |
+| **缓存机制**           | 支持 `past_key_values` 加速生成        | 无                                      |
+| **输出头**             | LM Head（单向预测）                    | MLM Head（随机位置预测）                |
+
+#### **6. 关键设计解析**
+**a. 因果注意力掩码**
+- **实现方式**：在 RoBERTa 的 Self-Attention 层中，生成下三角矩阵掩码，确保每个位置仅关注左侧上下文。
+- **作用**：防止未来信息泄露，确保生成过程的自回归特性。
+
+**b. 缓存机制优化**
+- **`past_key_values`**：存储历史计算的键值对，避免重复计算已生成 Token 的中间结果。
+- **内存效率**：缓存维度为 `(batch_size, num_heads, past_seq_len, head_size)`，随生成步数递增。
+
+**c. 损失计算细节**
+- **掩码处理**：`labels` 中 `-100` 的位置被忽略，仅计算有效 Token 的交叉熵损失。
+- **偏移对齐**：预测目标为输入序列右移一位（标准 CLM 训练方式）。
+
+#### **7. 使用示例**
+```python
+from transformers import AutoTokenizer, RobertaForCausalLM, AutoConfig
+
+tokenizer = AutoTokenizer.from_pretrained("roberta-base")
+config = AutoConfig.from_pretrained("roberta-base", is_decoder=True)  # 强制设为解码器
+model = RobertaForCausalLM.from_pretrained("roberta-base", config=config)
+
+# 编码输入
+inputs = tokenizer("Hello, my dog is", return_tensors="pt")
+
+# 自回归生成
+outputs = model.generate(**inputs, max_length=20)
+print(tokenizer.decode(outputs[0]))  # 输出续写结果，如 "Hello, my dog is cute and playful."
+```
+
+#### **8. 总结**
+`RobertaForCausalLM` 通过以下设计适配生成任务：
+1. **解码器模式**：启用因果注意力掩码，确保自回归生成。
+2. **缓存机制**：加速长序列生成，减少重复计算。
+3. **权重共享**：词嵌入与 LM Head 绑定，提升参数效率。
+4. **生成接口集成**：通过 `GenerationMixin` 支持多样化的解码策略。
+
+### 3.2 AlbertTransformer
+
+#### **1. 模块功能概述**
+`AlbertTransformer` 是 ALBERT 模型的**核心堆叠结构**，实现了两大核心特性：
+1. **参数跨层共享**：通过层组（Layer Group）复用显著减少参数量
+2. **嵌入维度压缩**：通过线性投影将词嵌入维度（embedding_size）映射到隐藏维度（hidden_size）
+
+#### **2. 初始化解析 (`__init__`)**
+```python
+class AlbertTransformer(nn.Module):
+    def __init__(self, config: AlbertConfig):
+        super().__init__()
+        self.config = config
+        # 嵌入维度映射：将较小的词嵌入映射到更大的隐藏空间
+        self.embedding_hidden_mapping_in = nn.Linear(config.embedding_size, config.hidden_size)
+        # 创建层组：核心参数共享结构
+        self.albert_layer_groups = nn.ModuleList([
+            AlbertLayerGroup(config) 
+            for _ in range(config.num_hidden_groups)
+        ])
+```
+**关键参数说明：**
+- `num_hidden_groups`：层组数量（通常远小于总层数）
+- `num_hidden_layers`：总Transformer层数
+- `embedding_size`：ALBERT特有的小维度词嵌入（典型值：128）
+- `hidden_size`：实际隐藏层维度（典型值：768）
+
+#### **3. 前向传播逻辑 (`forward`)**  
+**输入预处理**
+```python
+hidden_states = self.embedding_hidden_mapping_in(hidden_states)  # [B, L, E] => [B, L, H]
+```
+**设计意义**：  
+ALBERT 通过分离词嵌入维度（E）与隐藏维度（H），使得：
+- 词嵌入矩阵参数量从 `V×H` 降为 `V×E`（V为词表大小）
+- 后续所有层共享更大的隐藏空间（H），提升表征能力
+
+**层组调度机制**
+```python
+for i in range(self.config.num_hidden_layers):
+    # 计算当前层所属的层组索引
+    layers_per_group = self.config.num_hidden_layers // self.config.num_hidden_groups
+    group_idx = i // layers_per_group  # 整数除法
+    
+    # 调用对应层组
+    layer_group_output = self.albert_layer_groups[group_idx](
+        hidden_states,
+        ...  # 其他参数
+    )
+    hidden_states = layer_group_output[0]
+    
+```
+**动态路由示意图**
+```mermaid
+graph TD
+    A[第0层] -->|组0| G0
+    B[第1层] -->|组0| G0
+    ...
+    C[第n层] -->|组1| G1
+    D[第n+1层] -->|组1| G1
+    ...
+    E[最后一层] -->|组k| Gk
+```
+
+**参数共享示例**
+当 `num_hidden_layers=12`，`num_hidden_groups=2` 时：
+- 组0处理第0-5层
+- 组1处理第6-11层
+- 实际参数量 = 2 × 单组参数量（而非12×）
+
+**输出收集**
+```python
+# 收集各层隐藏状态
+if output_hidden_states:
+    all_hidden_states = all_hidden_states + (hidden_states,)
+
+# 收集注意力矩阵
+if output_attentions:
+    all_attentions = all_attentions + layer_group_output[-1]
+```
+
+#### **4. 关键技术解析**
+**参数共享机制**
+| 对比项          | BERT            | ALBERT                |
+|----------------|-----------------|-----------------------|
+| 参数共享方式      | 无共享           | 层组内共享             |
+| 12层模型参数量比 | 100%            | ≈ (组数/总层数)×100%   |
+| 典型配置         | 12独立层         | 12层共享2个组（参数量≈16.7%）|
+
+**维度分离策略**
+```python
+self.embedding_hidden_mapping_in 结构：
+Embedding Table       Projection           Transformer Layers
+[V×E]          →     [E×H]         →       [H×H] (共享)
+```
+
+#### **5. 与BERT的差异总结**
+| 特性                | AlbertTransformer          | BertTransformer            |
+|---------------------|---------------------------|---------------------------|
+| 参数共享             | 层组内共享                 | 无共享                    |
+| 词嵌入维度           | E < H（投影映射）          | E = H                     |
+| 层间独立性           | 强耦合（共享参数）          | 完全独立                  |
+| 内存占用             | 低（主要节省embedding参数） | 高                        |
+| 适合场景             | 大规模预训练/资源受限       | 小规模数据集/需要独立调参   |
+
+
+### 3.3 AlbertSOPHead
+
+#### **1. 模块定位**
+这是 ALBERT 模型中专门用于 **句子顺序预测 (Sentence Order Prediction, SOP)** 任务的分类头，属于预训练阶段的核心组件。与 BERT 的 NSP (Next Sentence Prediction) 不同，SOP 任务需要模型判断两个连续段落是否被调换顺序，能更好地学习句子间逻辑关系。
+
+#### **2. 代码逐层解析**
+**a. 初始化方法 (`__init__`)**
+```python
+class AlbertSOPHead(nn.Module):
+    def __init__(self, config: AlbertConfig):
+        super().__init__()
+        self.dropout = nn.Dropout(config.classifier_dropout_prob)  # 分类器专用Dropout
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)  # 二分类层
+```
+**关键参数说明**：
+- `classifier_dropout_prob`：分类层的随机失活率（通常比普通层更高，ALBERT 默认值为 0.1）
+- `num_labels`：固定为2（对应 "顺序正确" vs "顺序错误"）
+
+**b. 前向传播 (`forward`)**
+```python
+def forward(self, pooled_output: torch.Tensor) -> torch.Tensor:
+    dropout_pooled_output = self.dropout(pooled_output)  # [B, H]
+    logits = self.classifier(dropout_pooled_output)      # [B, 2]
+    return logits
+```
+**c. 输入输出流**：
+```
+(Batch Size, Hidden Size) → Dropout → Linear → (Batch Size, 2)
+```
+
+#### **3. 关键技术点**
+**与BERT NSP的区别**
+| 特性              | ALBERT SOP Head              | BERT NSP Head               |
+|-------------------|------------------------------|-----------------------------|
+| 任务目标          | 判断段落顺序是否调换          | 判断是否为上下文连续段落      |
+| 输入特征          | 两个段落拼接后的[CLS]向量      | 两个句子拼接后的[CLS]向量     |
+| 数据构造          | 50%正样本（顺序正确）          | 50%正样本（真实上下文）       |
+| 任务难度          | 更高（需理解逻辑顺序）          | 较低（易通过主题词匹配作弊）  |
+
+**结构设计解析**
+- **Dropout位置**：在分类器之前应用，增强泛化能力（ALBERT 论文中强调分类层的高Dropout率）
+- **无激活函数**：直接输出 logits，与标准分类任务设计一致
+- **轻量化设计**：仅包含两个线性操作，保持预训练高效性
+
+#### **4. 执行流程图解**
+```mermaid
+graph TD
+    A[输入 pooled_output] --> B[Dropout]
+    B --> C[线性分类层]
+    C --> D[输出 logits]
+```
+
+#### **5. 与其他模块的交互**
+**上游输入**
+- **pooled_output** 来源：
+  ```python
+  # 来自 AlbertModel 的池化输出
+  pooled_output = self.pooler(hidden_states[:, 0])  # 取[CLS]标记
+  ```
+
+**下游连接**
+- **损失计算**：
+  ```python
+  loss_fct = CrossEntropyLoss()
+  sop_loss = loss_fct(logits.view(-1, 2), labels.view(-1))
+  ```
+
+#### **6. 配置参数示例**
+```python
+# 对应 AlbertConfig 的关键参数
+AlbertConfig(
+    classifier_dropout_prob = 0.1,  # 分类器Dropout率
+    hidden_size = 768,              # 隐藏层维度
+    num_labels = 2                  # 固定为二分类
+)
+```
+
+### **7. 扩展应用场景**
+虽然主要设计用于预训练，但该模块的结构也可迁移到以下任务：
+1. **文本相似度判断**：微调后用于句子对相似度打分
+2. **对话连贯性检测**：判断对话轮次是否逻辑连贯
+3. **文档结构验证**：检测段落顺序是否合理
+
+
+### 3.4 ElectraDiscriminatorPredictions / ElectraGeneratorPredictions
+
+#### **1. 模块定位对比**
+| 模块名称                     | 功能定位                                                                 | 任务类型           |
+|------------------------------|--------------------------------------------------------------------------|--------------------|
+| `ElectraDiscriminatorPredictions` | 判断每个token是否为真实数据（区分生成器替换的假token）                     | 二分类判别任务     |
+| `ElectraGeneratorPredictions`     | 生成被掩盖token的替代表示（用于替换原始token以欺骗判别器）                  | 生成式掩码预测任务 |
+
+#### **2. ElectraDiscriminatorPredictions 解析**
+**代码结构**
+```python
+class ElectraDiscriminatorPredictions(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.dense = nn.Linear(config.hidden_size, config.hidden_size)  # 维度保持
+        self.activation = get_activation(config.hidden_act)  # 可配置激活函数
+        self.dense_prediction = nn.Linear(config.hidden_size, 1)  # 二分类输出
+
+    def forward(self, discriminator_hidden_states):
+        hidden_states = self.dense(discriminator_hidden_states)
+        hidden_states = self.activation(hidden_states)
+        logits = self.dense_prediction(hidden_states).squeeze(-1)  # [B, L]
+        return logits
+```
+
+**关键技术点**
+- **二分类设计**：输出每个token位置的得分（sigmoid后为真实概率）
+- **参数复用**：与ELECTRA共享token embeddings，不单独引入新参数
+- **激活函数灵活性**：支持通过配置选择不同激活函数（如GELU/ReLU）
+
+**数据流动**
+```
+[B, L, H] → Dense(H→H) → Activation → Dense(H→1) → Squeeze → [B, L]
+```
+
+#### **3. ElectraGeneratorPredictions 解析**
+**代码结构**
+```python
+class ElectraGeneratorPredictions(nn.Module):
+    def __init__(self, config):
+        super().__init__()
+        self.activation = get_activation("gelu")  # 固定GELU激活
+        self.LayerNorm = nn.LayerNorm(config.embedding_size, eps=config.layer_norm_eps)
+        self.dense = nn.Linear(config.hidden_size, config.embedding_size)  # 维度映射
+
+    def forward(self, generator_hidden_states):
+        hidden_states = self.dense(generator_hidden_states)  # [B, L, H] → [B, L, E]
+        hidden_states = self.activation(hidden_states)
+        hidden_states = self.LayerNorm(hidden_states)
+        return hidden_states  # [B, L, E]
+```
+
+**关键技术点**
+- **维度压缩**：将隐藏层维度（H）映射到词嵌入维度（E），通常 E < H
+- **归一化设计**：使用LayerNorm提升训练稳定性
+- **激活函数固定**：强制使用GELU保证梯度平滑性
+
+**数据流动**
+```
+[B, L, H] → Dense(H→E) → GELU → LayerNorm → [B, L, E]
+```
+
+#### **4. 核心差异对比表**
+| 特性                | Discriminator                          | Generator                          |
+|---------------------|----------------------------------------|------------------------------------|
+| **输出维度**         | 1（二分类得分）                        | E（词嵌入维度）                    |
+| **激活函数**         | 可配置（默认GELU）                     | 固定GELU                           |
+| **归一化层**         | 无                                     | LayerNorm                          |
+| **参数共享**         | 与判别器其他部分共享参数               | 输出连接词表嵌入矩阵（需矩阵相乘）  |
+| **目标函数**         | 二元交叉熵                             | 带权重的交叉熵                     |
+| **计算复杂度**       | 低（每个token单个得分）                | 高（需生成完整embedding）          |
+
+#### **5. 执行流程图示**
+**Discriminator 工作流**
+```mermaid
+graph TD
+    A[原始句子] --> B[Mask部分token]
+    B --> C[Generator生成替代token]
+    C --> D[拼接生成文本]
+    D --> E[Discriminator逐token判断]
+    E --> F[计算对抗损失]
+```
+
+**Generator 工作流**
+```mermaid
+graph TD
+    A[Masked句子] --> B[Generator生成嵌入]
+    B --> C[与词表矩阵相乘得logits]
+    C --> D[采样替代token]
+    D --> E[计算MLM损失]
+```
+
+### 3.5 ElectraForCausalLM
+
+#### **1. 模块功能定位**
+该模型是 ELECTRA 的 **因果语言模型（Causal LM）** 变体，专为 **自回归生成任务**（如文本生成、代码补全）设计。其核心特点包括：
+1. **单向注意力机制**：通过掩码实现仅关注历史信息
+2. **生成优化支持**：集成 `GenerationMixin` 实现 beam search 等解码策略
+3. **参数复用**：共享生成器与判别器的底层参数
+
+#### **2. 关键代码解析**
+**a. 类初始化 (`__init__`)**
+```python
+class ElectraForCausalLM(ElectraPreTrainedModel, GenerationMixin):
+    _tied_weights_keys = ["generator_lm_head.weight"]  # 权重绑定标识
+
+    def __init__(self, config):
+        super().__init__(config)
+        # 校验解码器配置
+        if not config.is_decoder:
+            logger.warning("需设置 is_decoder=True 以独立使用")
+        
+        # 主干网络
+        self.electra = ElectraModel(config)  # 共享的ELECTRA编码器
+        
+        # 生成头结构
+        self.generator_predictions = ElectraGeneratorPredictions(config)  # 维度转换
+        self.generator_lm_head = nn.Linear(config.embedding_size, config.vocab_size)  # 词表投影
+        
+        self.init_weights()  # 权重初始化
+```
+**核心设计：**
+- **权重绑定**：通过 `_tied_weights_keys` 声明生成器输出层与输入词嵌入共享权重（需在外部实现绑定）
+- **解码器强制**：要求配置 `is_decoder=True` 以启用因果掩码
+
+**b. 前向传播 (`forward`)**
+```python
+def forward(...):
+    # 禁用缓存当计算损失时
+    if labels is not None:
+        use_cache = False
+    
+    # 主干网络前向
+    outputs = self.electra(
+        input_ids,
+        attention_mask=attention_mask,
+        ...  # 其他参数
+    )
+    
+    # 获取最后一层隐藏状态
+    sequence_output = outputs[0]  # [B, L, H]
+    
+    # 生成预测
+    predictions = self.generator_predictions(sequence_output)  # [B, L, E]
+    prediction_scores = self.generator_lm_head(predictions)    # [B, L, V]
+    
+    # 损失计算
+    lm_loss = None
+    if labels is not None:
+        lm_loss = self.loss_function(prediction_scores, labels)
+    
+    # 返回结果
+    return CausalLMOutputWithCrossAttentions(
+        loss=lm_loss,
+        logits=prediction_scores,
+        ...  # 其他中间结果
+    )
+```
+**数据流图示：**
+```mermaid
+graph TD
+    A[输入IDs] --> B[ELECTRA编码器]
+    B --> C[最后一层隐藏状态]
+    C --> D[生成器预测模块]
+    D --> E[词表投影]
+    E --> F[预测logits]
+    F --> G{计算损失?}
+    G -->|是| H[交叉熵损失]
+    G -->|否| I[返回logits]
+```
+
+#### **3. 核心技术机制**
+**a. 因果注意力掩码**
+- **实现方式**：在 `ElectraModel` 内部根据 `is_decoder` 自动生成下三角布尔矩阵
+- **作用**：确保每个位置只能关注当前位置及之前的信息
+
+**b. 生成优化**
+- **缓存机制**：通过 `past_key_values` 存储历史计算的键值对，避免重复计算
+- **波束搜索**：继承 `GenerationMixin` 获得 `generate()` 方法支持
+
+**b. 权重共享**
+- **绑定方式**：若实现绑定，`generator_lm_head.weight` 与 `electra.embeddings.word_embeddings.weight` 共享
+- **优势**：减少参数量并提升训练稳定性
+
+#### **4. 与标准ELECTRA的差异**
+| 特性                | ElectraForCausalLM          | 标准ELECTRA               |
+|---------------------|-----------------------------|--------------------------|
+| **任务目标**         | 自回归语言建模               | 替换token检测             |
+| **注意力模式**       | 单向因果掩码                 | 双向全注意力              |
+| **输出头结构**       | 生成器预测+LM头              | 判别器二分类头            |
+| **典型应用**         | 文本生成、代码补全           | 文本分类、语义理解        |
+
+#### **5. 执行流程示例**
+以输入序列 `["The", "quick", "brown"]` 生成下一个token为例：
+1. **输入处理**：tokenize并添加 [CLS]/[SEP]
+2. **编码阶段**：逐层计算隐藏状态（使用因果掩码）
+3. **预测生成**：取最后一个位置的隐藏状态 → 生成器预测 → LM头投影
+4. **采样输出**：选择概率最高的token（如 "fox"）加入输入序列
+5. **迭代生成**：重复直到达到最大长度或生成 [SEP]
+
+### 3.6 ElectraForMaskedLM
+
+#### **1. 代码结构解析**
+**a. 类初始化 (`__init__`)**
+```python
+class ElectraForMaskedLM(ElectraPreTrainedModel):
+    _tied_weights_keys = ["generator_lm_head.weight"]  # 声明权重绑定
+
+    def __init__(self, config):
+        super().__init__(config)
+        self.electra = ElectraModel(config)  # 共享的ELECTRA主干
+        self.generator_predictions = ElectraGeneratorPredictions(config)  # 生成器专用转换层
+        self.generator_lm_head = nn.Linear(config.embedding_size, config.vocab_size)  # 词表投影
+        self.post_init()  # 权重初始化与绑定
+```
+**关键设计：**
+- **权重绑定**：`generator_lm_head.weight` 与输入词嵌入矩阵共享参数（需在外部实现）
+- **轻量化生成器**：通常配置比判别器小的隐藏层维度（如1/4尺寸）
+
+**b. 前向传播 (`forward`)**
+```python
+def forward(...):
+    # 主干网络前向
+    generator_hidden_states = self.electra(...)  # [B, L, H]
+    generator_sequence_output = generator_hidden_states[0]
+    
+    # 生成预测
+    prediction_scores = self.generator_predictions(generator_sequence_output)  # [B, L, E]
+    prediction_scores = self.generator_lm_head(prediction_scores)  # [B, L, V]
+    
+    # 损失计算
+    loss = None
+    if labels is not None:
+        loss = cross_entropy(prediction_scores.view(-1, V), labels.view(-1))
+    
+    return MaskedLMOutput(...)
+```
+**数据流动图示：**
+```mermaid
+graph TD
+    A[输入IDs] --> B[ELECTRA编码器]
+    B --> C[隐藏状态]
+    C --> D[生成器预测模块]
+    D --> E[词嵌入空间投影]
+    E --> F[词表线性层]
+    F --> G[预测logits]
+    G --> H{计算损失?}
+    H -->|是| I[交叉熵损失]
+    H -->|否| J[返回logits]
+```
+
+#### **2. 与BERT-MLM的差异对比**
+| 特性                | ElectraForMaskedLM              | BERT-MLM                        |
+|---------------------|----------------------------------|---------------------------------|
+| **目标任务**         | 生成对抗样本                     | 直接预测掩码token               |
+| **模型结构**         | 轻量化生成器                     | 完整尺寸模型                    |
+| **训练目标**         | 辅助对抗训练                     | 主训练目标                      |
+| **参数共享**         | 与判别器共享底层参数             | 独立参数                        |
+| **掩码策略**         | 更小的掩码比例（如15% vs 30%）   | 标准15%掩码                     |
