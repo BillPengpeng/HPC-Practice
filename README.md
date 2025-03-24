@@ -44,13 +44,13 @@
   - [ICS-PA2024](http://www.why.ink:8080/ICS/2024/Main_Page)
   - [NEMU](https://ysyx.oscc.cc/docs/ics-pa/)
   - [一生一芯](https://ysyx.oscc.cc/)
-- ICS-PA2024 Notes
+- ICS-PA2024 & YSYX Notes
   - [Lecture1-3: NEMU简介 / Linux和C语言拾遗](./course/Computer_System/notes/PA_ICS2024_notes_01_NEMU简介_Linux和C语言拾遗.md)
   - [Lecture4-5: NEMU编译运行 / NEMU代码导读](./course/Computer_System/notes/PA_ICS2024_notes_02_NEMU编译运行_NEMU代码导读.md)
   - [Lecture6-7: 数据的机器级表述 / ABI与内联汇编](./course/Computer_System/notes/PA_ICS2024_notes_03_数据的机器级表述_ABI与内联汇编.md)
   - [Lecture8-9: I/O设备 / 链接与加载](./course/Computer_System/notes/PA_ICS2024_notes_04_IO设备_链接与加载.md)
   - [Lecture10/12/14: 基础设施 / 中断 / 虚拟内存](./course/Computer_System/notes/PA_ICS2024_notes_05_基础设施_中断_虚拟内存.md)
-  - [NEMU: PA1&PA2实验要点](./course/Computer_System/notes/YSYX_notes_01_PA1&PA2实验要点.md)
+  - [NEMU: PA1 & PA2实验要点](./course/Computer_System/notes/YSYX_notes_01_PA1&PA2实验要点.md)
 
 ## 4 Compiler
 - Related course
