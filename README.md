@@ -11,7 +11,8 @@
 - LLM Notes
   - [LLM基础: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/notes/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
-  - [Hugging_Face Bert有关模型架构: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
+  - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
+  - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/notes/LLM_notes_04_Hugging_Face_T5_BART.md)
 - 10-414-714 Notes，
   - [Lecture1-6: Softmax / Backprop / Automatic Differentiation / Optimization](./course/AI/notes/10-414-714_notes_01.md)
   - [Lecture7/9-11: NN Library Abstractions / Normalization and Regularization](./course/AI/notes/10-414-714_notes_02.md)
@@ -31,7 +32,8 @@
 - Related link
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
 - CUDA MODE Notes
-  - [Lecture1/2/4: cuda基本函数 / python集成cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
+  - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
+
 - CUDA Kernal Notes
   - [cuda-kernel-easy: 常见激活函数](./course/CUDA/notes/cuda源码分析01-cuda-kernel-easy/01-cuda-kernel-easy.md)
   - [cuda-kernel-medium: reduce及其应用 ](./course/CUDA/notes/cuda源码分析02-cuda-kernel-medium/02-cuda-kernel-medium.md) 
