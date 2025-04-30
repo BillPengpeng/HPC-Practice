@@ -33,7 +33,6 @@
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
-
 - CUDA Kernal Notes
   - [cuda-kernel-easy: 常见激活函数](./course/CUDA/notes/cuda源码分析01-cuda-kernel-easy/01-cuda-kernel-easy.md)
   - [cuda-kernel-medium: reduce及其应用 ](./course/CUDA/notes/cuda源码分析02-cuda-kernel-medium/02-cuda-kernel-medium.md) 
@@ -54,6 +53,7 @@
   - [Lecture10/12/14: 基础设施 / 中断 / 虚拟内存](./course/Computer_System/notes/PA_ICS2024_notes_05_基础设施_中断_虚拟内存.md)
   - [YSYX Notes: PA1 & PA2实验要点](./course/Computer_System/notes/YSYX_notes_01_PA1&PA2实验要点.md)
   - [YSYX Notes: RISC-V指令集基础](./course/Computer_System/notes/YSYX_notes_02_RISCV指令集基础.md)
+  - [YSYX Notes: PA3要点](./course/Computer_System/notes/YSYX_notes_03_PA3要点.md)
 
 ## 4 Compiler
 - Related course
