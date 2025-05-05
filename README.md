@@ -51,9 +51,11 @@
   - [Lecture6-7: 数据的机器级表述 / ABI与内联汇编](./course/Computer_System/notes/PA_ICS2024_notes_03_数据的机器级表述_ABI与内联汇编.md)
   - [Lecture8-9: I/O设备 / 链接与加载](./course/Computer_System/notes/PA_ICS2024_notes_04_IO设备_链接与加载.md)
   - [Lecture10/12/14: 基础设施 / 中断 / 虚拟内存](./course/Computer_System/notes/PA_ICS2024_notes_05_基础设施_中断_虚拟内存.md)
-  - [YSYX Notes: PA1 & PA2实验要点](./course/Computer_System/notes/YSYX_notes_01_PA1&PA2实验要点.md)
-  - [YSYX Notes: RISC-V指令集基础](./course/Computer_System/notes/YSYX_notes_02_RISCV指令集基础.md)
-  - [YSYX Notes: PA3要点](./course/Computer_System/notes/YSYX_notes_03_PA3要点.md)
+  - [YSYX Notes: PA1 & PA2要点（NEMU框架 / 计算机是个抽象层）](./course/Computer_System/notes/YSYX_notes_01_PA1&PA2要点.md)
+  - [YSYX Notes: RISC-V指令集基础（RISC-V寄存器 / 指令格式）](./course/Computer_System/notes/YSYX_notes_02_RISCV指令集基础.md)
+  - [YSYX Notes: PA3要点（系统编程 / 虚拟文件系统）](./course/Computer_System/notes/YSYX_notes_03_PA3要点.md)
+  - [YSYX Notes: PA4要点（虚存管理 / 用户进程切换）](./course/Computer_System/notes/YSYX_notes_04_PA4要点.md)
+
 
 ## 4 Compiler
 - Related course
