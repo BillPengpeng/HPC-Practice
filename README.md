@@ -13,10 +13,10 @@
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
   - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/notes/LLM_notes_04_Hugging_Face_T5_BART.md)
-- 10-414-714 Notes，
+- 10-414-714 Notes
   - [Lecture1-6: Softmax / Backprop / Automatic Differentiation / Optimization](./course/AI/notes/10-414-714_notes_01.md)
   - [Lecture7/9-11: NN Library Abstractions / Normalization and Regularization](./course/AI/notes/10-414-714_notes_02.md)
-- CV Notes，
+- CV Notes
   - [经典CNN Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
   - [经典CNN Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
   - [经典Transformer_Backbone：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](./course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
@@ -45,6 +45,7 @@
   - [ICS-PA2024](http://www.why.ink:8080/ICS/2024/Main_Page)
   - [NEMU](https://ysyx.oscc.cc/docs/ics-pa/)
   - [一生一芯](https://ysyx.oscc.cc/)
+  - [NJU-OS](https://jyywiki.cn/OS/2025/)
 - ICS-PA2024 & YSYX Notes
   - [Lecture1-3: NEMU简介 / Linux和C语言拾遗](./course/Computer_System/notes/PA_ICS2024_notes_01_NEMU简介_Linux和C语言拾遗.md)
   - [Lecture4-5: NEMU编译运行 / NEMU代码导读](./course/Computer_System/notes/PA_ICS2024_notes_02_NEMU编译运行_NEMU代码导读.md)
@@ -55,7 +56,9 @@
   - [YSYX Notes: RISC-V指令集基础（RISC-V寄存器 / 指令格式）](./course/Computer_System/notes/YSYX_notes_02_RISCV指令集基础.md)
   - [YSYX Notes: PA3要点（系统编程 / 虚拟文件系统）](./course/Computer_System/notes/YSYX_notes_03_PA3要点.md)
   - [YSYX Notes: PA4要点（虚存管理 / 用户进程切换）](./course/Computer_System/notes/YSYX_notes_04_PA4要点.md)
-
+- OS Notes
+  - [NJU-OS Notes: 应用视角 / 硬件视角 / 数学视角的操作系统](./course/OS/NJU_OS_notes_01_绪论要点.md)
+  - [NJU-OS Notes: 进程与程序 / fork / execve](./course/OS/NJU_OS_notes_02_进程与程序要点.md)
 
 ## 4 Compiler
 - Related course
@@ -77,7 +80,7 @@
 - Related link 
   - [NCNN](https://github.com/Tencent/ncnn)
 - NCNN notes
-  - 基础使用，
+  - 基础使用
   [模型加载](./deployment/ncnn/notes/NCNN源码分析01-ncnn模型加载.md), 
   [内存管理](./deployment/ncnn/notes/NCNN源码分析02-CPU内存管理.md), 
   [类Mat](./deployment/ncnn/notes/NCNN源码分析03-类Mat.md), 
@@ -85,7 +88,7 @@
   [yuv420sp2rgb](./deployment/ncnn/notes/NCNN源码分析04-图像处理函数之yuv420sp2rgb.md), 
   [resize](./deployment/ncnn/notes/NCNN源码分析04-图像处理函数之resize.md), 
   [kanna_rotate](./deployment/ncnn/notes/NCNN源码分析04-图像处理函数之kanna_rotate.md)
-  - operator，
+  - operator
   [AbsVal](./deployment/ncnn/notes/NCNN源码分析05-激活函数之absval算子.md), 
   [Batchnorm](./deployment/ncnn/notes/NCNN源码分析05-激活函数之bn算子.md), 
   [Bias](./deployment/ncnn/notes/NCNN源码分析05-激活函数之bias算子.md), 
