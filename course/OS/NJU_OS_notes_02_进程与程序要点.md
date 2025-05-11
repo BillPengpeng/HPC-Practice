@@ -609,3 +609,137 @@ while (1) {
 
 ### **总结**
 `fork()` 通过 **写时复制** 机制高效复制进程状态机，使得子进程成为父进程的独立副本。理解其复制的具体内容（内存、文件描述符、寄存器等）和未复制的状态（PID、定时器等），是编写健壮多进程程序的关键。实际开发中需注意资源管理和状态同步问题。
+
+## 七、子进程托孤
+
+在 Linux 系统中，当父进程（通过 `fork()` 创建子进程的进程）被终止或提前退出时，子进程会成为 **孤儿进程（Orphan Process）**。操作系统会自动将这些孤儿进程「托孤」给 **init 进程（PID 1，现代系统可能是 systemd）**，由其接管并负责回收子进程的资源。以下是详细机制和操作流程：
+
+---
+
+### **1. 孤儿进程的自动托孤机制**
+#### **(1) 操作系统行为**
+- **父进程退出时**：  
+  内核会将所有存活的子进程的父进程 PID（`PPID`）更新为 **1（init/systemd）**。
+- **init 进程的职责**：  
+  - 定期调用 `wait()` 系统调用，回收孤儿进程的退出状态（防止僵尸进程）。
+  - 若孤儿进程仍在运行，init 会继续管理其生命周期。
+
+#### **(2) 验证示例**
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid = fork();
+    if (pid == 0) {       // 子进程
+        sleep(2);         // 等待父进程退出
+        printf("Child PID=%d, PPID=%d\n", getpid(), getppid());
+        _exit(0);
+    } else {              // 父进程
+        printf("Parent exits immediately\n");
+    }
+    return 0;
+}
+```
+**输出**：
+```text
+Parent exits immediately
+Child PID=1234, PPID=1   # 父进程退出后，子进程的 PPID 变为 1
+```
+
+---
+
+### **2. 手动实现「托孤」**
+若需在父进程退出前主动让子进程被 init 收养，可使用 **双 `fork()` 技巧**：
+
+#### **(1) 代码示例**
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid = fork();
+    if (pid == 0) {       // 子进程（第一次 fork）
+        pid_t grandchild_pid = fork();
+        if (grandchild_pid == 0) {  // 孙进程（第二次 fork）
+            sleep(2);
+            printf("Grandchild PID=%d, PPID=%d\n", getpid(), getppid());
+            _exit(0);
+        } else {          // 子进程
+            _exit(0);     // 立即退出，孙进程由 init 收养
+        }
+    } else {              // 父进程
+        waitpid(pid, NULL, 0);
+        printf("Parent exits\n");
+    }
+    return 0;
+}
+```
+**输出**：
+```text
+Parent exits
+Grandchild PID=1235, PPID=1  # 孙进程直接由 init 收养
+```
+
+#### **(2) 双 `fork()` 的作用**
+1. **第一次 `fork()`**：创建子进程。
+2. **第二次 `fork()`**：创建孙进程。
+3. **子进程立即退出**：孙进程的父进程（子进程）已终止，孙进程自动被 init 收养。
+
+---
+
+### **3. 关键注意事项**
+#### **(1) 僵尸进程风险**
+- **问题**：若父进程未调用 `wait()` 且未退出，子进程退出后会成为僵尸进程。
+- **解决方案**：  
+  - 父进程应正确处理 `SIGCHLD` 信号，调用 `wait()`。
+  - 若父进程无法处理，依赖 init 进程自动回收。
+
+#### **(2) 信号传递**
+- **孤儿进程的信号处理**：  
+  - 默认情况下，孤儿进程的终端控制权可能丢失（如 `SIGHUP` 信号）。
+  - 可调用 `setsid()` 使进程脱离终端，成为守护进程。
+
+#### **(3) 资源继承**
+- **文件描述符**：  
+  孤儿进程继承父进程打开的文件描述符，需在必要时关闭（如设置 `O_CLOEXEC` 标志）。
+- **工作目录**：  
+  孤儿进程继承父进程的工作目录，若需持久运行，建议调用 `chdir("/")`。
+
+---
+
+### **4. 实际应用场景**
+#### **(1) 守护进程（Daemon）**
+通过双 `fork()` 创建完全脱离终端的守护进程：
+```c
+pid_t pid = fork();
+if (pid == 0) {
+    setsid();      // 创建新会话并脱离终端
+    pid_t pid2 = fork();
+    if (pid2 == 0) {
+        // 守护进程的实际逻辑
+        daemon_work();
+        _exit(0);
+    } else {
+        _exit(0);
+    }
+} else {
+    waitpid(pid, NULL, 0);
+}
+```
+
+#### **(2) 长期运行的服务**
+确保服务进程在父进程（如 shell）退出后仍继续运行：
+```bash
+# 在 shell 中启动后台进程
+nohup long-running-service &
+```
+
+---
+
+### **总结**
+- **自动托孤**：父进程退出后，孤儿进程由 init/systemd 接管，内核自动更新其 `PPID`。
+- **手动控制**：通过双 `fork()` 可提前让子进程脱离父进程。
+- **资源管理**：注意文件描述符、信号处理和僵尸进程的回收问题。
