@@ -61,6 +61,8 @@
   - [NJU-OS Notes: 进程与程序 / fork / execve](./course/OS/NJU_OS_notes_02_进程与程序要点.md)
   - [NJU-OS Notes: 进程的地址空间 / mmap](./course/OS/NJU_OS_notes_03_进程的地址空间要点.md)
   - [NJU-OS Notes: 访问操作系统中的对象 / pipe](./course/OS/NJU_OS_notes_04_访问操作系统中的对象要点.md)
+  - [NJU-OS Notes: 终端、进程组 / Ctrl-C](./course/OS/NJU_OS_notes_05_终端、进程组要点.md)
+  - [NJU-OS Notes: UNIX Shell / Freestanding Shell](./course/OS/NJU_OS_notes_06_UNIX_Shell要点.md)
 
 ## 4 Compiler
 - Related course
