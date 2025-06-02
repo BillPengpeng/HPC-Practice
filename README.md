@@ -65,6 +65,7 @@
   - [NJU-OS Notes: UNIX Shell / Freestanding Shell](./course/OS/NJU_OS_notes_06_UNIX_Shell要点.md)
   - [NJU-OS Notes: libc / musl-gcc](./course/OS/NJU_OS_notes_07_libc原理与实现要点.md)
   - [NJU-OS Notes: 可执行文件 / Core Dump / fle源码阅读](./course/OS/NJU_OS_notes_08_可执行文件、静态链接和加载要点.md)
+  - [NJU-OS Notes: 重定位差异 / ld-linux.so / -fPIC / LD_PRELOAD](./course/OS/NJU_OS_notes_09_动态链接和加载要点.md)
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
