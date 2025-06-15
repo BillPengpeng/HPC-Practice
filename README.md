@@ -68,6 +68,9 @@
   - [NJU-OS Notes: 重定位差异 / ld-linux.so / -fPIC / LD_PRELOAD](./course/OS/NJU_OS_notes_09_动态链接和加载.md)
   - [NJU-OS Notes: initramfs概述 / 最小Linux initramfs解读](./course/OS/NJU_OS_notes_10_操作系统上的应用生态世界.md)
   - [NJU-OS Notes: 多线程栈4kB内存 / T_sum编译器行为](./course/OS/NJU_OS_notes_11_多处理器编程.md)
+  - [NJU-OS Notes: lock/unlock / pthread_mutex_t / sum-spin / sum-atomic](./course/OS/NJU_OS_notes_12_并发编程：互斥.md)
+  - [NJU-OS Notes: 条件变量 / 生产者-消费者源码阅读 / 同步机制实现计算图](./course/OS/NJU_OS_notes_13_并发编程：条件变量.md)
+  - [NJU-OS Notes: 使用互斥锁实现计算图 / 使用信号量实现生产者-消费者问题](./course/OS/NJU_OS_notes_14_并发编程：信号量.md)
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
