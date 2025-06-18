@@ -71,6 +71,8 @@
   - [NJU-OS Notes: lock/unlock / pthread_mutex_t / sum-spin / sum-atomic](./course/OS/NJU_OS_notes_12_并发编程：互斥.md)
   - [NJU-OS Notes: 条件变量 / 生产者-消费者源码阅读 / 同步机制实现计算图](./course/OS/NJU_OS_notes_13_并发编程：条件变量.md)
   - [NJU-OS Notes: 使用互斥锁实现计算图 / 使用信号量实现生产者-消费者问题](./course/OS/NJU_OS_notes_14_并发编程：信号量.md)
+  - [NJU-OS Notes: 死锁 / Lock Ordering / lockdep源码解读 / Atomicity/Order Violation](./course/OS/NJU_OS_notes_15_并发bug及应对.md)
+  - [NJU-OS Notes: OpenMP基本 / Perf基本 / SIMD指令集发展史](./course/OS/NJU_OS_notes_16_真实世界的并发编程.md)
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
