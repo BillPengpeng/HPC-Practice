@@ -1,4 +1,4 @@
-本文主要整理UNIX Shell的要点。
+本文主要整理NJU-OS UNIX Shell章节的要点。
 
 ## 一、sudo echo hello > /etc/a.txt 提示Permission denied
 

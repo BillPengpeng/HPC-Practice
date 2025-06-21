@@ -1,4 +1,4 @@
-本文主要整理并发Bugs和应对的要点。
+本文主要整理并发Bugs和应对章节的要点。
 
 ## 一、死锁产生的条件
 死锁（Deadlock）是并发系统中一种严重的资源竞争问题，指两个或多个进程（线程）因争夺资源而陷入无限等待的状态。理解死锁产生的条件是预防和解决死锁的关键。
@@ -156,7 +156,7 @@ void unsafe_operation() {
 }
 ```
 
-## 三、lockdep源码解读
+## 三、lockdep示例源码解读
 
 ```c
 // This function is to be C-linked; name mangling is disabled.

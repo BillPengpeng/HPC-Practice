@@ -1,4 +1,4 @@
-本文主要整理终端、进程组的要点。
+本文主要整理NJU-OS终端、进程组章节的要点。
 
 ## 一、Linux Pseudo Terminal
 
