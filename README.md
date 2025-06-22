@@ -74,6 +74,8 @@
   - [NJU-OS Notes: 死锁 / Lock Ordering / lockdep示例源码解读 / Atomicity/Order Violation](./course/OS/NJU_OS_notes_15_并发bug及应对.md)
   - [NJU-OS Notes: OpenMP基本 / Perf基本 / SIMD指令集发展史](./course/OS/NJU_OS_notes_16_真实世界的并发编程.md)
   - [NJU-OS Notes: file_operations / launcher示例源码分析 / ioctl基本 / kvm示例源码解析](./course/OS/NJU_OS_notes_17_设备和驱动程序.md)
+  - [NJU-OS Notes: FLASH、DDR对比 / SSD/优盘/TF卡内计算机系统 / 块设备数据读写流程与BIO](./course/OS/NJU_OS_notes_18_存储设备原理.md)
+  
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
