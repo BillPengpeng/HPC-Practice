@@ -75,7 +75,8 @@
   - [NJU-OS Notes: OpenMP基本 / Perf基本 / SIMD指令集发展史](./course/OS/NJU_OS_notes_16_真实世界的并发编程.md)
   - [NJU-OS Notes: file_operations / launcher示例源码分析 / ioctl基本 / kvm示例源码解析](./course/OS/NJU_OS_notes_17_设备和驱动程序.md)
   - [NJU-OS Notes: FLASH、DDR对比 / SSD/优盘/TF卡内计算机系统 / 块设备数据读写流程与BIO](./course/OS/NJU_OS_notes_18_存储设备原理.md)
-  
+  - [NJU-OS Notes: linux目录树关联API / VFS层与文件系统驱动层分工 / inode/dentry介绍 / mount/loopback协同](./course/OS/NJU_OS_notes_19_目录树管理API.md)
+
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
