@@ -77,6 +77,7 @@
   - [NJU-OS Notes: FLASH、DDR对比 / SSD/优盘/TF卡内计算机系统 / 块设备读写与BIO](./course/OS/NJU_OS_notes_18_存储设备原理.md)
   - [NJU-OS Notes: linux目录树关联API / VFS层与文件系统驱动层分工 / mount/loopback协同](./course/OS/NJU_OS_notes_19_目录树管理API.md)
   - [NJU-OS Notes: FAT文件系统 / ex2文件系统 / 崩溃一致性](./course/OS/NJU_OS_notes_20_文件系统实现.md)
+  - [MIT-OS Notes: XV6 Shell实现源码解析](./course/OS/MIT_XV6_notes_01_XV6_Shell.md)
 
 ## 4 Compiler
 - Related course
