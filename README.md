@@ -13,16 +13,17 @@
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
   - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/notes/LLM_notes_04_Hugging_Face_T5_BART.md)
-- 10-414-714 Notes
-  - [Lecture1-6: Softmax / Backprop / Automatic Differentiation / Optimization](./course/AI/notes/10-414-714_notes_01.md)
-  - [Lecture7/9-11: NN Library Abstractions / Normalization and Regularization](./course/AI/notes/10-414-714_notes_02.md)
+- MLSys Notes
+10-414-714 Notes
+  - [CMU-DLSys Notes: Softmax / Backprop / Automatic Differentiation / Optimization (Lecture1-6)](./course/AI/notes/10-414-714_notes_01.md)
+  - [CMU-DLSys Notes: NN Library Abstractions / Normalization and Regularization (Lecture7/9-11)](./course/AI/notes/10-414-714_notes_02.md)
 - CV Notes
-  - [经典CNN Backbone之一：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
-  - [经典CNN Backbone之二：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
-  - [经典Transformer_Backbone：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](./course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
-  - [经典对比学习自监督算法：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](./course/AI/notes/CV_notes_04_经典对比学习自监督算法.md)
-  - [经典MIM自监督算法：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](./course/AI/notes/CV_notes_05_经典MIM自监督算法.md)
-  - [经典多模态自监督算法：CLIP / Chinese CLIP / BLIP V1 & V2](./course/AI/notes/CV_notes_06_经典多模态自监督算法.md)
+  - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
+  - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
+  - [Transformer Backbone Notes：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](./course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
+  - [Self-supervised Notes：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](./course/AI/notes/CV_notes_04_经典对比学习自监督算法.md)
+  - [Self-supervised Notes：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](./course/AI/notes/CV_notes_05_经典MIM自监督算法.md)
+  - [Multimodal Notes：CLIP / Chinese CLIP / BLIP V1 & V2](./course/AI/notes/CV_notes_06_经典多模态自监督算法.md)
 
 ## 2 Parallel Programming
 
