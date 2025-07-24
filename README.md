@@ -81,6 +81,7 @@
   - [MIT-OS Notes: XV6 Shell实现源码解析](./course/OS/MIT_XV6_notes_01_XV6_Shell.md)
   - [MIT-OS Notes: XV6 Operating system organization (Chapter 2)](./course/OS/MIT_XV6_notes_02_XV6_Operating_system_organization.md)
   - [MIT-OS Notes: XV6 Traps and system calls (Chapter 4)](./course/OS/MIT_XV6_notes_03_XV6_Traps_and_system_calls.md)
+  - [MIT-OS Notes: XV6 Page tables (Chapter 3)](./course/OS/MIT_XV6_notes_04_XV6_Page_tables.md)
 
 ## 4 Compiler
 - Related course
