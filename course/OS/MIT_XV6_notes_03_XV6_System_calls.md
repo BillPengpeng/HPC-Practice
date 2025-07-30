@@ -1,4 +1,4 @@
-本文主要整理Chapter 4 Traps and system calls的要点。
+本文主要整理Chapter 4 system calls的要点。
 
 ## 4.3 Code: System call arguments
 
