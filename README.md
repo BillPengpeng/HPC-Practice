@@ -83,6 +83,7 @@
   - [MIT-OS Notes: XV6 System calls (Chapter 4)](./course/OS/MIT_XV6_notes_03_XV6_System_calls.md)
   - [MIT-OS Notes: XV6 Page tables (Chapter 3)](./course/OS/MIT_XV6_notes_04_XV6_Page_tables.md)
   - [MIT-OS Notes: XV6 Traps (Chapter 4)](./course/OS/MIT_XV6_notes_05_XV6_Traps.md)
+  - [MIT-OS Notes: XV6 Interrupts and device drivers (Chapter 5)](./course/OS/MIT_XV6_notes_06_XV6_Interrupts_and_device_drivers.md)
 
 ## 4 Compiler
 - Related course
