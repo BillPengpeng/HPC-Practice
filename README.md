@@ -3,15 +3,16 @@
 ## 1 AI 
 
 - Related course
-  - [CMU 10-414/714: Deep Learning Systems](https://dlsyscourse.org/)
-  - [ZJU Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
   - [stanford CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2025/)
+  - [ZJU LLM: Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
+  - [CMU 10-414/714: Deep Learning Systems](https://dlsyscourse.org/)
 - Related link
   - [mmpretrain](https://github.com/open-mmlab/mmpretrain/tree/main)
   - [transformers](https://github.com/huggingface/transformers)
+  - [tiktokenizer](https://tiktokenizer.vercel.app)
 - NLP Notes
-  - [stanford-LLM Notes: Overview / tokenization (Lecture1)](./AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
-  - [LLM基础: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
+  - [stanford-LLM Notes: Overview / tokenization (Lecture1)](./course/AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
+  - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
   - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/ZJU_LLM/LLM_notes_04_Hugging_Face_T5_BART.md)
