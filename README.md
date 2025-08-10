@@ -3,27 +3,28 @@
 ## 1 AI 
 
 - Related course
-  - [10-414-714_Deep_Learning_Systems（2024）](https://dlsyscourse.org/)
-  - [Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
+  - [CMU 10-414/714: Deep Learning Systems](https://dlsyscourse.org/)
+  - [ZJU Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
+  - [stanford CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2025/)
 - Related link
   - [mmpretrain](https://github.com/open-mmlab/mmpretrain/tree/main)
   - [transformers](https://github.com/huggingface/transformers)
-- LLM Notes
-  - [LLM基础: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/notes/LLM_notes_01_LLM基础.md)
-  - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
-  - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/notes/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
-  - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/notes/LLM_notes_04_Hugging_Face_T5_BART.md)
+- NLP Notes
+  - [stanford-LLM Notes: Overview / tokenization (Lecture1)](./AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
+  - [LLM基础: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
+  - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
+  - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
+  - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/ZJU_LLM/LLM_notes_04_Hugging_Face_T5_BART.md)
 - MLSys Notes
-10-414-714 Notes
-  - [CMU-DLSys Notes: Softmax / Backprop / Automatic Differentiation / Optimization (Lecture1-6)](./course/AI/notes/10-414-714_notes_01.md)
-  - [CMU-DLSys Notes: NN Library Abstractions / Normalization and Regularization (Lecture7/9-11)](./course/AI/notes/10-414-714_notes_02.md)
+  - [CMU-DLSys Notes: Softmax / Backprop / Automatic Differentiation / Optimization (Lecture1-6)](./course/AI/10-414_714/10-414-714_notes_01.md)
+  - [CMU-DLSys Notes: NN Library Abstractions / Normalization and Regularization (Lecture7/9-11)](./course/AI/10-414_714/10-414-714_notes_02.md)
 - CV Notes
-  - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/notes/CV_notes_01_经典CNN_Backbone.md)
-  - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/notes/CV_notes_02_经典CNN_Backbone.md)
-  - [Transformer Backbone Notes：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](./course/AI/notes/CV_notes_03_经典Transformer_Backbone.md)
-  - [Self-supervised Notes：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](./course/AI/notes/CV_notes_04_经典对比学习自监督算法.md)
-  - [Self-supervised Notes：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](./course/AI/notes/CV_notes_05_经典MIM自监督算法.md)
-  - [Multimodal Notes：CLIP / Chinese CLIP / BLIP V1 & V2](./course/AI/notes/CV_notes_06_经典多模态自监督算法.md)
+  - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
+  - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
+  - [Transformer Backbone Notes：ViT / Swin Transformer V1 & V2 / DeiT / DeiT-3](./course/AI/CV/CV_notes_03_经典Transformer_Backbone.md)
+  - [Self-supervised Notes：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](./course/AI/CV/CV_notes_04_经典对比学习自监督算法.md)
+  - [Self-supervised Notes：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](./course/AI/CV/CV_notes_05_经典MIM自监督算法.md)
+  - [Multimodal Notes：CLIP / Chinese CLIP / BLIP V1 & V2](./course/AI/CV/CV_notes_06_经典多模态自监督算法.md)
 
 ## 2 Parallel Programming
 
@@ -47,6 +48,7 @@
   - [NEMU](https://ysyx.oscc.cc/docs/ics-pa/)
   - [一生一芯](https://ysyx.oscc.cc/)
   - [NJU-OS](https://jyywiki.cn/OS/2025/)
+  - [MIT-OS](https://pdos.csail.mit.edu/6.828/2024/index.html)
 - ICS-PA2024 & YSYX Notes
   - [NJU-PA Notes: NEMU简介 / Linux和C语言拾遗 (Lecture1-3)](./course/Computer_System/notes/PA_ICS2024_notes_01_NEMU简介_Linux和C语言拾遗.md)
   - [NJU-PA Notes: NEMU编译运行 / NEMU代码导读 (Lecture4-5)](./course/Computer_System/notes/PA_ICS2024_notes_02_NEMU编译运行_NEMU代码导读.md)
