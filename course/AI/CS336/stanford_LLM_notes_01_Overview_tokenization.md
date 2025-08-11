@@ -788,6 +788,8 @@ GPT2_REGEX = r"""'(?:[sdmt]|ll|ve|re)| ?\w\w+|\w|\S\s*"""
 1. **词表规模可控**  
    - 用户自定义合并次数（如50K次→50K词表）
 2. **零OOV问题**  
+   OOV: 完全消除未登录词（Out-Of-Vocabulary）​​
+
    ```python
    # 新词处理示例
    encode("ChatGPT") = encode("Chat") + encode("G") + encode("PT")
