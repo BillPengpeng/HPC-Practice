@@ -91,6 +91,7 @@
   - [MIT-OS Notes: XV6 Traps (Chapter 4)](./course/OS/6.S081/MIT_XV6_notes_05_XV6_Traps.md)
   - [MIT-OS Notes: XV6 Interrupts and device drivers (Chapter 5)](./course/OS/6.S081/MIT_XV6_notes_06_XV6_Interrupts_and_device_drivers.md)
   - [MIT-OS Notes: Locking (Chapter 6)](./course/OS/6.S081/MIT_XV6_notes_07_XV6_Locking.md)
+  - [MIT-OS Notes: Buffer cache (Chapter 8)](./course/OS/6.S081/MIT_XV6_notes_08_XV6_BUffer_cache.md)
 
 ## 4 Compiler
 - Related course
