@@ -13,6 +13,7 @@
 - Stanford LLM Notes
   - [stanford-LLM Notes: Overview / tokenization (Lecture1)](./course/AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
   - [stanford-LLM Notes: tensors_memory / tensor_operations / tensor_einops (Lecture2)](./course/AI/CS336/stanford_LLM_notes_02_PyTorch_resource_accounting_Part_1.md)
+  - [stanford-LLM Notes: tensor_operations_flops / gradients_flops / optimizer (Lecture2)](./course/AI/CS336/stanford_LLM_notes_02_PyTorch_resource_accounting_Part_2.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
