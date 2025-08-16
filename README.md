@@ -4,6 +4,7 @@
 
 - Related course
   - [Stanford CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2025/)
+  - [Stanford CS224N: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/index.html)
   - [ZJU LLM: Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
   - [CMU 10-414/714: Deep Learning Systems](https://dlsyscourse.org/)
 - Related link
@@ -14,6 +15,7 @@
   - [stanford-LLM Notes: Overview / tokenization (Lecture1)](./course/AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
   - [stanford-LLM Notes: tensors_memory / tensor_operations / tensor_einops (Lecture2)](./course/AI/CS336/stanford_LLM_notes_02_PyTorch_resource_accounting_Part_1.md)
   - [stanford-LLM Notes: tensor_operations_flops / gradients_flops / optimizer (Lecture2)](./course/AI/CS336/stanford_LLM_notes_02_PyTorch_resource_accounting_Part_2.md)
+  - [stanford-LLM Notes: 经典Transformer / Pre-Norm / RMSNorm / Drop Bias / GLU (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_1.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
