@@ -18,6 +18,7 @@
   - [stanford-LLM Notes: 经典Transformer / Pre-Norm / RMSNorm / Drop Bias / GLU (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_1.md)
   - [stanford-LLM Notes: Sine embeddings / Absolute embeddings / Relative embeddings / RoPE embeddings (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_2.md)
   - [stanford-LLM Notes: Feedforward hyperparameters / Head dim / Aspect ratio / Regularization (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_3.md)
+  - [stanford-LLM Notes: Z-Loss / QK Norm / Soft-Capping / GQA/MQA / SWA (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_4.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
