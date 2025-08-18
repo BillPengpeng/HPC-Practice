@@ -91,15 +91,16 @@
   - [NJU-OS Notes: FLASH、DDR对比 / SSD/优盘/TF卡内计算机系统 / 块设备读写与BIO](./course/OS/NJU_OS2025/NJU_OS_notes_18_存储设备原理.md)
   - [NJU-OS Notes: linux目录树关联API / VFS层与文件系统驱动层分工 / mount/loopback协同](./course/OS/NJU_OS2025/NJU_OS_notes_19_目录树管理API.md)
   - [NJU-OS Notes: FAT文件系统 / ex2文件系统 / 崩溃一致性](./course/OS/NJU_OS2025/NJU_OS_notes_20_文件系统实现.md)
-- 6.S081 Notes
-  - [MIT-OS Notes: XV6 Shell实现源码解析](./course/OS/6.S081/MIT_XV6_notes_01_XV6_Shell.md)
-  - [MIT-OS Notes: XV6 Operating system organization (Chapter 2)](./course/OS/6.S081/MIT_XV6_notes_02_XV6_Operating_system_organization.md)
-  - [MIT-OS Notes: XV6 System calls (Chapter 4)](./course/OS/6.S081/MIT_XV6_notes_03_XV6_System_calls.md)
-  - [MIT-OS Notes: XV6 Page tables (Chapter 3)](./course/OS/6.S081/MIT_XV6_notes_04_XV6_Page_tables.md)
-  - [MIT-OS Notes: XV6 Traps (Chapter 4)](./course/OS/6.S081/MIT_XV6_notes_05_XV6_Traps.md)
-  - [MIT-OS Notes: XV6 Interrupts and device drivers (Chapter 5)](./course/OS/6.S081/MIT_XV6_notes_06_XV6_Interrupts_and_device_drivers.md)
-  - [MIT-OS Notes: Locking (Chapter 6)](./course/OS/6.S081/MIT_XV6_notes_07_XV6_Locking.md)
-  - [MIT-OS Notes: Buffer cache (Chapter 8)](./course/OS/6.S081/MIT_XV6_notes_08_XV6_BUffer_cache.md)
+- MIT_6.S081 Notes
+  - [MIT-OS Notes: XV6 Shell实现源码解析](./course/OS/MIT_6.S081/MIT_XV6_notes_01_XV6_Shell.md)
+  - [MIT-OS Notes: XV6 Operating system organization (Chapter 2)](./course/OS/MIT_6.S081/MIT_XV6_notes_02_XV6_Operating_system_organization.md)
+  - [MIT-OS Notes: XV6 System calls (Chapter 4)](./course/OS/MIT_6.S081/MIT_XV6_notes_03_XV6_System_calls.md)
+  - [MIT-OS Notes: XV6 Page tables (Chapter 3)](./course/OS/MIT_6.S081/MIT_XV6_notes_04_XV6_Page_tables.md)
+  - [MIT-OS Notes: XV6 Traps (Chapter 4)](./course/OS/MIT_6.S081/MIT_XV6_notes_05_XV6_Traps.md)
+  - [MIT-OS Notes: XV6 Interrupts and device drivers (Chapter 5)](./course/OS/MIT_6.S081/MIT_XV6_notes_06_XV6_Interrupts_and_device_drivers.md)
+  - [MIT-OS Notes: Locking (Chapter 6)](./course/OS/MIT_6.S081/MIT_XV6_notes_07_XV6_Locking.md)
+  - [MIT-OS Notes: Buffer cache (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Buffer_cache.md)
+  - [MIT-OS Notes: Logging layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Logging_Layer.md)
 
 ## 4 Compiler
 - Related course
