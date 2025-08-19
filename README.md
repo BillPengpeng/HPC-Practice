@@ -101,6 +101,7 @@
   - [MIT-OS Notes: Locking (Chapter 6)](./course/OS/MIT_6.S081/MIT_XV6_notes_07_XV6_Locking.md)
   - [MIT-OS Notes: Buffer cache (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Buffer_cache.md)
   - [MIT-OS Notes: Logging layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Logging_Layer.md)
+  - [MIT-OS Notes: Block allocator / Inode layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Inode_Layer.md)
 
 ## 4 Compiler
 - Related course
