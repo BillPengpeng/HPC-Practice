@@ -105,6 +105,7 @@
   - [MIT-OS Notes: XV6 Directory layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_Directory_layer.md)
   - [MIT-OS Notes: XV6 File descriptor layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_File_descriptor_layer.md)
   - [MIT-OS Notes: XV6 Multiplexing (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Multiplexing.md)
+  - [MIT-OS Notes: XV6 Sleep and wakeup (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Sleep_wakeup.md)
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
