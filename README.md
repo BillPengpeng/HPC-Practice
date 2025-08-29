@@ -44,6 +44,8 @@
   - [CUDA MODE](https://github.com/gpu-mode/lectures)
 - Related link
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
+- PMPP Notes 
+  - [PMPP Notes: Perface / Volta/Turing/Ampere简介 / CUDA9到CUDA11演进](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
 - CUDA Kernal Notes
