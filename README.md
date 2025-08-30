@@ -46,7 +46,9 @@
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
-  - [PMPP Notes: Heterogeneous parallel computing / Challenges in parallel programming (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
+  - [PMPP Notes: Heterogeneous parallel computing / Challenges in parallel programming (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
+  - [PMPP Notes: Data Parallelism / CUDA C program structure / CUDA C Compilation (Chapter 2)](./course/CUDA/PMPP/PMPP_notes_03_Heterogeneous_data_parallel_computing.md)
+  - [PMPP Notes: Chapter 2 Exercises / cudaError_t / \_\_host\_\_/\_\_device\_\_ (Chapter 2)](./course/CUDA/PMPP/PMPP_notes_03_chapter_2_exercise.md)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
 - CUDA Kernal Notes
