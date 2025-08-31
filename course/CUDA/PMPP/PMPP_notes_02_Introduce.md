@@ -1,6 +1,6 @@
 本文主要整理PMPP Chapter 1 Introduce的要点。
 
-## 1. 前言
+## 1.0 前言
 
 ### 内容概括
 
