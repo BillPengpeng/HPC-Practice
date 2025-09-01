@@ -48,8 +48,9 @@
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
   - [PMPP Notes: Heterogeneous parallel computing / Challenges in parallel programming (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
   - [PMPP Notes: Data Parallelism / CUDA C program structure / CUDA C Compilation (Chapter 2)](./course/CUDA/PMPP/PMPP_notes_03_Heterogeneous_data_parallel_computing.md)
-  - [PMPP Notes: Chapter 2 Exercises / cudaError_t / \_\_host\_\_/\_\_device\_\_ (Chapter 2)](./course/CUDA/PMPP/PMPP_notes_03_chapter_2_exercise.md)
+  - [PMPP Notes: Chapter 2 Exercises / cudaError_t (Chapter 2)](./course/CUDA/PMPP/PMPP_notes_03_chapter_2_exercise.md)
   - [PMPP Notes: Multidimensional grid organization / Matrix multiplication v0版本 (Chapter 3)](./course/CUDA/PMPP/PMPP_notes_04_Multidimensional_grids_and_data.md)
+  - [PMPP Notes: Chapter 3 Exercises (Chapter 3)](./course/CUDA/PMPP/PMPP_notes_04_chapter_3_exercise.md)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
 - CUDA Kernal Notes
