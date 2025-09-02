@@ -54,6 +54,7 @@
   - [PMPP Notes: SM / Block scheduling / Synchronization (Chapter 4)](./course/CUDA/PMPP/PMPP_notes_05_Architecture_of_a_modern_GPU.md)
   - [PMPP Notes: Warps / Control divergence / Latency tolerance / Occupancy (Chapter 4)](./course/CUDA/PMPP/PMPP_notes_05_Warps_and_SIMD_hardware.md)
   - [PMPP Notes: Chapter 4 Exercises / Divergent warps exercises / Occupancy exercises (Chapter 4)](./course/CUDA/PMPP/PMPP_notes_05_chapter_4_exercise.md)
+  - [PMPP Notes: Roofline Model / CUDA memory types / Tiling (Chapter 5)](./course/CUDA/PMPP/PMPP_notes_06_Memory_architecture.md)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
 - CUDA Kernal Notes
