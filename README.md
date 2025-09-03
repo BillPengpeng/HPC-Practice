@@ -57,6 +57,7 @@
   - [PMPP Notes: Roofline Model / CUDA memory types / Tiling (Chapter 5)](./course/CUDA/PMPP/PMPP_notes_06_Memory_architecture.md)
   - [PMPP Notes: Tiled matrix multiplication / Boundary checks / Memory and occupancy (Chapter 5)](./course/CUDA/PMPP/PMPP_notes_06_Tiled_matrix_multiplication.md)
   - [PMPP Notes: Chapter 5 Exercises / Tiling practice / Memory and occupancy practice (Chapter 5)](./course/CUDA/PMPP/PMPP_notes_06_chapter_5_exercise.md)
+  - [PMPP Notes: Memory coalescing / Hiding memory latency / Bank Conflict (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_Memory_coalescing.md)
 - CUDA MODE Notes
   - [Lecture1/2/4: cuda基础](./course/CUDA/notes/cuda笔记01-cuda基础/01-cuda基础.md)
 - CUDA Kernal Notes
