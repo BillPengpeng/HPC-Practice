@@ -62,6 +62,7 @@
   - [PMPP Notes: Chapter 6 Exercises / Coalesced access practice (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_chapter_6_exercise.md)
 - CUDA MODE Notes
   - [CUDA MODE Notes: PMPP Ch1 Introduction / PMPP Ch2 Heterogeneous data parallel computing (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch1-2.md) 
+  - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
