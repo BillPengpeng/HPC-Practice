@@ -65,6 +65,7 @@
   - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
   - [CUDA MODE Notes: Streaming Multiprocessor (SM) / ​Threads、Warps和Blocks (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch4_Part1.md) 
   - [CUDA MODE Notes: Warp shuffle / Warp divergence / Getting good occupancy (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch4_Part2.md) 
+  - [CUDA MODE Notes: Memory access / GPU HBM / GeLU fuse / FlashAttention (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch5.md) 
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
