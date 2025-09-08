@@ -28,6 +28,7 @@
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/ZJU_LLM/LLM_notes_04_Hugging_Face_T5_BART.md)
 - MLSys Notes
   - [CMU-DLSys Notes: Key elements / Learning objects / Tips for AI tools (Lecture1)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_01_Introduction_Logistics.md)
+  - [CMU-DLSys Notes: Three ingredients of a ML algorithm / softmax regression example (Lecture2)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_02_ML_Refresher_Softmax_Regression.md)
 - CV Notes
   - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
   - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
