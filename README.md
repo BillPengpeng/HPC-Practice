@@ -27,8 +27,7 @@
   - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/ZJU_LLM/LLM_notes_04_Hugging_Face_T5_BART.md)
 - MLSys Notes
-  - [CMU-DLSys Notes: Softmax / Backprop / Automatic Differentiation / Optimization (Lecture1-6)](./course/AI/10-414_714/10-414-714_notes_01.md)
-  - [CMU-DLSys Notes: NN Library Abstractions / Normalization and Regularization (Lecture7/9-11)](./course/AI/10-414_714/10-414-714_notes_02.md)
+  - [CMU-DLSys Notes: Key elements / Learning objects / Tips for AI tools (Lecture1)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_01_Introduction_Logistics.md)
 - CV Notes
   - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
   - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
