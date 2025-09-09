@@ -3,6 +3,7 @@
 ## 1 AI 
 
 - Related course
+  - [Stanford CS231n: Deep Learning for Computer Vision](https://cs231n.stanford.edu/)
   - [Stanford CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2025/)
   - [Stanford CS224N: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/index.html)
   - [ZJU LLM: Foundations-of-LLMs](https://github.com/ZJU-LLMs/Foundations-of-LLMs)
@@ -126,6 +127,8 @@
   - [MIT-OS Notes: XV6 File descriptor layer (Chapter 8)](./course/OS/MIT_6.S081/MIT_XV6_notes_08_XV6_File_descriptor_layer.md)
   - [MIT-OS Notes: XV6 Multiplexing (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Multiplexing.md)
   - [MIT-OS Notes: XV6 Sleep and wakeup (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Sleep_wakeup.md)
+  - [MIT-OS Notes: XV6 Pipes / Wait, exit, and kill / Process Locking (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Pipes.md)
+
 ## 4 Compiler
 - Related course
   - [USTC: Principles and Techniques of Compiler](https://ustc-compiler-principles.github.io/2023/)
