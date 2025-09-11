@@ -48,6 +48,7 @@
   - [CUDA MODE](https://github.com/gpu-mode/lectures)
 - Related link
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
+  - [leetgpu](https://www.leetgpu.com/)
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
   - [PMPP Notes: Heterogeneous parallel computing / Challenges (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
@@ -64,12 +65,14 @@
   - [PMPP Notes: Memory coalescing / Hiding memory latency / Bank Conflict (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_Memory_coalescing.md)
   - [PMPP Notes: Thread coarsening / Thread coarsening (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_Thread_coarsening.md)
   - [PMPP Notes: Chapter 6 Exercises / Coalesced access practice (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_chapter_6_exercise.md)
+  - [PMPP Notes: Convolution (Chapter 7)](./course/CUDA/PMPP/PMPP_notes_08_Convolution.md)
 - CUDA MODE Notes
   - [CUDA MODE Notes: PMPP Ch1 Introduction / PMPP Ch2 Heterogeneous data parallel computing (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch1-2.md) 
   - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
   - [CUDA MODE Notes: Streaming Multiprocessor (SM) / ​Threads、Warps和Blocks (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch4_Part1.md) 
   - [CUDA MODE Notes: Warp shuffle / Warp divergence / Getting good occupancy (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch4_Part2.md) 
   - [CUDA MODE Notes: Memory access / GPU HBM / GeLU fuse / FlashAttention (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch5.md) 
+  - [CUDA MODE Notes: DRAM/SRAM / Latency / Throughput / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
@@ -128,6 +131,7 @@
   - [MIT-OS Notes: XV6 Multiplexing (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Multiplexing.md)
   - [MIT-OS Notes: XV6 Sleep and wakeup (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Sleep_wakeup.md)
   - [MIT-OS Notes: XV6 Pipes / Wait, exit, and kill / Process Locking (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Pipes.md)
+  - [MIT-OS Notes: XV6 Concurrency revisited (Chapter 9)](./course/OS/MIT_6.S081/MMIT_XV6_notes_10_XV6_Concurrency_revisited.md)
 
 ## 4 Compiler
 - Related course
