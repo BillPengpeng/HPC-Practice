@@ -73,6 +73,7 @@
   - [CUDA MODE Notes: Warp shuffle / Warp divergence / Getting good occupancy (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch4_Part2.md) 
   - [CUDA MODE Notes: Memory access / GPU HBM / GeLU fuse / FlashAttention (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch5.md) 
   - [CUDA MODE Notes: DRAM/SRAM / Latency / Throughput / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
+  - [CUDA MODE Notes: Minimize control divergence / Thread Coarsening / Privatization (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
