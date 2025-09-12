@@ -33,6 +33,7 @@
   - [CMU-DLSys Notes: Neural networks / Universal function approximation (Lecture3)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_03_Manual_Neural_Networks.md)
   - [CMU-DLSys Notes: The gradient(s) of a two-layer network / Backpropagation (Lecture3)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_03_Backprop.md)
   - [CMU-DLSys Notes: 微分计算 / Reverse AD algorithm (Lecture4)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_04_Automatic_Differentiation.md)
+  - [CMU-DLSys Notes: Gradient descent / Newton’s Method (Lecture6)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_05_Optimization_Part1.md)
 - CV Notes
   - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
   - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
