@@ -23,6 +23,7 @@
   - [stanford-LLM Notes: MoE/非MoE区别 / Routing / Shared experts / Train routing (Lecture4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_1.md)
   - [stanford-LLM Notes: Issues with MoEs / upcycling / DeepSeek MoE（待完善） (Lecture4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_2.md)
   - [stanford-LLM Notes: Unicode Encodings / UTF-8 / Subword Tokenization (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_1.md)
+  - [stanford-LLM Notes: BPE Tokenizer Training / BPE Tokenizer: Encoding and Decoding (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_2.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
