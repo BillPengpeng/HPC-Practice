@@ -22,6 +22,7 @@
   - [stanford-LLM Notes: Z-Loss / QK Norm / Soft-Capping / GQA/MQA / SWA (Lecture3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_4.md)
   - [stanford-LLM Notes: MoE/非MoE区别 / Routing / Shared experts / Train routing (Lecture4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_1.md)
   - [stanford-LLM Notes: Issues with MoEs / upcycling / DeepSeek MoE（待完善） (Lecture4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_2.md)
+  - [stanford-LLM Notes: Unicode Encodings / UTF-8 / Subword Tokenization (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_1.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
@@ -35,6 +36,7 @@
   - [CMU-DLSys Notes: 微分计算 / Reverse AD algorithm (Lecture4)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_04_Automatic_Differentiation.md)
   - [CMU-DLSys Notes: Gradient descent / Newton’s Method (Lecture6)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_05_Optimization_Part1.md)
   - [CMU-DLSys Notes: Momentum / Adam / Stochastic variants (Lecture6)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_05_Optimization_Part2.md)
+  - [CMU-DLSys Notes: Initialization / Normalization / Regularization (Lecture8)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_06_Normalization.md)
 - CV Notes
   - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
   - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
@@ -51,6 +53,7 @@
 - Related link
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
   - [leetgpu](https://www.leetgpu.com/)
+  - [cuda-math-api](https://docs.nvidia.com/cuda/cuda-math-api/index.html)
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
   - [PMPP Notes: Heterogeneous parallel computing / Challenges (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
@@ -76,6 +79,8 @@
   - [CUDA MODE Notes: Memory access / GPU HBM / GeLU fuse / FlashAttention (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch5.md) 
   - [CUDA MODE Notes: DRAM/SRAM / Latency / Throughput / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
   - [CUDA MODE Notes: Minimize control divergence / Thread Coarsening / Privatization (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
+- LeetGPU Notes
+  - [LeetGPU Notes: Vector Addition](./course/CUDA/PMPP/PMPP_notes_08_Convolution.md)
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
