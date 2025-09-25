@@ -188,8 +188,8 @@
 ## 3.3 Example(einstein_example1):Batched matrix multiplication with einops.einsum
 
 ```python
- importtorch
- fromeinopsimportrearrange,einsum
+ import torch
+ from einops import rearrange,einsum
  ## Basic implementation
  Y=D @A.T
  # Hard to tell the input and output shapes and what they mean.

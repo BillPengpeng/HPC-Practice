@@ -149,6 +149,11 @@ max_len_line: Ġaccomplish ment
   1  107.395  107.395  508.231  508.231 assignment1-basics/tests/adapters.py:1046(run_train_bpe)
 9743 247.738  0.025    249.034  0.026   assignment1-basics/tests/adapters.py:990(calc_max_pair)
 150    0.001  0.000    225.263  1.502   python3.13/multiprocessing/pool.py:500(_wait_for_updates)
+
+# 20250923 TinyStoriesV2-GPT4-train.txt
+# 引入大堆 + 双向链表 优化
+test_train_bpe_TinyStories: 151.95091319084167
+max_len_line: Ġaccomplish ment
 ```
 
 ### Problem (train_bpe_expts_owt): BPE Training on OpenWebText
@@ -160,10 +165,6 @@ is the longest token in the vocabulary? Does it make sense?
     - Deliverable: A one-to-two sentence response.
 - (b) Compare and contrast the tokenizer that you get training on TinyStories versus OpenWebText.
     - Deliverable: A one-to-two sentence response.
-
-```python
-OpenWebText速度慢，搁置
-```
 
 ## 2.6 BPE Tokenizer: Encoding and Decoding
 
@@ -256,6 +257,10 @@ arr: (5466495,)
 # TinyStoriesV2-GPT4-train.txt => TinyStoriesV2-GPT4-train-encoded.npy
 test_bpe_tokenize_TinyStories_proc 49862.50148153305 second
 arr: (541285731,)
+
+# owt_valid.txt => owt_valid-encoded.npy
+test_bpe_tokenize_TinyStories_proc 12115.171059131622 second
+arr: (91370615,)
 
 OpenWebText速度慢，搁置。
 '''
