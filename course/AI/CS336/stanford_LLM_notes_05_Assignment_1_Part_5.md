@@ -192,15 +192,83 @@ $$
 *   **参考图2**： 文档特别提醒读者在实现过程中要**“参考图2”**（图中用红色方框高亮标出了数字“2”）。这表明存在一个架构图（Figure 2），该图很可能直观地展示了Transformer块的数据流、层间连接和组件关系，是实现的重要参考。
 *   **承上启下**： 本节是**整合性**的章节，它假定读者已经按照文档前面的章节（如 §3.4, §3.5）成功实现了RMSNorm、多头自注意力等所有基础构建块。
 
+## Resource Accounting
+
+### 内容概况
+
+本节的核心目标是提供一套**系统的方法论**，用于量化分析Transformer模型中各个组件的计算开销（以FLOPs衡量）和内存消耗。文章首先强调了进行这种核算的重要性，然后给出了具体的核算步骤和一个关键的矩阵乘法FLOPs计算规则。
+
 ---
 
-### 总结
+### 要点总结
 
-| 方面 | 内容 |
-| :--- | :--- |
-| **章节目标** | 组装完整的Transformer块 |
-| **块结构** | **2个子层**：MHA子层 + FFN子层 |
-| **子层流程** | **统一顺序**：RMSNorm -> Core Operation (MHA/FFN) -> Add (Residual) |
-| **核心公式** | $y = x + \text{MHA}(\text{RMSNorm}(x))$ （第一子层） |
-| **关键架构** | **Pre-Norm** (使用RMSNorm) + **残差连接** |
-| **实践指引** | 必须参考**Figure 2**（架构图）进行实现 |
+#### 1. 核心目标与重要性
+*   **目的**： 学会如何**理解和核算**Transformer各个部分消耗的**计算量（FLOPs）和内存**。
+*   **意义**： 这种核算是进行模型优化、性能分析和成本估算的基础，对于高效部署和研发至关重要。
+
+#### 2. 核算方法论（两个核心步骤）
+文档提供了一个清晰、可操作的**两步走核算框架**：
+
+1.  **步骤一：枚举（Listing）**
+    > “Write down all the matrix multiplies in a Transformer forward pass.”
+    *   **方法**： 列出Transformer**单次前向传播**过程中**所有**的矩阵乘法（Matrix Multiplies）操作。
+    *   **对象**： 包括Embedding层、所有的Q/K/V/O线性投影、前馈网络（FFN）的两层、输出投影层等。
+
+2.  **步骤二：转换（Conversion）**
+    > “Convert each matrix multiply into FLOPs required.”
+    *   **方法**： 利用给定的规则，将步骤一中列出的每个矩阵乘法转换为具体的FLOPs数值。
+
+#### 3. 关键计算规则（The Rule）
+文档给出了一个**精确的数学规则**，用于计算任意矩阵乘法的FLOPs：
+*   **规则**： 给定矩阵 $ A \in \mathbb{R}^{m \times n} $ 和 $ B \in \mathbb{R}^{n \times p} $，它们的乘积 $ AB $ 所需的FLOPs为 $ 2mnp $。
+*   **原理推导**：
+    1.  计算输出矩阵的**单个元素** $ (AB)[i,j] $ 需要一次**点积**操作。
+    2.  一次点积（$ A[i,:] \cdot B[:,j] $）包含：
+        *   `n` 次**乘法**
+        *   `n` 次**加法**
+        *   共计 `2n` 次浮点运算（FLOPs）
+    3.  输出矩阵共有 $ m \times p $ 个元素。
+    4.  因此，**总FLOPs** = $ (2n) \times (mp) = 2mnp $。
+
+#### 4. 实践指导
+*   **准备工作**： 在进入具体问题（Next Problem）之前，建议读者**系统性地遍历**Transformer块（Block）和整个语言模型（LM）的**每个组件**。
+*   **操作**： 列出**所有的矩阵乘法**并标注其相应的FLOPs成本。
+
+## Problem (transformer_accounting): Transformer LM resource accounting
+
+ - (a) Consider GPT-2XL, which has the following configuration:
+    - vocab_size : 50,257
+    - context_length : 1,024
+    - num_layers : 48
+    - d_model : 1,600
+    - num_heads : 25
+    - d_ff : 6,400
+    - Suppose we constructed our model using this configuration. How many trainable parameters
+    would our model have? Assuming each parameter is represented using single-precision floating
+    point, how much memory is required to just load this model?
+    - Deliverable: A one-to-two sentence response. 
+    - (vocab_size*d_model) + num_layers * (4*d_model^2 + 2*d_model + 3*d_model*d_ff) + (d_model + d_model*vocab_size)
+      = (50257*1600) + 48*(4*1600*1600 + 2*1600 + 3*1600*6400) + (1600 + 1600 * 50257) = 2127489600 = 2.1B
+    - 内存大小：2127489600 * 4 = 7.9GB
+
+  - (b) Identify the matrixmultiplies required to complete a forward pass of our GPT-2XL-shaped
+      model. How many FLOPs do these matrixmultiplies require in total? Assume that our input
+      sequence has context_length tokens.
+    - Deliverable: A list of matrixmultiplies (with descriptions), and the total number of FLOPs required.
+    - num_layers * (8*seq_len*d_model^2 + 4*d_model*seq_len^2 + 6*seq*d_ff*d_model) + 2*seq_len*vocab_size*d_model 
+      = 48 * (8*1024*1600*1600 + 4*1600*1024*1024 + 6*1024*6400*1600) + 2*1024*50257*1600
+      = 4513336524800 = 4.5T
+
+  - (c) Based on your analysis above, which parts of the model require the most FLOPs?
+    - Deliverable: A one-to-two sentence response.
+    - FFN：48 * 6*1024*6400*1600 / 4513336524800 = 66.91%
+
+  - (d) Repeat your analysis with GPT-2 small (12 layers, 768 d_model, 12 heads), GPT-2 medium (24
+      layers, 1024 d_model, 16 heads), and GPT-2 large (36 layers, 1280 d_model, 20 heads). As the
+      model size in creases, which parts of the TransformerLM take up proportionally more or less of
+      the total FLOPs?
+    - Deliverable: For each model, provide abreakdown of model components and its associated
+      FLOPs (as a proportion of the total FLOPs required for a forward pass). Inaddition, provide a
+      one-to-two sentence description of how varying the model size changes the proportional FLOPs
+      of each component.
+    - FFN: 39.76% => 49.85% => 54.45%

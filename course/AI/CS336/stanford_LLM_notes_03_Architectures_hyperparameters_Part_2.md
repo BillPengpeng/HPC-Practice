@@ -489,7 +489,7 @@ def apply_rope(q, k, freqs_cis):
     
     # 执行旋转 (复数乘法)
     q_rotated = q_complex * freqs
-    k_rotated = k_complex * freqs.conj()  # 键向量取共轭
+    k_rotated = k_complex * freqs.conj()  # 键向量取共轭  *problem  
     
     # 转换回实数表示
     q_out = torch.view_as_real(q_rotated).flatten(-2)
