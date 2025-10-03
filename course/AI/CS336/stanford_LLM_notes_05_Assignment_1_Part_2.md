@@ -252,15 +252,17 @@ uint16 an appropriate choice?
 '''python
 ​token ID的范围​​：在BPE分词中，词汇表大小通常有限。例如，GPT-2的词汇表大小为50,257，所以token ID的范围是0到50256。这可以用16位无符号整数（uint16）表示，因为uint16的范围是0到65535，足以覆盖50257个token。
 # TinyStoriesV2-GPT4-valid.txt => TinyStoriesV2-GPT4-valid-encoded.npy
-test_bpe_tokenize_TinyStories_proc 742.1681144237518 second
+test_bpe_tokenize_TinyStories_proc 742.1681144237518 second => 41.70 (20251002优化版本)
 arr: (5466495,)
 # TinyStoriesV2-GPT4-train.txt => TinyStoriesV2-GPT4-train-encoded.npy
 test_bpe_tokenize_TinyStories_proc 49862.50148153305 second
 arr: (541285731,)
 
 # owt_valid.txt => owt_valid-encoded.npy
-test_bpe_tokenize_TinyStories_proc 12115.171059131622 second
-arr: (91370615,)
+test_bpe_tokenize_owt_proc 895.748753786087 second
+arr: (66402184,)
 
-OpenWebText速度慢，搁置。
+# owt_train.txt => owt_train-encoded.npy
+arr: (2724408583,)
+
 '''

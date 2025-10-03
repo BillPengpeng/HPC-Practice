@@ -431,3 +431,46 @@ assume that the backward pass has twice the FLOPs of the forward pass.
 2. **采样策略影响质量**：不同的解码策略会产生不同风格的文本
 3. **参数调节重要**：温度参数$\tau$和核参数$p$需要根据任务调整
 4. **实用性导向**：这些技巧特别有助于提升小模型的生成效果
+
+## 7 Experiments
+
+### Problem (batch_size_experiment): Batch size variations
+
+| lr | batchsize | total_tokens | validation loss | perplexity | 
+| :--: | :--: | :--: | :--: | :--: |
+| 0.001 | 32 | 40960000 | 1.64 | 5.15 |
+| 0.001 | 32 | 327680000 | 1.34 | 3.84 |
+| 0.001 | 64 | 327680000 | 1.35 | 3.86 |
+| 0.001 | 128 | 327680000 | 1.40 | 4.04 |
+
+### Problem (generate): Generatetext
+
+```python
+uv run problem/pred.py --yaml_path=./cfg/tinystories_v1.0.yaml --model_path=./workdir/tinystories_v1.0_lr0.001_wd0.1_mln1.0_wi100_2/iter_40000.pth --prompt="Once upon a time"
+
+>> Once upon a time, there was a little boy named Tim. Tim was an adventurous boy. He loved to play outside. One sunny day, Tim went to the park with his mom to play.
+At the park, Tim saw a mosquito. He asked his mom, "Mom, can you help me with this mosquito?" His mom smiled and said, "Of course, Tim. Let's be one and catch it." They played near a bush and had a lot of fun.
+Later, it started to get dark. Tim's mom said, "Tim, it's time to go home now." Tim picked up his kayak and began to paddle home. His mom helped him get away from the dark fireplace. They laughed and waved goodbye to the exciting park town.
+ ```
+
+## 7.3 Ablationsandarchitecturemodification
+
+### Ablation1: layer normalization
+
+| lr | batchsize | total_tokens | validation loss | perplexity | 备注 |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+| 0.001 | 64 | 327680000 | 1.39 | 4.01 | Remove RMSNorm and train |
+| 0.001 | 64 | 327680000 | 1.36 | 3.88 | Post norm |
+| 0.001 | 64 | 327680000 | 1.33 | 3.80 | Add norm |
+
+### Ablation 2: position embeddings
+
+| lr | batchsize | total_tokens | validation loss | perplexity | 备注 |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+| 0.001 | 64 | 327680000 | 1.39 | 4.01 | NoPE |
+
+### Ablation 3: SwiGLU vs. SiLU
+
+| lr | batchsize | total_tokens | validation loss | perplexity | 备注 |
+| :--: | :--: | :--: | :--: | :--: | :--: |
+| 0.001 | 64 | 327680000 | 1.38 | 3.99 | SiLU |

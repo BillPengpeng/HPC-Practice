@@ -156,8 +156,12 @@ total_loss = task_loss + 0.001 * z_loss(router_logits)
 
 ![DeepSeek v2 MoE](https://pic4.zhimg.com/v2-13624b94dbdf47a3456fc105a69f6189_1440w.jpg)
 
+[Deepseekv3解读](https://zhuanlan.zhihu.com/p/17212886624)
+[解读DeepseekV3](https://zhuanlan.zhihu.com/p/15173369256)
+
 ![DeepSeek v3 MoE](https://pic2.zhimg.com/v2-2cd0133361e30b05c0f80b3e725f06fd_1440w.jpg)
 
 - V1（16B；2.8B 激活）：标准 top‑k 路由，2 个共享专家，k = 6, 专家数（64/4），专家/设备双层负载均衡。
 - V2（236B；21B 激活）：k = 6, 专家数（160/10），引入 Communication balancing loss 与 Top‑M 设备路由（关注进出通信对称）。
 - V3（671B；37B 激活）：Sigmoid+Softmax 复合路由, k = 8, 专家数（256/10）,“aux‑loss‑free + sequence-wise”平衡，以及后续 Bonus 部分的 MLA / MTP 技术以降低 KV 缓存与推理成本。
+

@@ -28,6 +28,8 @@
   - [stanford-LLM Notes: Linear / Embedding / LayerNorm / SwiGLU / RoPE(*) (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_4.md)
   - [stanford-LLM Notes: Softmax / Self-Attention / The Full Transformer LM(*) (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_5.md)
   - [stanford-LLM Notes: Training a Transformer LM / Training loop / Generating text(*) (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_6.md)
+  - [stanford-LLM Notes: GPU&TPU / Control divergence / Low Precision Computation / Operator fusion / Recomputation (Lecture5)](./course/AI/CS336/stanford_LLM_notes_06_GPUs_Part_1.md)
+  - [stanford-LLM Notes: Memory coalescing / Tiling / A matrix mystery / Flash attention (Lecture5)](./course/AI/CS336/stanford_LLM_notes_06_GPUs_Part_2.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
