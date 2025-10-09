@@ -32,6 +32,8 @@
   - [stanford-LLM Notes: Memory coalescing / Tiling / A matrix mystery / Flash attention (Lecture 5)](./course/AI/CS336/stanford_LLM_notes_06_GPUs_Part_2.md)
   - [stanford-LLM Notes: benchmark & profile / NVTX示例 (Lecture 6)](./course/AI/CS336/stanford_LLM_notes_07_Kernels_Triton_Part_1.md)
   - [stanford-LLM Notes: cuda_gelu / triton_gelu / torch.compile (Lecture 6)](./course/AI/CS336/stanford_LLM_notes_07_Kernels_Triton_Part_2.md)
+  - [stanford-LLM Notes: Collective communication / Naïve data parallelism / ZeRO (Lecture 7)](./course/AI/CS336/stanford_LLM_notes_08_Parallelism_Part_1.md)
+  - [stanford-LLM Notes: Model parallelism / Pipeline parallel / Tensor parallel / Sequence parallel (Lecture 7)](./course/AI/CS336/stanford_LLM_notes_08_Parallelism_Part_2.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
@@ -64,6 +66,7 @@
   - [CUDA-Learn-Notes](https://github.com/DefTruth/cuda-learn-notes)
   - [leetgpu](https://www.leetgpu.com/)
   - [cuda-math-api](https://docs.nvidia.com/cuda/cuda-math-api/index.html)
+  - [triton-doc](https://triton-lang.cn/main/index.html)
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
   - [PMPP Notes: Heterogeneous parallel computing / Challenges (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
@@ -90,7 +93,8 @@
   - [CUDA MODE Notes: DRAM/SRAM / Latency / Throughput / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
   - [CUDA MODE Notes: Minimize control divergence / Thread Coarsening / Privatization (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
 - LeetGPU Notes
-  - [LeetGPU Notes: Vector Addition](./course/CUDA/PMPP/PMPP_notes_08_Convolution.md)
+  - LeetGPU Notes: Vector Addition [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_cuda.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_triton.md)
+  - LeetGPU Notes: ReLU / Leaky ReLU / Color Inversion / Matrix Copy / Matrix Transpose / Count 2D Array Element / Reverse Array [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_1.md)
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
