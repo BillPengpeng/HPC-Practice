@@ -85,6 +85,7 @@
   - [PMPP Notes: Chapter 6 Exercises / Coalesced access practice (Chapter 6)](./course/CUDA/PMPP/PMPP_notes_07_chapter_6_exercise.md)
   - [PMPP Notes: Convolution (Chapter 7)](./course/CUDA/PMPP/PMPP_notes_08_Convolution.md)
   - [PMPP Notes: Reduce (Chapter 10)](./course/CUDA/PMPP/PMPP_notes_09_Reduce.md)
+  - [PMPP Notes: Parallel histogram (Chapter 9)](./course/CUDA/PMPP/PMPP_notes_10_Parallel_histogram.md)
 - CUDA MODE Notes
   - [CUDA MODE Notes: PMPP Ch1 Introduction / PMPP Ch2 Heterogeneous data parallel computing (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch1-2.md) 
   - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
