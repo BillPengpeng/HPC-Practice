@@ -49,6 +49,7 @@
   - [CMU-DLSys Notes: Momentum / Adam / Stochastic variants (Lecture6)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_05_Optimization_Part2.md)
   - [CMU-DLSys Notes: Initialization / Normalization / Regularization (Lecture8)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_06_Normalization.md)
   - [CMU-DLSys Notes: Neural Network Library Abstractions (Lecture7)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_07_Neural_Network_Library_Abstractions.md)
+  - [CMU-DLSys Notes: Convolutional Networks / Convolutions as matrix multiplication (Lecture10)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_08_Convolutional_Networks.md)
 - CV Notes
   - [CNN Backbone Notes：VGG / ResNet / MobileNet系列 / Inception系列](./course/AI/CV/CV_notes_01_经典CNN_Backbone.md)
   - [CNN Backbone Notes：ShuffleNet系列 / RepVGG / ResNet改进系列 / HRNet](./course/AI/CV/CV_notes_02_经典CNN_Backbone.md)
