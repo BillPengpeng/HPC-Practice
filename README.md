@@ -90,6 +90,7 @@
   - [PMPP Notes: Stencil (Chapter 8)](./course/CUDA/PMPP/PMPP_notes_11_Stencil.md)
   - [PMPP Notes: Prefix sum (Chapter 11)](./course/CUDA/PMPP/PMPP_notes_12_Prefix_sum.md)
   - [PMPP Notes: Merge (Chapter 12)](./course/CUDA/PMPP/PMPP_notes_13_Merge.md)
+  - [PMPP Notes: Sorting (Chapter 13)](./course/CUDA/PMPP/PMPP_notes_14_Sorting.md)
 - CUDA MODE Notes
   - [CUDA MODE Notes: PMPP Ch1 Introduction / PMPP Ch2 Heterogeneous data parallel computing (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch1-2.md) 
   - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
