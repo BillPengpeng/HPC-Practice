@@ -104,6 +104,7 @@
   - LeetGPU Notes: ReLU / Leaky ReLU / Color Inversion / Matrix Copy / Matrix Transpose / Count 2D Array Element / Reverse Array [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_1.md)
   - LeetGPU Notes: Count Array Element / Sigmoid / Swish-Gated / 1D Convolution / Rainbow Table / Matrix Multiplication [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_2.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_2.md)
   - LeetGPU Notes: Reduce / Softmax [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_1.md)
+  - LeetGPU Notes: 2D Convolution [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_2.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_2.md)
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
