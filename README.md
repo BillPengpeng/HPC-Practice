@@ -99,6 +99,7 @@
   - [CUDA MODE Notes: Memory access / GPU HBM / GeLU fuse / FlashAttention (Lecture 4)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_02_PMPP_Ch5.md) 
   - [CUDA MODE Notes: DRAM/SRAM / Latency / Throughput / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
   - [CUDA MODE Notes: Minimize control divergence / Thread Coarsening / Privatization (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
+  - [CUDA MODE Notes: **Reduction** [关注Branch Efficiency & L1/TEX Cache] (Lecture 9)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
 - LeetGPU Notes
   - LeetGPU Notes: Vector Addition [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_cuda.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_triton.md)
   - LeetGPU Notes: ReLU / Leaky ReLU / Color Inversion / Matrix Copy / Matrix Transpose / Count 2D Array Element / Reverse Array [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_1.md)

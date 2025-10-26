@@ -136,13 +136,45 @@ __global__ void SimpleSumReductionKernel(float* input, float* output) {
 ```
 
 ```ncu
+  SimpleSumReductionKernel(float *, float *) (1, 1, 1)x(1024, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.81
+    SM Frequency                    Ghz         1.55
+    Elapsed Cycles                cycle         9318
+    Memory Throughput                 %         1.59
+    DRAM Throughput                   %         1.59
+    Duration                         us         6.02
+    L1/TEX Cache Throughput           %        19.41
+    L2 Cache Throughput               %         1.57
+    SM Active Cycles              cycle       381.20
+    Compute (SM) Throughput           %         1.50
+    ----------------------- ----------- ------------
+
+    Section: Memory Workload Analysis
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    Memory Throughput                Gbyte/s         3.94
+    Mem Busy                               %         1.57
+    Max Bandwidth                          %         1.83
+    L1/TEX Hit Rate                        %        91.63
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Compression Input Sectors      sector            0
+    L2 Hit Rate                            %        77.56
+    Mem Pipes Busy                         %         0.75
+    ---------------------------- ----------- ------------
+
     ------------------------- ----------- ------------
     Metric Name               Metric Unit Metric Value
     ------------------------- ----------- ------------
     Branch Instructions Ratio           %         0.12
-    Branch Instructions              inst        1,312
+    Branch Instructions              inst         1312
     Branch Efficiency                   %        74.05
-    Avg. Divergent Branches                       0.37
+    Avg. Divergent Branches                       2.39
     ------------------------- ----------- ------------
 ```
 
@@ -194,12 +226,227 @@ __global__ void FixDivergenceKernel(float* input, float* output) {
 ```
 
 ```ncu
+  FixDivergenceKernel(float *, float *) (1, 1, 1)x(1024, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.64
+    SM Frequency                    Ghz         1.53
+    Elapsed Cycles                cycle         5185
+    Memory Throughput                 %         3.12
+    DRAM Throughput                   %         3.12
+    Duration                         us         3.39
+    L1/TEX Cache Throughput           %        13.70
+    L2 Cache Throughput               %         1.45
+    SM Active Cycles              cycle       173.75
+    Compute (SM) Throughput           %         0.93
+    ----------------------- ----------- ------------
+
+    Section: Memory Workload Analysis
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    Memory Throughput                Gbyte/s         3.92
+    Mem Busy                               %         1.49
+    Max Bandwidth                          %         1.81
+    L1/TEX Hit Rate                        %        66.88
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Compression Input Sectors      sector            0
+    L2 Hit Rate                            %        58.17
+    Mem Pipes Busy                         %         0.68
+    ---------------------------- ----------- ------------
+
     ------------------------- ----------- ------------
     Metric Name               Metric Unit Metric Value
     ------------------------- ----------- ------------
     Branch Instructions Ratio           %         0.31
-    Branch Instructions              inst        1,126
+    Branch Instructions              inst         1126
     Branch Efficiency                   %        99.32
-    Avg. Divergent Branches                       0.01
+    Avg. Divergent Branches                       0.06
     ------------------------- ----------- ------------
+```
+
+## 2.2 shared_reduce
+
+```c
+__global__ void SharedMemoryReduction(float* input, float* output) {
+    __shared__ float input_s[BLOCK_DIM];
+    unsigned int t = threadIdx.x;
+    input_s[t] = input[t] + input[t  + BLOCK_DIM];
+    for (unsigned int stride = blockDim.x/2; stride >= 1; stride /=2) {
+        __syncthreads();
+        if (threadIdx.x < stride) {
+            input_s[t] += input_s[t + stride];
+        }
+    }
+
+    if (threadIdx.x == 0) {
+        *output = input_s[0];
+    }
+}
+```
+
 ```ncu
+  SharedMemoryReduction(float *, float *) (1, 1, 1)x(1024, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.72
+    SM Frequency                    Ghz         1.53
+    Elapsed Cycles                cycle         5841
+    Memory Throughput                 %         1.88
+    DRAM Throughput                   %         1.38
+    Duration                         us         3.81
+    L1/TEX Cache Throughput           %        52.50
+    L2 Cache Throughput               %         0.91
+    SM Active Cycles              cycle       207.60
+    Compute (SM) Throughput           %         1.88
+    ----------------------- ----------- ------------
+
+    Section: Memory Workload Analysis
+    ---------------------------- ----------- ------------
+    Metric Name                  Metric Unit Metric Value
+    ---------------------------- ----------- ------------
+    Memory Throughput                Gbyte/s         3.27
+    Mem Busy                               %         0.96
+    Max Bandwidth                          %         1.87
+    L1/TEX Hit Rate                        %            0
+    L2 Compression Success Rate            %            0
+    L2 Compression Ratio                                0
+    L2 Compression Input Sectors      sector            0
+    L2 Hit Rate                            %        40.81
+    Mem Pipes Busy                         %         1.87
+    ---------------------------- ----------- ------------
+```
+
+要理解**共享内存归约内核**中`L1/TEX Hit Rate`与`L1/TEX Cache Throughput`的表现，以及它们与`__shared__`的关系，需要从**存储层次架构**、**内核访问模式**和**指标定义**三个维度深入分析：
+
+
+### **先回顾核心背景：GPU存储层次与共享内存**
+GPU的存储层次从快到慢依次是：  
+**寄存器 → 共享内存（__shared__） → L1/TEX缓存 → L2缓存 → DRAM显存**  
+
+其中：
+- **共享内存（__shared__）**：每个SM内部的**片上SRAM**，容量小（如A100的SM有48KB/112KB共享内存），但**访问延迟极低（~10ns）**，且**不经过L1/TEX缓存**（独立存储层次）；  
+- **L1/TEX缓存**：每个SM的**片上缓存**，用于加速**全局内存**（`float*`）、纹理内存的访问，缓存行大小通常为128字节。  
+
+
+### **指标解读：为什么L1/TEX Hit Rate=0%，Throughput=52.5%？**
+结合**共享内存归约**的内核行为（如：线程从全局内存读数据→写入共享内存→共享内存归约），两个指标的表现可拆解为：
+
+
+#### **L1/TEX Hit Rate=0%：几乎没有全局/纹理内存访问命中缓存**  
+- **定义回顾**：`L1/TEX Hit Rate`是**全局/纹理内存访问中命中L1/TEX缓存的比例**。  
+- **为何为0%？**  
+  共享内存归约的核心是**大量访问共享内存**（而非全局内存）：  
+  - 步骤1：每个线程从全局内存读取1个元素→写入共享内存（这部分是全局内存访问，但占比极低）；  
+  - 步骤2：后续的归约操作（如`shared_mem[i] += shared_mem[i+stride]`）**全部访问共享内存**，不经过L1/TEX缓存。  
+  因此，**几乎没有全局/纹理内存访问命中L1/TEX缓存**，导致Hit Rate=0%。  
+
+
+#### **L1/TEX Cache Throughput=52.5%：仍有少量全局内存访问贡献吞吐量**  
+- **定义回顾**：`L1/TEX Cache Throughput`是**L1/TEX缓存处理的数据总量占最大带宽的比例**。  
+- **为何不为0？**  
+  内核的**初始加载阶段**需要从全局内存读取数据到共享内存：  
+  每个线程从全局内存读取1个元素→存入寄存器→写入共享内存。这部分**全局内存读取请求**会走L1/TEX缓存（即使最终数据要写入共享内存，读取时仍需经过L1缓存）。  
+  因此，这部分全局内存访问贡献了`52.5%`的L1/TEX吞吐量——**缓存处理了“从全局内存加载数据到共享内存”的请求**。  
+
+
+### 与`__shared__`的直接关系：共享内存“分流”了L1/TEX的访问**
+`__shared__`的使用是导致两个指标表现的关键原因：  
+1. **共享内存“接管”了主要访问**：  
+   归约的核心操作（线程间数据交换）全部在共享内存中完成，**不经过L1/TEX缓存**，因此L1/TEX的命中率被“稀释”到0%；  
+2. **仅初始加载依赖全局内存**：  
+   共享内存的初始数据来自全局内存，这部分访问仍需经过L1/TEX缓存，因此Throughput不为0。  
+
+
+### 进一步验证：共享内存的“高效性”如何体现？**
+虽然L1/TEX指标看似“一般”，但共享内存的使用大幅提升了内核性能：  
+- **低延迟**：共享内存访问延迟（~10ns）远低于L1缓存（~40ns）和DRAM（~100ns），归约的核心操作因此极快；  
+- **高带宽**：共享内存的带宽是L1缓存的数倍（如A100的共享内存带宽达1.5TB/s，L1缓存约500GB/s），支持大量线程并行访问。  
+
+
+### **总结：共享内存如何影响L1/TEX指标？**
+| 指标                | 表现          | 原因                                                                 |
+|---------------------|---------------|----------------------------------------------------------------------|
+| L1/TEX Hit Rate     | 0%            | 共享内存归约的核心操作访问共享内存，不经过L1/TEX；全局内存访问占比极低。 |
+| L1/TEX Cache Throughput | 52.5% | 初始加载阶段从全局内存读取数据到共享内存的请求，仍需经过L1/TEX缓存。   |
+
+### **关键结论**
+- **`__shared__`的作用**：将归约的核心操作从“慢速的全局内存”转移到“快速的共享内存”，避免了L1/TEX的瓶颈；  
+- **指标的合理性**：L1/TEX Hit Rate=0%不是问题，反而说明共享内存的使用“分流”了大部分访问，是优化的结果；  
+- **性能的核心**：共享内存的低延迟、高带宽让归约操作快速完成，即使L1/TEX指标一般，内核整体性能仍远优于全局内存归约。
+
+**一句话总结**：  
+共享内存归约的内核通过`__shared__`将核心操作移出L1/TEX缓存，因此L1/TEX Hit Rate为0%，但初始加载的全局内存访问仍贡献了Throughput——这是**共享内存优化成功的标志**！
+
+## 2.3 segment_reduce
+
+```c
+__global__ void SharedMemoryReduction(float* input, float* output, int n) {
+    __shared__ float input_s[BLOCK_DIM]; 
+    unsigned int idx = blockIdx.x * blockDim.x + threadIdx.x; // index within a block
+    unsigned int t = threadIdx.x; // global index
+
+    // Load elements into shared memory
+    if (idx < n) {
+        input_s[t] = input[idx];
+    } else {
+        input_s[t] = 0.0f;
+    }
+    __syncthreads();
+
+    // Reduction in shared memory
+    for (unsigned int stride = blockDim.x / 2; stride > 0; stride >>= 1) {
+        if (t < stride && idx + stride < n) {
+            input_s[t] += input_s[t + stride];
+        }
+        __syncthreads();
+    }
+
+    // Reduction across blocks in global memory
+    // needs to be atomic to avoid contention
+    if (t == 0) {
+        atomicAdd(output, input_s[0]);
+    }
+}
+```
+
+## 2.4 reduce_coarsening
+
+```c
+__global__ void CoarsenedReduction(float* input, float* output, int size) {
+    __shared__ float input_s[BLOCK_DIM];
+
+    unsigned int i = blockIdx.x * blockDim.x * COARSE_FACTOR + threadIdx.x;
+    unsigned int t = threadIdx.x;
+    float sum = 0.0f;
+
+    // Reduce within a thread
+    for (unsigned int tile = 0; tile < COARSE_FACTOR; ++tile) {
+        unsigned int index = i + tile * blockDim.x;
+        if (index < size) {
+            sum += input[index];
+        }
+    }
+
+    input_s[t] = sum;
+    __syncthreads();
+    
+    //Reduce within a block
+    for (unsigned int stride = blockDim.x / 2; stride > 0; stride >>= 1) {
+        if (t < stride) {
+            input_s[t] += input_s[t + stride];
+        }
+        __syncthreads();
+    }
+
+    //Reduce over blocks
+    if (t == 0) {
+        atomicAdd(output, input_s[0]);
+    }
+}
+```
