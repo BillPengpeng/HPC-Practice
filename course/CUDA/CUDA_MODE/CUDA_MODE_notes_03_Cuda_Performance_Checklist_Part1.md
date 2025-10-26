@@ -259,6 +259,82 @@ __global__ void copyDataCoalesced(float *in, float *out, int n) {
 }
 ```
 
+```ncu
+  copyDataNonCoalesced(float *, float *, int) (131072, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.51
+    SM Frequency                    Ghz         1.49
+    Elapsed Cycles                cycle     55498665
+    Memory Throughput                 %        27.33
+    DRAM Throughput                   %         1.01
+    Duration                         ms        37.29
+    L1/TEX Cache Throughput           %         0.63
+    L2 Cache Throughput               %        27.33
+    SM Active Cycles              cycle  56250784.60
+    Compute (SM) Throughput           %         0.55
+    ----------------------- ----------- ------------
+
+  copyDataCoalesced(float *, float *, int) (131072, 1, 1)x(128, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.79
+    SM Frequency                    Ghz         1.55
+    Elapsed Cycles                cycle     23784911
+    Memory Throughput                 %        17.78
+    DRAM Throughput                   %         0.26
+    Duration                         ms        15.32
+    L1/TEX Cache Throughput           %         0.99
+    L2 Cache Throughput               %        17.78
+    SM Active Cycles              cycle  21418092.15
+    Compute (SM) Throughput           %         0.66
+    ----------------------- ----------- ------------
+```
+
+### **内存合并访问对GPU吞吐量指标的影响分析**  
+内存合并访问（Coalesced Memory Access）是GPU优化内存访问效率的核心技术之一。通过对比 `copyDataNonCoalesced`（非合并访问）和 `copyDataCoalesced`（合并访问）的性能指标，可以从以下维度理解其对各项吞吐量的影响：  
+
+### **关键指标对比与合并访问的影响**  
+
+#### **(1) 执行时间（Duration）与周期数（Elapsed Cycles）**  
+- **非合并访问**：Duration=37.29ms，Elapsed Cycles=5549万。  
+- **合并访问**：Duration=15.32ms（缩短59%），Elapsed Cycles=2378万（缩短57%）。  
+**原因**：合并访问减少了内存事务数量，线程无需等待分散的内存响应，降低了访问延迟，总执行时间显著缩短。  
+
+
+#### **(2) DRAM与内存吞吐量（Memory/DRAM Throughput）**  
+- **非合并访问**：Memory Throughput=27.33%（占理论峰值的比例），DRAM Throughput=1.01%。  
+- **合并访问**：Memory Throughput=17.78%（下降），DRAM Throughput=0.26%（大幅下降）。  
+**关键理解**：  
+  - 此处“Throughput百分比”可能指**实际带宽与理论峰值的比值**，而非绝对性能。非合并访问因事务分散，DRAM实际有效带宽极低（仅1.01%），但内存子系统（包括L1/L2缓存）的总吞吐量被“拉高”（27.33%）。  
+  - 合并访问后，DRAM事务被高效合并，实际带宽需求减少（DRAM Throughput降至0.26%），但内存子系统整体利用率（Memory Throughput）下降，说明**合并访问减少了对内存带宽的“无效占用”**，资源被更高效利用。  
+
+
+#### **(3) 缓存吞吐量（L1/TEX & L2 Cache Throughput）**  
+- **非合并访问**：L2 Cache Throughput=27.33%（占理论峰值）。  
+- **合并访问**：L2 Cache Throughput=17.78%（下降35%），L1/TEX Cache Throughput=0.99%（略升）。  
+**原因**：合并访问减少了缓存行的冲突缺失（Cache Line Conflict Miss），L2缓存无需频繁处理分散的地址请求，因此缓存吞吐量需求降低。L1缓存因访问更集中，利用率略升。  
+
+
+#### **(4) 计算吞吐量（Compute SM Throughput）**  
+- **非合并访问**：Compute Throughput=0.55%（计算单元利用率低）。  
+- **合并访问**：Compute Throughput=0.66%（提升20%）。  
+**原因**：非合并访问时，线程因等待内存响应而阻塞（Memory Stall），计算单元空闲。合并访问减少了内存延迟，计算单元能更充分地执行指令，利用率提升。  
+
+
+### **总结：合并访问的核心优化效果**  
+内存合并访问通过以下方式提升GPU性能：  
+- **减少内存事务**：连续地址访问合并为少量事务，降低总线开销，缩短访问延迟（Duration下降59%）。  
+- **释放计算资源**：减少内存阻塞（Memory Stall），计算单元利用率提升（Compute Throughput提升20%）。  
+- **优化缓存效率**：减少L2缓存的冲突缺失，降低缓存吞吐量需求（L2 Throughput下降35%）。  
+- **降低无效带宽占用**：虽内存子系统总吞吐量（Memory Throughput）下降，但DRAM实际有效带宽（DRAM Throughput）更高效，资源被合理利用。  
+
+**一句话结论**：内存合并访问通过“集中访问连续地址”，将分散的内存请求转化为高效的事务，减少了延迟与资源浪费，最终提升整体执行效率并释放计算单元。
+
 ## 6. GPU Occupancy
 
 ### **要点总结**  
@@ -291,6 +367,91 @@ __global__ void copyDataCoalesced(float *in, float *out, int n) {
 2. 第二张图提供 **PyTorch 中解决 Tensor Core 维度限制的填充方案**，指导实际开发中的矩阵维度设计；  
 3. 第三张图展示 **CUDA 占用率计算器的工具价值**，帮助开发者快速获取最优并行配置（网格/块大小）。三者共同服务于 GPU 计算的高效调优。
 
+## 6. occupancy.cu
+
+```c
+__global__ void copyDataCoalesced(float *in, float *out, int n) {
+    int index = blockIdx.x * blockDim.x + threadIdx.x;
+    if (index < n) {
+        out[index] = in[index];
+    }
+}
+```
+
+```ncu
+  copyDataCoalesced(float *, float *, int) (21846, 1, 1)x(768, 1, 1), Context 1, Stream 7, Device 0, CC 8.6
+    Section: GPU Speed Of Light Throughput
+    ----------------------- ----------- ------------
+    Metric Name             Metric Unit Metric Value
+    ----------------------- ----------- ------------
+    DRAM Frequency                  Ghz         6.40
+    SM Frequency                    Ghz         1.46
+    Elapsed Cycles                cycle     23276898
+    Memory Throughput                 %        12.40
+    DRAM Throughput                   %         1.18
+    Duration                         ms        15.90
+    L1/TEX Cache Throughput           %         1.04
+    L2 Cache Throughput               %        12.40
+    SM Active Cycles              cycle     25798341
+    Compute (SM) Throughput           %         0.70
+    ----------------------- ----------- ------------
+
+    OPT   This workload exhibits low compute throughput and memory bandwidth utilization relative to the peak           
+          performance of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak           
+          typically indicate latency issues. Look at Scheduler Statistics and Warp State Statistics for potential       
+          reasons.
+```
+
+用户提供的性能数据中，各 `Throughput` 指标的 **单位均为百分比（%）**，表示**实际吞吐量占硬件理论峰值的比值**（而非绝对带宽值）。数值偏小的核心原因是当前任务的特性（如内存访问模式、计算负载）与硬件设计特性（如带宽峰值、缓存效率）不匹配，导致资源未被充分利用。以下是具体指标的解读与数值偏小的原因分析：  
+
+### **各吞吐量指标的定义与单位**  
+所有 `Throughput` 指标的单位均为 **百分比（%）**，表示实际性能与硬件理论峰值的比值。具体指标含义如下：  
+
+| **指标名称**               | **定义**                                                                 | **单位** |  
+|----------------------------|--------------------------------------------------------------------------|----------|  
+| **Memory Throughput**       | 内存子系统（含 L1/L2 缓存、DRAM）的总有效带宽占理论峰值的百分比。         | %        |  
+| **DRAM Throughput**         | DRAM 控制器的实际带宽占理论峰值的百分比（反映 DRAM 本身的利用率）。       | %        |  
+| **L1/TEX Cache Throughput** | L1 缓存和纹理缓存的命中/访问效率占理论峰值的百分比（反映缓存的局部性）。   | %        |  
+| **L2 Cache Throughput**     | L2 缓存的命中/访问效率占理论峰值的百分比（反映 L2 缓存的负载与效率）。     | %        |  
+| **Compute (SM) Throughput** | 流多处理器（SM）的计算单元利用率占理论峰值的百分比（反映计算的活跃程度）。 | %        |  
+
+
+### **各指标数值偏小的原因分析**  
+结合数据（如 `Memory Throughput=12.40%`、`DRAM Throughput=1.18%`、`Compute Throughput=0.70%`），数值偏小的核心原因可归纳为以下几点：  
+
+
+#### **(1) 内存访问模式：合并访问的局限性**  
+虽然 `copyDataCoalesced` 实现了内存合并访问（连续线程访问连续地址），但可能因以下原因导致带宽利用率低：  
+- **数据量不足**：当前任务的数据量（如矩阵维度 `(21846, 768)`）可能较小，无法触发 DRAM 的高带宽模式（DRAM 需要批量大访问才能满负荷）。  
+- **访问步长或模式不完美**：即使合并访问，若线程束（Warp）内的地址步长非最优（如非 128 字节对齐），或访问模式存在“间隙”（如部分线程空闲），仍会导致事务碎片化。  
+
+
+#### **(2) 计算与内存的严重不平衡：计算单元空闲**  
+- **Compute Throughput=0.70%**（极低）：计算单元（SM）的利用率仅 0.7%，说明**计算资源几乎未被使用**。这是因为线程大部分时间在等待内存数据（内存阻塞），无法执行计算指令。  
+- **DRAM Throughput=1.18%**（极低）：DRAM 实际带宽仅占峰值的 1.18%，进一步印证内存访问未充分利用 DRAM 的高带宽能力（DRAM 理论带宽通常远高于此值）。  
+
+
+#### **(3) 缓存效率低：缓存未有效缓解内存延迟**  
+- **L1/TEX Cache Throughput=1.04%**（极低）：L1 缓存和纹理缓存的命中率或访问效率极低，说明数据访问的局部性差（如线程访问的地址分散，无法利用缓存的空间局部性）。  
+- **L2 Cache Throughput=12.40%**（与 Memory Throughput 一致）：L2 缓存承担了大部分内存访问，但因 L1 缓存失效频繁，L2 需处理大量请求，导致其吞吐量与内存子系统总吞吐量绑定。  
+
+
+#### **(4) 硬件限制：频率与架构瓶颈**  
+- **DRAM Frequency=6.40 GHz**、**SM Frequency=1.46 GHz**：DRAM 和 SM 的工作频率可能受限于硬件的最大频率（如功耗墙、散热限制），无法达到理论峰值频率。  
+- **CC 8.6（Ampere 架构）**：虽然 Ampere 架构支持高带宽（如 936 GB/s），但实际利用率需依赖任务的访问模式和数据量。当前任务可能未触发架构的高带宽优化机制（如稀疏访问、张量核心加速）。  
+
+
+### **总结：数值偏小的本质**  
+各吞吐量指标数值偏小的核心是 **“任务负载与硬件特性的不匹配”**：  
+- 内存访问模式（合并访问）虽优于非合并，但数据量小、访问模式不完美，导致 DRAM 和缓存的实际带宽远低于理论峰值；  
+- 计算单元因内存阻塞而空闲，计算吞吐量极低；  
+- 硬件频率受限于设计约束，无法进一步提升。  
+
+**关键改进方向**：  
+- 增大数据量或调整访问模式（如增大线程块尺寸、优化内存布局），触发 DRAM 的高带宽模式；  
+- 提升数据局部性（如调整线程访问的地址步长），提高 L1/L2 缓存命中率；  
+- 增加计算负载（如在内存访问间隙插入计算操作），减少内存阻塞，提升计算单元利用率。
+
 ## 7. 算术强度（Arithmetic Intensity）
 
 ### **内容概括**  
@@ -307,8 +468,8 @@ __global__ void copyDataCoalesced(float *in, float *out, int n) {
 - **数据类型与字节数**：假设为 float32（4 字节/元素），每个元素的总字节数为 $2 \times 4 = 8$（读取 2 次，每次 4 字节）。  
 - **算术强度计算**：  
   - 最坏情况：1 次运算 / 8 字节 = 1/8；  
-  - 最好情况：1 次运算 / 16 字节（假设写入不计入）= 1/16；  
-- **限制类型**：因算术强度（1/16 < 1）远低于 1，判定为 **内存受限**（Memory Bound）。  
+  - 最好情况：1 次运算 / 4 字节（假设写入不计入）= 1/4；  
+- **限制类型**：因算术强度（1/4 < 1）远低于 1，判定为 **内存受限**（Memory Bound）。  
 
 ![Arithmetic intensity](https://pic3.zhimg.com/v2-34b0a490dccd1d4c7b36227eeb4f6d6a_1440w.jpg)
 
@@ -333,12 +494,10 @@ __global__ void copyDataCoalesced(float *in, float *out, int n) {
 - **字节数计算**：每个元素的总字节数为 $2 \times 2 = 4$（读取 2 次，每次 2 字节）。  
 - **算术强度计算**：  
   - 最坏情况：1 次运算 / 4 字节 = 1/4；  
-  - 最好情况：1 次运算 / 8 字节（假设写入不计入）= 1/2；  
-- **限制类型**：算术强度（1/4 ~ 1/2）仍小于 1，但相比 float32 场景（1/8 ~ 1/16），**内存限制程度减轻**。  
-
+  - 最好情况：1 次运算 / 2 字节（假设写入不计入）= 1/2；    
 
 ### **总结**  
 三张图片通过具体案例（ReLU 逐元素计算）和通用概念（算术强度），系统展示了 GPU 计算中 **数据类型、操作类型对性能限制的影响**：  
-- float32 场景下，ReLU 逐元素计算因算术强度极低（1/16），完全受限于内存带宽；  
+- float32 场景下，ReLU 逐元素计算因算术强度极低（1/8），完全受限于内存带宽；  
 - float16 场景下，算术强度提升（1/4 ~ 1/2），内存限制程度减轻；  
 - 通用算术强度指标（FLOPS/Bytes）可量化算法的数学与内存操作平衡，指导性能优化（如选择更高效的数据类型或调整操作模式）。
