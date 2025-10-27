@@ -97,7 +97,7 @@ void radix_sort_iter(unsigned int* input, unsigned int* output,
 
     if (i < N) {
         unsigned int numOnesBefore = bits[i];
-        unsigned int numOnesTotal = bits[N-1] + ((bits[N-1] >> (N-1)) & 1); // 常见计算总1数的方法，图中代码可能有误
+        unsigned int numOnesTotal = bits[N];
         unsigned int dst = (bit == 0) ? (i - numOnesBefore) : (N - numOnesTotal + numOnesBefore);
         output[dst] = key;
     }
