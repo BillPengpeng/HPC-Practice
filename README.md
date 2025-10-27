@@ -106,8 +106,9 @@
   - LeetGPU Notes: Count Array Element / Sigmoid / Swish-Gated / 1D Convolution / Rainbow Table / Matrix Multiplication [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_2.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_2.md)
   - LeetGPU Notes: Reduce / Softmax [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_1.md)
   - LeetGPU Notes: 2D Convolution / 2D Max Pooling [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_2.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_2.md)
-  - LeetGPU Notes: Batch Normalization / RMS Normalization [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_3.md)
-- ARM NEON Notes,[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_3.md)
+  - LeetGPU Notes: Batch Normalization / RMS Normalization [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_3.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_3.md)
+  - LeetGPU Notes: Histogramming [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_4.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_4.md)
+- ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
 
 ## 3 Computer System 
