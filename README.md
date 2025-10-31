@@ -36,6 +36,7 @@
   - [stanford-LLM Notes: Model parallelism / Pipeline parallel / Tensor parallel / Sequence parallel (Lecture 7)](./course/AI/CS336/stanford_LLM_notes_08_Parallelism_Part_2.md)
   - [stanford-LLM Notes: collective_operations / data_parallelism / tensor_parallelism / pipeline_parallelism (Lecture 8)](./course/AI/CS336/stanford_LLM_notes_09_Parallelism.md)
   - [stanford-LLM Notes: Nsight Systems Profiler / Mixed Precision (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_1.md)
+  - [stanford-LLM Notes: Benchmarking PyTorch Attention / Weighted Sum (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_2.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
