@@ -456,3 +456,20 @@ likely need to adjust tile sizes depending on the input sizes.
 # 24GB RTX 4090 最大sequence_length=8192
 test_timing_flash_forward_backward: 70.00166320800781
 ```
+
+## 1.3.4 OPTIONAL: Triton backward pass
+
+**TILE=16 + torch.compile + flash_bwd_kernel_v1**
+
+|   seq_len |   d_model |   forward_time |   forward_backward_time |
+|----------:|----------:|---------------:|------------------------:|
+|       128 |        16 |      0.014692  |                1.22391  |
+|       256 |        16 |      0.0197907 |                0.875767 |
+|       512 |        16 |      0.0298293 |                0.989293 |
+|      1024 |        16 |      0.0597047 |                1.17282  |
+|      2048 |        16 |      0.112678  |                1.08164  |
+|      4096 |        16 |      0.251987  |                1.23906  |
+|      8192 |        16 |      0.657475  |                2.93112  |
+|     16384 |        16 |      2.37966   |               10.7123   |
+|     32768 |        16 |      9.33631   |               40.8002   |
+|     65536 |        16 |    nan         |              nan        |
