@@ -356,7 +356,7 @@ lengths of various powers of 2 from 128 up to 65536, embedding dimension sizes o
 of 2 from 16 up to size 128, and precisions of torch.bfloat16 and torch.float32. You will
 likely need to adjust tile sizes depending on the input sizes.
 
-**24GB RTX 4090 scaled_dot_product_attention_func*
+**24GB RTX 4090 scaled_dot_product_attention_func**
 
 **F32**
 

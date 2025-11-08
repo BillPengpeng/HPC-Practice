@@ -293,6 +293,10 @@
     *   `t`: 张量并行大小 (tensor parallel size)
     *   **解读**：张量并行（`t > 1`）可以**线性减少**注意力二次项的内存（除以`t`），但**常数项部分减少有限**。因此，常数项代表的线性部分成为新的主要瓶颈。
 
+![Attention计算](https://pica.zhimg.com/v2-2cc3595d70551d89a03fa02f4b1c2c6e_1440w.jpg)
+![FFN计算](https://picx.zhimg.com/v2-9e6cf890be67f2304e68b8fefa5b084f_1440w.jpg)
+[[细读经典]megatron-减少大Transformer模型中的激活重计算-1](https://zhuanlan.zhihu.com/p/715284622)
+
 #### 3. 核心优化方向
 *   **重计算（Recomputation）**：也称为梯度检查点（Gradient Checkpointing）。这是最主流的优化方法，如第三张图所述：“**we can drop this term via recomputation**”。策略是：在前向传播时**不保存**那些计算量巨大的中间结果（尤其是注意力二次项），在反向传播需要时**重新计算**它们。这是一种**用计算时间换内存空间**的经典权衡。
 *   **模型并行**：

@@ -38,6 +38,7 @@
   - [stanford-LLM Notes: Nsight Systems Profiler / Mixed Precision (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_1.md)
   - [stanford-LLM Notes: Benchmarking PyTorch Attention / Weighted Sum (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_2.md)
   - [stanford-LLM Notes: FlashAttention-2 Forward Pass / Backward pass with recomputation (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_3.md)
+  - [stanford-LLM Notes: PyTorch collective_operations / Naïve DDP / Overlapping Computation (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_4.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
