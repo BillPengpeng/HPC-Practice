@@ -12,6 +12,7 @@
   - [mmpretrain](https://github.com/open-mmlab/mmpretrain/tree/main)
   - [transformers](https://github.com/huggingface/transformers)
   - [tiktokenizer](https://tiktokenizer.vercel.app)
+  - [scaling-book](https://jax-ml.github.io/scaling-book/)
 - Stanford LLM Notes
   - [stanford-LLM Notes: Overview / tokenization (Lecture 1)](./course/AI/CS336/stanford_LLM_notes_01_Overview_tokenization.md)
   - [stanford-LLM Notes: tensors_memory / tensor_operations / tensor_einops (Lecture 2)](./course/AI/CS336/stanford_LLM_notes_02_PyTorch_resource_accounting_Part_1.md)
@@ -39,6 +40,13 @@
   - [stanford-LLM Notes: Benchmarking PyTorch Attention / Weighted Sum (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_2.md)
   - [stanford-LLM Notes: FlashAttention-2 Forward Pass / Backward pass with recomputation (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_3.md)
   - [stanford-LLM Notes: PyTorch collective_operations / Naïve DDP / Overlapping Computation (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_4.md)
+  - [stanford-LLM Notes: 4D Parallelism / Optimizer State Sharding (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_5.md)
+  - [stanford-LLM Notes: Data scaling / Neural (LLM) scaling (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_1.md)
+  - [stanford-LLM Notes: Joint data-model scaling laws / Chinchilla (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_2.md)
+- scaling-book Notes
+  - [scaling-book Notes: data parallelism / FSDP / tensor parallelism / Combining FSDP and Tensor Parallelism (Part 5)](./course/AI/scaling-book/scaling_book_notes_01_training_Part_1.md)
+  - [scaling-book Notes: Combining FSDP and Tensor Parallelism Example / Pipelining / Scaling Across Pods (Part 5)](./course/AI/scaling-book/scaling_book_notes_01_training_Part_2.md)
+  - [scaling-book Notes: Background & goals / High-Level Outline (Part 0)](./course/AI/scaling-book/scaling_book_notes_02_intro.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
