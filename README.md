@@ -42,7 +42,8 @@
   - [stanford-LLM Notes: PyTorch collective_operations / Naïve DDP / Overlapping Computation (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_4.md)
   - [stanford-LLM Notes: 4D Parallelism / Optimizer State Sharding (Assignment 2)](./course/AI/CS336/stanford_LLM_notes_10_Assignment_2_Part_5.md)
   - [stanford-LLM Notes: Data scaling / Neural (LLM) scaling (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_1.md)
-  - [stanford-LLM Notes: Joint data-model scaling laws / Chinchilla (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_2.md)
+  - [stanford-LLM Notes: Joint data-model scaling laws (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_2.md)
+  - [stanford-LLM Notes: Cerebras-GPT、MiniCPM、DeepSeek有关scaling laws (Lecture 11)](./course/AI/CS336/stanford_LLM_notes_12_Scaling_laws_case_study.md)
 - scaling-book Notes
   - [scaling-book Notes: data parallelism / FSDP / tensor parallelism / Combining FSDP and Tensor Parallelism (Part 5)](./course/AI/scaling-book/scaling_book_notes_01_training_Part_1.md)
   - [scaling-book Notes: Combining FSDP and Tensor Parallelism Example / Pipelining / Scaling Across Pods (Part 5)](./course/AI/scaling-book/scaling_book_notes_01_training_Part_2.md)
