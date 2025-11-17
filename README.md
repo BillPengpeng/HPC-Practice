@@ -49,6 +49,7 @@
   - [scaling-book Notes: Combining FSDP and Tensor Parallelism Example / Pipelining / Scaling Across Pods (Part 5)](./course/AI/scaling-book/scaling_book_notes_01_training_Part_2.md)
   - [scaling-book Notes: Background & goals / High-Level Outline (Part 0)](./course/AI/scaling-book/scaling_book_notes_02_intro.md)
   - [scaling-book Notes: TPU Rooflines (Part 2)](./course/AI/scaling-book/scaling_book_notes_03_Rooflines.md)
+  - [scaling-book Notes: TPU TensorCore / TPU Networking / TPU Specs (Part 3)](./course/AI/scaling-book/scaling_book_notes_04_TPUs.md)
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
