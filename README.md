@@ -87,6 +87,7 @@
   - [triton-doc](https://triton-lang.cn/main/index.html)
   - [scaling-book](https://jax-ml.github.io/scaling-book/)
   ---
+  
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
   - [PMPP Notes: Heterogeneous parallel computing / Challenges (Chapter 1)](./course/CUDA/PMPP/PMPP_notes_02_Introduce.md)
@@ -138,6 +139,7 @@
   - [scaling-book Notes: TPU TensorCore / TPU Networking / TPU Specs / VPU / Scalar Core (Part 3)](./course/TPU/scaling-book/scaling_book_notes_04_TPUs.md)
   - [scaling-book Notes: GPU specs / GPUs vs. TPUs (Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs.md)
   - [scaling-book Notes: GPU Networking (Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs_networking.md)
+  - [scaling-book Notes: GPU Collectives（待完善）(Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs_collectives.md)
 ---
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
