@@ -45,6 +45,10 @@
   - [stanford-LLM Notes: Data scaling / Neural (LLM) scaling (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_1.md)
   - [stanford-LLM Notes: Joint data-model scaling laws (Lecture 9)](./course/AI/CS336/stanford_LLM_notes_11_Scaling_laws_basic_Part_2.md)
   - [stanford-LLM Notes: Cerebras-GPT、MiniCPM、DeepSeek有关scaling laws (Lecture 11)](./course/AI/CS336/stanford_LLM_notes_12_Scaling_laws_case_study.md)
+  - [stanford-LLM Notes: landscape / arithmetic_intensity_of_inference / throughput_and_latency (Lecture 10)](./course/AI/CS336/stanford_LLM_notes_13_Inference_Part1.md)
+  - [stanford-LLM Notes: reduce_kv_cache_size / speculative_sampling / continuous_batching / paged_attention (Lecture 10)](./course/AI/CS336/stanford_LLM_notes_13_Inference_Part2.md)
+  - [stanford-LLM Notes: perplexity / knowledge + instruction_following + agent + pure_reasoning_benchmarks (Lecture 12)](./course/AI/CS336/stanford_LLM_notes_14_Evaluation.md)
+  - [stanford-LLM Notes: Pretraining data / Mid-training + post-training data (Lecture 13)](./course/AI/CS336/stanford_LLM_notes_15_Data.md)
   ---
 
 - ZJU LLM Notes
