@@ -49,6 +49,7 @@
   - [stanford-LLM Notes: reduce_kv_cache_size / speculative_sampling / continuous_batching / paged_attention (Lecture 10)](./course/AI/CS336/stanford_LLM_notes_13_Inference_Part2.md)
   - [stanford-LLM Notes: perplexity / knowledge + instruction_following + agent + pure_reasoning_benchmarks (Lecture 12)](./course/AI/CS336/stanford_LLM_notes_14_Evaluation.md)
   - [stanford-LLM Notes: Pretraining data / Mid-training + post-training data (Lecture 13)](./course/AI/CS336/stanford_LLM_notes_15_Data.md)
+  - [stanford-LLM Notes: filtering_algorithms / filtering_applications / deduplication (Lecture 14)](./course/AI/CS336/stanford_LLM_notes_16_Data.md)
   ---
 
 - ZJU LLM Notes
