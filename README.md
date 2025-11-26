@@ -50,6 +50,7 @@
   - [stanford-LLM Notes: perplexity / knowledge + instruction_following + agent + pure_reasoning_benchmarks (Lecture 12)](./course/AI/CS336/stanford_LLM_notes_14_Evaluation.md)
   - [stanford-LLM Notes: Pretraining data / Mid-training + post-training data (Lecture 13)](./course/AI/CS336/stanford_LLM_notes_15_Data.md)
   - [stanford-LLM Notes: filtering_algorithms / filtering_applications / deduplication (Lecture 14)](./course/AI/CS336/stanford_LLM_notes_16_Data.md)
+  - [stanford-LLM Notes: Filtering Common Crawl (Assignment 4)](./course/AI/CS336/stanford_LLM_notes_17_Assignment_4_Part_1.md)
   ---
 
 - ZJU LLM Notes
