@@ -53,6 +53,9 @@
   - [stanford-LLM Notes: Filtering Common Crawl (Assignment 4)](./course/AI/CS336/stanford_LLM_notes_17_Assignment_4_Part_1.md)
   - [stanford-LLM Notes: Deduplication / filter data for language modeling (Assignment 4)](./course/AI/CS336/stanford_LLM_notes_17_Assignment_4_Part_2.md)
   - [stanford-LLM Notes: Scaling Laws from IsoFLOPs profiles (Assignment 3)](./course/AI/CS336/stanford_LLM_notes_18_Assignment_3.md)
+  - [stanford-LLM Notes: SFT Data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_1.md)
+  - [stanford-LLM Notes: RLHF and data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_2.md)
+  - [stanford-LLM Notes: PPO / DPO / Variants (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_3.md)
   ---
 
 - ZJU LLM Notes
