@@ -618,7 +618,7 @@ shaped_rewards[batch_indices, terminal_positions] += rewards
 
 ---
 
-## 打印代码（带详细注释）
+### 打印代码（带详细注释）
 
 ```python
 def _estimate_advantage(
