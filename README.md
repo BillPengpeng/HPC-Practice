@@ -56,6 +56,8 @@
   - [stanford-LLM Notes: SFT Data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_1.md)
   - [stanford-LLM Notes: RLHF and data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_2.md)
   - [stanford-LLM Notes: PPO / DPO / Variants (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_3.md)
+  - [stanford-LLM Notes: PPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RLHF_Alignment_Part_1.md)
+
   ---
 
 - ZJU LLM Notes
