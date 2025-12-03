@@ -53,12 +53,13 @@
   - [stanford-LLM Notes: Filtering Common Crawl (Assignment 4)](./course/AI/CS336/stanford_LLM_notes_17_Assignment_4_Part_1.md)
   - [stanford-LLM Notes: Deduplication / filter data for language modeling (Assignment 4)](./course/AI/CS336/stanford_LLM_notes_17_Assignment_4_Part_2.md)
   - [stanford-LLM Notes: Scaling Laws from IsoFLOPs profiles (Assignment 3)](./course/AI/CS336/stanford_LLM_notes_18_Assignment_3.md)
-  - [stanford-LLM Notes: SFT Data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_1.md)
-  - [stanford-LLM Notes: RLHF and data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_2.md)
-  - [stanford-LLM Notes: PPO / DPO / Variants (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_RLHF_Alignment_Part_3.md)
-  - [stanford-LLM Notes: PPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RLHF_Alignment_Part_1.md)
-  - [stanford-LLM Notes: GRPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RLHF_Alignment_Part_2.md)
-  - [stanford-LLM Notes: Case studies: Deepseek R1 & Kimi K1.5 & Qwen 3 (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RLHF_Alignment_Part_3.md)
+  - [stanford-LLM Notes: SFT Data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_SFT_RLHF_Alignment_Part_1.md)
+  - [stanford-LLM Notes: RLHF and data (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_SFT_RLHF_Alignment_Part_2.md)
+  - [stanford-LLM Notes: PPO / DPO / Variants (Lecture 15)](./course/AI/CS336/stanford_LLM_notes_19_SFT_RLHF_Alignment_Part_3.md)
+  - [stanford-LLM Notes: PPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RL_Alignment_Part_1.md)
+  - [stanford-LLM Notes: GRPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RL_Alignment_Part_2.md)
+  - [stanford-LLM Notes: Case studies: Deepseek R1 & Kimi K1.5 & Qwen 3 (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RL_Alignment_Part_3.md)
+  - [stanford-LLM Notes: Reasoning with Language Models / Measuring Zero-Shot MATH Performance (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_1.md)
   ---
 
 - ZJU LLM Notes
