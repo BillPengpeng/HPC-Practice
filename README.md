@@ -60,6 +60,7 @@
   - [stanford-LLM Notes: GRPO in practice (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RL_Alignment_Part_2.md)
   - [stanford-LLM Notes: Case studies: Deepseek R1 & Kimi K1.5 & Qwen 3 (Lecture 16)](./course/AI/CS336/stanford_LLM_notes_20_RL_Alignment_Part_3.md)
   - [stanford-LLM Notes: Reasoning with Language Models / Measuring Zero-Shot MATH Performance (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_1.md)
+  - [stanford-LLM Notes: Supervised Finetuning for MATH (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_2.md)
   ---
 
 - ZJU LLM Notes
