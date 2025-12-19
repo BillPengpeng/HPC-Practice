@@ -570,8 +570,21 @@ python sft_experiment.py
 using the Qwen 2.5 Math 1.5B base model, varying the number of unique examples for SFT in the range {128, 256, 512, 1024}, 
 along with using the full dataset. Tune the learning rate and
 batch size to achieve at least 15% validation accuracy when using the full dataset.
-- 采用gsm8k体验流程，Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples128_gpu2  (Eval: iter: 120 correct_num: 1070 error_num: 249)
-
+- 采用gsm8k体验流程
+    - Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples128_gpu2  (Eval: iter: 120 correct_num: 1070 error_num: 249)
+      - {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 1030, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 114, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 175}
+    - Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples256_gpu1 
+      - iter96 {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 902, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 352, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 65}
+    - Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples512_gpu1 
+      - iter96 {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 1011, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 206, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 102}
+    - Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples1024_gpu1 
+      - iter48 {'{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 1185, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 25, '{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 109}
+      - iter12 {'{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 1245, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 55, '{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 19}
+    - Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples10240_gpu1 全部数据
+      - iter108 {'{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 613, '{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 590, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 116}
+      - iter96 {'{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 623, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 120, '{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 576}
+      
+      
 2. Filter the reasoning SFT examples to only include examples that produce the correct answer. Run
 SFT on the (full) filtered dataset and report the size of the filtered dataset and the validation
 accuracy you achieve.
@@ -597,3 +610,10 @@ accuracy you achieve.
 7124 {'format_reward': 1.0, 'answer_reward': 0.0, 'reward': 0.0}
 7137 {'format_reward': 1.0, 'answer_reward': 0.0, 'reward': 0.0}
 ```
+-  Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples10240_gpu1_2nd
+   - iter120 {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 598, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 625, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 96}
+   - iter108 {'{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 604, '{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 614, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 101}
+
+- Qwen2.5-Math-1.5B_bs1_asteps64_niters125_nsamples10240_gpu1_3rd 延长训练时长
+   - iter800 {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 762, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 522, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 35}
+   - iter700 {'{"answer_reward": 1.0, "format_reward": 1.0, "reward": 1.0}': 750, '{"answer_reward": 0.0, "format_reward": 0.0, "reward": 0.0}': 533, '{"answer_reward": 0.0, "format_reward": 1.0, "reward": 0.0}': 36}
