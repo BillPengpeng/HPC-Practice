@@ -62,6 +62,7 @@
   - [stanford-LLM Notes: Reasoning with Language Models / Measuring Zero-Shot MATH Performance (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_1.md)
   - [stanford-LLM Notes: Supervised Finetuning for MATH (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_2.md)
   - [stanford-LLM Notes: Expert Iteration for MATH / Primer on Policy Gradients (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_3.md)
+  - [stanford-LLM Notes: Group Relative Policy Optimization (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_4.md)
   ---
 
 - ZJU LLM Notes

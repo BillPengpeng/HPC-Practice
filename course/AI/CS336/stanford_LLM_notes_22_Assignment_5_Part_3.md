@@ -47,6 +47,15 @@ combinations of these hyperparameters. Just enough to draw conclusions about eac
 entropy of the model’s reponses over training. Make sure to have vLLM terminate generations at the
 second answer tag </answer>, as done in the SFT section.
 
+- 采用gsm8k体验流程
+```python
+Eval: steps: 0 correct_num: 610 error_num: 709
+Eval: steps: 1 correct_num: 952 error_num: 367
+Eval: steps: 2 correct_num: 961 error_num: 358
+Eval: steps: 3 correct_num: 942 error_num: 377
+Eval: steps: 4 correct_num: 910 error_num: 409
+```
+
 ## 6 Primer on Policy Gradients
 
 ### 内容概况
