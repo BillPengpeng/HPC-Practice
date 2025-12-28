@@ -65,6 +65,15 @@
   - [stanford-LLM Notes: Group Relative Policy Optimization (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_4.md)
   ---
 
+- Umar Jamil Notes
+  - [Umar Jamil Notes: Diffusion算法流程 / Latent Diffusion Model / Variational Autoencoder (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part1.md)
+  - [Umar Jamil Notes: encoder源码分析 / decoder源码分析 / attention源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part2.md)
+  - [Umar Jamil Notes: clip源码分析 / diffusion U-Net源码解释 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part3.md)
+  - [Umar Jamil Notes: pipeline源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part4.md)
+  - [Umar Jamil Notes: ddpm源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part5.md)
+
+  ---
+
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
