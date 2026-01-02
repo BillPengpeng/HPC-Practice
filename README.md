@@ -12,6 +12,7 @@
   - [mmpretrain](https://github.com/open-mmlab/mmpretrain/tree/main)
   - [transformers](https://github.com/huggingface/transformers)
   - [tiktokenizer](https://tiktokenizer.vercel.app)
+
 ---
 
 - Stanford LLM Notes
@@ -63,22 +64,25 @@
   - [stanford-LLM Notes: Supervised Finetuning for MATH (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_2.md)
   - [stanford-LLM Notes: Expert Iteration for MATH / Primer on Policy Gradients (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_3.md)
   - [stanford-LLM Notes: Group Relative Policy Optimization (Assignment 5)](./course/AI/CS336/stanford_LLM_notes_22_Assignment_5_Part_4.md)
-  ---
+  
+---
 
 - Umar Jamil Notes
   - [Umar Jamil Notes: Diffusion算法流程 / Latent Diffusion Model / Variational Autoencoder (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part1.md)
-  - [Umar Jamil Notes: encoder源码分析 / decoder源码分析 / attention源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part2.md)
-  - [Umar Jamil Notes: clip源码分析 / diffusion U-Net源码解释 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part3.md)
+  - [Umar Jamil Notes: encoder & decoder & attention源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part2.md)
+  - [Umar Jamil Notes: clip & diffusion U-Net源码解释 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part3.md)
   - [Umar Jamil Notes: pipeline源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part4.md)
   - [Umar Jamil Notes: ddpm源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part5.md)
-
-  ---
+  - [Umar Jamil Notes: model & train & dataset源码分析 (pytorch_transformer)](./course/AI/Umar_Jamil/Umar_Jamil_notes_02_pytorch_transformer.md)
+  - [Umar Jamil Notes: Transformer vs LLaMA / Grouped Multi-Query Attention (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part1.md)
+---
 
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
   - [Hugging_Face Encoder-only代表性方法: Bert / Bert下游任务 / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_03_Hugging_Face_Bert有关模型架构.md)
   - [Hugging_Face Encoder-Decoder代表性方法：T5 / BART](./course/AI/ZJU_LLM/LLM_notes_04_Hugging_Face_T5_BART.md)
+
 ---
 
 - MLSys Notes
@@ -92,6 +96,7 @@
   - [CMU-DLSys Notes: Initialization / Normalization / Regularization (Lecture8)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_06_Normalization.md)
   - [CMU-DLSys Notes: Neural Network Library Abstractions (Lecture7)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_07_Neural_Network_Library_Abstractions.md)
   - [CMU-DLSys Notes: Convolutional Networks / Convolutions as matrix multiplication (Lecture10)](./course/AI/CMU_10-414-714/CMU-DLSys_notes_08_Convolutional_Networks.md)
+
 ---
 
 - CV Notes
@@ -101,6 +106,8 @@
   - [Self-supervised Notes：MoCo系列 / SimCLR / BYOL / SWAV / DenseCL / SimSiam](./course/AI/CV/CV_notes_04_经典对比学习自监督算法.md)
   - [Self-supervised Notes：MAE / BeiT V1 & V2 / SimMIM / MixMIM / MFF](./course/AI/CV/CV_notes_05_经典MIM自监督算法.md)
   - [Multimodal Notes：CLIP / Chinese CLIP / BLIP V1 & V2](./course/AI/CV/CV_notes_06_经典多模态自监督算法.md)
+
+---
 
 ## 2 Parallel Programming
 
@@ -113,7 +120,8 @@
   - [cuda-math-api](https://docs.nvidia.com/cuda/cuda-math-api/index.html)
   - [triton-doc](https://triton-lang.cn/main/index.html)
   - [scaling-book](https://jax-ml.github.io/scaling-book/)
-  ---
+
+---
   
 - PMPP Notes 
   - [PMPP Notes: Volta/Turing/Ampere简介 / CUDA9到CUDA11演进 (Perface)](./course/CUDA/PMPP/PMPP_notes_01_Perface.md)
@@ -138,7 +146,9 @@
   - [PMPP Notes: Prefix sum (Chapter 11)](./course/CUDA/PMPP/PMPP_notes_12_Prefix_sum.md)
   - [PMPP Notes: Merge (Chapter 12)](./course/CUDA/PMPP/PMPP_notes_13_Merge.md)
   - [PMPP Notes: Sorting (Chapter 13)](./course/CUDA/PMPP/PMPP_notes_14_Sorting.md)
+
 ---
+
 - CUDA MODE Notes
   - [CUDA MODE Notes: PMPP Ch1 Introduction / PMPP Ch2 Heterogeneous data parallel computing (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch1-2.md) 
   - [CUDA MODE Notes: PMPP Ch3 Multidimensional grids and data (Lecture 2)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_01_PMPP_Ch3.md) 
@@ -148,7 +158,9 @@
   - [CUDA MODE Notes: DRAM/SRAM / Latency / **Throughput** [关注Memory Throughput] / Occupancy / Arithmetic Intensity (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part1.md) 
   - [CUDA MODE Notes: **Minimize control divergence** [关注Branch] / **Thread Coarsening** [关注Memory Throughput] / Privatization (Lecture 8)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
   - [CUDA MODE Notes: **Reduction** [关注Branch & L1/TEX Cache] (Lecture 9)](./course/CUDA/CUDA_MODE/CUDA_MODE_notes_03_Cuda_Performance_Checklist_Part2.md) 
+
 ---
+
 - LeetGPU Notes
   - LeetGPU Notes: Vector Addition [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_cuda.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_01_Vector_Addition_triton.md)
   - LeetGPU Notes: ReLU / Leaky ReLU / Color Inversion / Matrix Copy / Matrix Transpose / Count 2D Array Element / Reverse Array [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_cuda_Part_1.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_02_easy_triton_Part_1.md)
@@ -157,7 +169,9 @@
   - LeetGPU Notes: 2D Convolution / 2D Max Pooling [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_2.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_2.md)
   - LeetGPU Notes: Batch Normalization / RMS Normalization [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_3.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_3.md)
   - LeetGPU Notes: Histogramming / Dot Product / Mean Squared Error [cuda](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_cuda_Part_4.md),[triton](./course/CUDA/LeetGPU/LeetGPU_notes_03_medium_triton_Part_4.md)
+
 ---
+
 - scaling-book Notes
   - [scaling-book Notes: data parallelism / FSDP / tensor parallelism / Combining FSDP and Tensor Parallelism (Part 5)](./course/TPU/scaling-book/scaling_book_notes_01_training_Part_1.md)
   - [scaling-book Notes: Combining FSDP and Tensor Parallelism Example / Pipelining / Scaling Across Pods (Part 5)](./course/TPU/scaling-book/scaling_book_notes_01_training_Part_2.md)
@@ -167,9 +181,13 @@
   - [scaling-book Notes: GPU specs / GPUs vs. TPUs (Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs.md)
   - [scaling-book Notes: GPU Networking (Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs_networking.md)
   - [scaling-book Notes: GPU Collectives（待完善）(Part 12)](./course/TPU/scaling-book/scaling_book_notes_05_GPUs_collectives.md)
+
 ---
+
 - ARM NEON Notes
   - [ARM NEON基础使用: 基础数据类型 / 基本函数 / 编译和优化](./course/ARM/notes/ARM_NEON_notes_01_NEON基本操作.md)
+
+---
 
 ## 3 Computer System 
 
@@ -179,6 +197,7 @@
   - [一生一芯](https://ysyx.oscc.cc/)
   - [NJU-OS](https://jyywiki.cn/OS/2025/)
   - [MIT-OS](https://pdos.csail.mit.edu/6.828/2024/index.html)
+
 ---
 
 - ICS-PA2024 & YSYX Notes
@@ -191,7 +210,8 @@
   - [NJU-PA Notes: RISC-V指令集基础（RISC-V寄存器 / 指令格式）](./course/Computer_System/notes/YSYX_notes_02_RISCV指令集基础.md)
   - [NJU-PA Notes: PA3要点（系统编程 / 虚拟文件系统）](./course/Computer_System/notes/YSYX_notes_03_PA3要点.md)
   - [NJU-PA Notes: PA4要点（虚存管理 / 用户进程切换）](./course/Computer_System/notes/YSYX_notes_04_PA4要点.md)
-  ---
+
+---
 
 - NJU_OS2025 Notes
   - [NJU-OS Notes: 应用视角 / 硬件视角 / 数学视角的操作系统](./course/OS/NJU_OS2025/NJU_OS_notes_01_绪论.md)
@@ -214,7 +234,8 @@
   - [NJU-OS Notes: FLASH、DDR对比 / SSD/优盘/TF卡内计算机系统 / 块设备读写与BIO](./course/OS/NJU_OS2025/NJU_OS_notes_18_存储设备原理.md)
   - [NJU-OS Notes: linux目录树关联API / VFS层与文件系统驱动层分工 / mount/loopback协同](./course/OS/NJU_OS2025/NJU_OS_notes_19_目录树管理API.md)
   - [NJU-OS Notes: FAT文件系统 / ex2文件系统 / 崩溃一致性](./course/OS/NJU_OS2025/NJU_OS_notes_20_文件系统实现.md)
-  ---
+
+---
 
 - MIT_6.S081 Notes
   - [MIT-OS Notes: XV6 Shell实现源码解析](./course/OS/MIT_6.S081/MIT_XV6_notes_01_XV6_Shell.md)
@@ -233,6 +254,8 @@
   - [MIT-OS Notes: XV6 Sleep and wakeup (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Sleep_wakeup.md)
   - [MIT-OS Notes: XV6 Pipes / Wait, exit, and kill / Process Locking (Chapter 7)](./course/OS/MIT_6.S081/MIT_XV6_notes_09_XV6_Pipes.md)
   - [MIT-OS Notes: XV6 Concurrency revisited (Chapter 9)](./course/OS/MIT_6.S081/MMIT_XV6_notes_10_XV6_Concurrency_revisited.md)
+
+---
 
 ## 4 Compiler
 - Related course
