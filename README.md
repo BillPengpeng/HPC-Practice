@@ -76,6 +76,7 @@
   - [Umar Jamil Notes: model & train & dataset源码分析 (pytorch_transformer)](./course/AI/Umar_Jamil/Umar_Jamil_notes_02_pytorch_transformer.md)
   - [Umar Jamil Notes: Transformer vs LLaMA / Grouped Multi-Query Attention (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part1.md)
   - [Umar Jamil Notes: rope & SelfAttention & SwiGLU & KV cache & inference源码分析 (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part2.md)
+  - [Umar Jamil Notes: Contractive pre-training / SiglipVisionEmbeddings & SiglipMLP源码分析 (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part1.md)
 ---
 
 - ZJU LLM Notes
