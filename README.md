@@ -68,15 +68,17 @@
 ---
 
 - Umar Jamil Notes
-  - [Umar Jamil Notes: Diffusion算法流程 / Latent Diffusion Model / Variational Autoencoder (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part1.md)
-  - [Umar Jamil Notes: encoder & decoder & attention源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part2.md)
-  - [Umar Jamil Notes: clip & diffusion U-Net源码解释 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part3.md)
-  - [Umar Jamil Notes: pipeline源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part4.md)
-  - [Umar Jamil Notes: ddpm源码分析 (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part5.md)
-  - [Umar Jamil Notes: model & train & dataset源码分析 (pytorch_transformer)](./course/AI/Umar_Jamil/Umar_Jamil_notes_02_pytorch_transformer.md)
+  - [Umar Jamil Notes: Latent Diffusion Model / Variational Autoencoder (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part1.md)
+  - [Umar Jamil Notes: stable_diffusion encoder & decoder & attention (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part2.md)
+  - [Umar Jamil Notes: stable_diffusion clip & diffusion U-Net (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part3.md)
+  - [Umar Jamil Notes: stable_diffusion pipeline (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part4.md)
+  - [Umar Jamil Notes: stable_diffusion ddpm (pytorch_stable_diffusion)](./course/AI/Umar_Jamil/Umar_Jamil_notes_01_pytorch_stable_diffusion_part5.md)
+  - [Umar Jamil Notes: Transformer (pytorch_transformer)](./course/AI/Umar_Jamil/Umar_Jamil_notes_02_pytorch_transformer.md)
   - [Umar Jamil Notes: Transformer vs LLaMA / Grouped Multi-Query Attention (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part1.md)
-  - [Umar Jamil Notes: rope & SelfAttention & SwiGLU & KV cache & inference源码分析 (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part2.md)
-  - [Umar Jamil Notes: Contractive pre-training / SiglipVisionEmbeddings & SiglipMLP源码分析 (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part1.md)
+  - [Umar Jamil Notes: LLaMA Transformer (pytorch_llama)](./course/AI/Umar_Jamil/Umar_Jamil_notes_03_pytorch_llama_part2.md)
+  - [Umar Jamil Notes: Contractive pre-training / SiglipVisionModel (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part1.md)
+  - [Umar Jamil Notes: Gemma / PaliGemmaForConditionalGeneration (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part2.md)
+  - [Umar Jamil Notes: PaliGemma 预处理 & inference / load_hf_model (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part3.md)
 ---
 
 - ZJU LLM Notes
