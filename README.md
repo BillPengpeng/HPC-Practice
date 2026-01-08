@@ -79,6 +79,8 @@
   - [Umar Jamil Notes: Contractive pre-training / SiglipVisionModel (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part1.md)
   - [Umar Jamil Notes: Gemma / PaliGemmaForConditionalGeneration (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part2.md)
   - [Umar Jamil Notes: PaliGemma 预处理 & inference / load_hf_model (pytorch_paligema)](./course/AI/Umar_Jamil/Umar_Jamil_notes_04_pytorch_paligemma_part3.md)
+  - [Umar Jamil Notes: Collective Communication / PyTorch DDP (pytorch_transformer_distributed)](./course/AI/Umar_Jamil/Umar_Jamil_notes_05_pytorch_transformer_distributed.md)
+  - [Umar Jamil Notes: Asymmetric vs Symmetric quantization / QAT (pytorch-quantization)](./course/AI/Umar_Jamil/Umar_Jamil_notes_06_pytorch_quantization.md)
 ---
 
 - ZJU LLM Notes
