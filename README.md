@@ -82,6 +82,7 @@
   - [Umar Jamil Notes: Collective Communication / PyTorch DDP (pytorch_transformer_distributed)](./course/AI/Umar_Jamil/Umar_Jamil_notes_05_pytorch_transformer_distributed.md)
   - [Umar Jamil Notes: Asymmetric vs Symmetric quantization / QAT (pytorch-quantization)](./course/AI/Umar_Jamil/Umar_Jamil_notes_06_pytorch_quantization_part1.md)
   - [Umar Jamil Notes: Pytorch PTQ & QAT (pytorch-quantization)](./course/AI/Umar_Jamil/Umar_Jamil_notes_06_pytorch_quantization_part2.md)
+  - [Umar Jamil Notes: PyTorch SVD & LoRA (pytorch-lora)](./course/AI/Umar_Jamil/Umar_Jamil_notes_07_pytorch_lora.md)
 ---
 
 - ZJU LLM Notes
