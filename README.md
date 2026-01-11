@@ -83,6 +83,9 @@
   - [Umar Jamil Notes: Asymmetric vs Symmetric quantization / QAT (pytorch-quantization)](./course/AI/Umar_Jamil/Umar_Jamil_notes_06_pytorch_quantization_part1.md)
   - [Umar Jamil Notes: Pytorch PTQ & QAT (pytorch-quantization)](./course/AI/Umar_Jamil/Umar_Jamil_notes_06_pytorch_quantization_part2.md)
   - [Umar Jamil Notes: PyTorch SVD & LoRA (pytorch-lora)](./course/AI/Umar_Jamil/Umar_Jamil_notes_07_pytorch_lora.md)
+  - [Umar Jamil Notes: online softmax / _attn_fwd_inner & _attn_fwd (triton-flash-attention)](./course/AI/Umar_Jamil/Umar_Jamil_notes_08_triton_flash_attention_part1.md)
+  - [Umar Jamil Notes: Gradient of Softmax / _attn_bwd_preprocess & _attn_bwd_dq & _attn_bwd_dk_dv (triton-flash-attention)](./course/AI/Umar_Jamil/Umar_Jamil_notes_08_triton_flash_attention_part2.md)
+  
 ---
 
 - ZJU LLM Notes
