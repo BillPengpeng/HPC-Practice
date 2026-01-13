@@ -1,4 +1,4 @@
-本文主要整理RLHF and PPO的主要内容。
+本文主要整理rlhf_ppo的主要内容。
 
 ## 9.0 - First Problem with Gradient Policy Optimization
 

@@ -89,6 +89,7 @@
   - [Umar Jamil Notes: Problems with Gradient Policy Optimization (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part2.md)
   - [Umar Jamil Notes: loss & compute_rewards & compute_advantages (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part3.md)
   - [Umar Jamil Notes: batched_forward_pass & train_minibatch & step (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part4.md)
+  - [Umar Jamil Notes: the Bradley-Terry model / dpo loss (dpo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_10_dpo.md)
   
 ---
 

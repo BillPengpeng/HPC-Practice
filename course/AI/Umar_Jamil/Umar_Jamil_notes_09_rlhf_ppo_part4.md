@@ -1,4 +1,4 @@
-本文主要整理RLHF and PPO的主要内容。
+本文主要整理rlhf_ppo的主要内容。
 
 ## 11.3 - batched_forward_pass源码分析
 
