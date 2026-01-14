@@ -90,7 +90,8 @@
   - [Umar Jamil Notes: loss & compute_rewards & compute_advantages (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part3.md)
   - [Umar Jamil Notes: batched_forward_pass & train_minibatch & step (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part4.md)
   - [Umar Jamil Notes: the Bradley-Terry model / dpo loss (dpo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_10_dpo.md)
-  
+  - [Umar Jamil Notes: interpretability engine / feature visualization / interpretability for LM (ml-interpretability)](./course/AI/Umar_Jamil/Umar_Jamil_notes_11_ml_interpretability.md)
+
 ---
 
 - ZJU LLM Notes
