@@ -91,6 +91,10 @@
   - [Umar Jamil Notes: batched_forward_pass & train_minibatch & step (rlhf-ppo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_09_rlhf_ppo_part4.md)
   - [Umar Jamil Notes: the Bradley-Terry model / dpo loss (dpo)](./course/AI/Umar_Jamil/Umar_Jamil_notes_10_dpo.md)
   - [Umar Jamil Notes: interpretability engine / feature visualization / interpretability for LM (ml-interpretability)](./course/AI/Umar_Jamil/Umar_Jamil_notes_11_ml_interpretability.md)
+  - [Umar Jamil Notes: Autoencoders / Variational Autoencoder / ELBO (vae)](./course/AI/Umar_Jamil/Umar_Jamil_notes_12_vae_part1.md)
+  - [Umar Jamil Notes: Example network / ELBO loss (vae)](./course/AI/Umar_Jamil/Umar_Jamil_notes_12_vae_part2.md)
+  - [Umar Jamil Notes: Segment Anything Task / Segment Anything Model (segment-anything)](./course/AI/Umar_Jamil/Umar_Jamil_notes_13_segment-anything_part1.md)
+  - [Umar Jamil Notes: Transformer & Output源码分析 / Interactive training / Data Engine (segment-anything)](./course/AI/Umar_Jamil/Umar_Jamil_notes_13_segment-anything_part2.md)
 
 ---
 
