@@ -95,6 +95,7 @@
   - [Umar Jamil Notes: Example network / ELBO loss (vae)](./course/AI/Umar_Jamil/Umar_Jamil_notes_12_vae_part2.md)
   - [Umar Jamil Notes: Segment Anything Task / Segment Anything Model (segment-anything)](./course/AI/Umar_Jamil/Umar_Jamil_notes_13_segment-anything_part1.md)
   - [Umar Jamil Notes: Transformer & Output源码分析 / Interactive training / Data Engine (segment-anything)](./course/AI/Umar_Jamil/Umar_Jamil_notes_13_segment-anything_part2.md)
+  - [Umar Jamil Notes: Sentence BERT / Vector DB / HNSW (retrieval-augmented-generation)](./course/AI/Umar_Jamil/Umar_Jamil_notes_14_rag.md)
 
 ---
 
