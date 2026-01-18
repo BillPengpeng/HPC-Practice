@@ -100,6 +100,11 @@
 
 ---
 
+- LLM & VLM Paper Notes
+  - [LLM & VLM Paper Notes: Abstract / Introduction / MLA / DeepSeekMoE (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part1.md)
+
+---
+
 - ZJU LLM Notes
   - [ZJU LLM Notes: LLM架构 / Prompt工程 / 参数高效微调 / 模型编辑 / 检索增强生成](./course/AI/ZJU_LLM/LLM_notes_01_LLM基础.md)
   - [Hugging_Face Bert有关Embeddings及Tokenizer: Bert / Albert / Roberta / Electra](./course/AI/ZJU_LLM/LLM_notes_02_Hugging_Face_Bert有关Embeddings及Tokenizer.md)
