@@ -24,7 +24,7 @@
   - [stanford-LLM Notes: Feedforward hyperparameters / Head dim / Aspect ratio / Regularization (Lecture 3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_3.md)
   - [stanford-LLM Notes: Z-Loss / QK Norm / Soft-Capping / GQA/MQA / SWA (Lecture 3)](./course/AI/CS336/stanford_LLM_notes_03_Architectures_hyperparameters_Part_4.md)
   - [stanford-LLM Notes: MoE/非MoE区别 / Routing / Shared experts / Train routing (Lecture 4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_1.md)
-  - [stanford-LLM Notes: Issues with MoEs / upcycling / DeepSeek MoE（待完善） (Lecture 4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_2.md)
+  - [stanford-LLM Notes: Issues with MoEs / upcycling / DeepSeek MoE（需深入探究） (Lecture 4)](./course/AI/CS336/stanford_LLM_notes_04_Mixture_of_expert_Part_2.md)
   - [stanford-LLM Notes: Unicode Encodings / UTF-8 / Subword Tokenization (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_1.md)
   - [stanford-LLM Notes: BPE Tokenizer Training / BPE Tokenizer: Encoding and Decoding (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_2.md)
   - [stanford-LLM Notes: Transformer Language Model Architecture / Einsum (Assignment 1)](./course/AI/CS336/stanford_LLM_notes_05_Assignment_1_Part_3.md)
@@ -102,6 +102,8 @@
 
 - LLM & VLM Paper Notes
   - [LLM & VLM Paper Notes: Abstract / Introduction / MLA / DeepSeekMoE (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part1.md)
+  - [LLM & VLM Paper Notes: Load Balancing / Node-Limited Routing / Multi-Token Prediction (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part2.md)
+  - [LLM & VLM Paper Notes: Compute Clusters / Training Framework (难理解) (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part3.md)
 
 ---
 
