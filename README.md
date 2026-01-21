@@ -106,6 +106,7 @@
   - [LLM & VLM Paper Notes: Compute Clusters / Training Framework (难理解) (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part3.md)
   - [LLM & VLM Paper Notes: FP8 Training (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part4.md)
   - [LLM & VLM Paper Notes: Inference and Deployment / Pre-Training Hyper-Parameters (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part5.md)
+  - [LLM & VLM Paper Notes: Pre-Training Evaluations & Discussion (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part6.md)
 ---
 
 - ZJU LLM Notes
