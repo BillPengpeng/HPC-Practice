@@ -107,7 +107,7 @@
   - [LLM & VLM Paper Notes: FP8 Training / Inference and Deployment (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part4.md)
   - [LLM & VLM Paper Notes: Pre-Training (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part5.md)
   - [LLM & VLM Paper Notes: Post-Training / Conclusion (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part6.md)
-  
+  - [LLM & VLM Paper Notes: Abstract / Introduction / DeepSeek-R1-Zero / DeepSeek-R1 (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part1.md)
 ---
 
 - ZJU LLM Notes
