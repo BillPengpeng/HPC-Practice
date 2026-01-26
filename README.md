@@ -109,6 +109,8 @@
   - [LLM & VLM Paper Notes: Post-Training / Conclusion (Deepseek V3)](./course/AI/LLM_VLM/LLM_VLM_notes_01_deepseek_v3_part6.md)
   - [LLM & VLM Paper Notes: Abstract / Introduction / DeepSeek-R1-Zero / DeepSeek-R1 (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part1.md)
   - [LLM & VLM Paper Notes: Background / Training Details (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part2.md)
+  - [LLM & VLM Paper Notes: Evaluation of DeepSeek-R1 (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part3.md)
+  - [LLM & VLM Paper Notes: More Analysis / DeepSeek-R1 Distillation / Discussion / Related Work (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part4.md)
 
 ---
 
