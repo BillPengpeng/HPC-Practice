@@ -111,8 +111,9 @@
   - [LLM & VLM Paper Notes: Background / Training Details (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part2.md)
   - [LLM & VLM Paper Notes: Evaluation of DeepSeek-R1 (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part3.md)
   - [LLM & VLM Paper Notes: More Analysis / DeepSeek-R1 Distillation / Discussion / Related Work (Deepseek R1)](./course/AI/LLM_VLM/LLM_VLM_notes_02_deepseek_r1_part4.md)
-  - [LLM & VLM Paper Notes: ParallelEmbedding / ParallelLinear / 改进RoPE (Deepseek开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part1.md)
-  - [LLM & VLM Paper Notes: MLA / Gate / Expert (Deepseek开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part2.md)
+  - [LLM & VLM Paper Notes: ParallelEmbedding / ParallelLinear / 改进RoPE (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part1.md)
+  - [LLM & VLM Paper Notes: MLA / Gate / Expert (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part2.md)
+  - [LLM & VLM Paper Notes: generate / kernel (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part3.md)
 
 ---
 
