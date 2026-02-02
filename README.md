@@ -114,6 +114,7 @@
   - [LLM & VLM Paper Notes: ParallelEmbedding / ParallelLinear / 改进RoPE (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part1.md)
   - [LLM & VLM Paper Notes: MLA / Gate / Expert (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part2.md)
   - [LLM & VLM Paper Notes: generate / kernel (Deepseek-V3开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_03_deepseek_源码_part3.md)
+  - [LLM & VLM Paper Notes: Abstract / Introduction / Architecture / Pre-training (Qwen3)](./course/AI/LLM_VLM/LLM_VLM_notes_04_qwen3_part1.md)
 
 ---
 
