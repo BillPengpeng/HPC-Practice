@@ -118,6 +118,7 @@
   - [LLM & VLM Paper Notes: Post-training / Conclusion / Appendix (Qwen3)](./course/AI/LLM_VLM/LLM_VLM_notes_04_qwen3_part2.md)
   - [LLM & VLM Paper Notes: Abstract / Introduction / Architecture / Pre-training / Post-training (Qwen2.5-VL)](./course/AI/LLM_VLM/LLM_VLM_notes_05_qwen2.5_vl_part1.md)
   - [LLM & VLM Paper Notes: Experiments / Conclusion (Qwen2.5-VL)](./course/AI/LLM_VLM/LLM_VLM_notes_05_qwen2.5_vl_part2.md)
+  - [LLM & VLM Paper Notes: Abstract / Introduction / Architecture / Pre-training (Qwen3-VL)](./course/AI/LLM_VLM/LLM_VLM_notes_06_qwen3_vl_part1.md)
 
 ---
 
