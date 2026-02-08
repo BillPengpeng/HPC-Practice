@@ -42,6 +42,8 @@ Qwen2_5_VisionRotaryEmbedding的设计体现了 RoPE 的核心思想：将绝对
 - 多模态扩展 (MRoPE)：在 Qwen2.5-VL 中，这个基础的 1D RoPE 被扩展为多模态旋转位置编码。视觉数据（图像和视频）的位置是三维的 (temporal, height, width)。因此，模型会为每个维度独立生成类似 freqs的频率张量，并最终复合形成一个3D旋转位置编码。​ 
 - 绝对时间对齐：对于视频，Qwen2.5-VL 的一个关键创新是将时间维度的位置索引与绝对时间戳（例如秒）对齐，而非简单的帧序号。这使得模型能理解不同帧率视频中的时间节奏和事件持续时间。
 
+![3D mrope](https://pic1.zhimg.com/v2-b7658c166a07d63af591ab38875a493a_1440w.jpg)
+
 ```python
 class Qwen2_5_VisionRotaryEmbedding(nn.Module):
     inv_freq: torch.Tensor  # fix linting for `register_buffer`
