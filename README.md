@@ -126,6 +126,7 @@
   - [LLM & VLM Paper Notes: Qwen2_5_VisionPatchEmbed / Qwen2_5_VisionRotaryEmbedding & Qwen2_5_VLRotaryEmbedding / Qwen2_5_VisionTransformerPretrainedModel (Qwen2.5-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_07_qwen2.5_vl_源码_part3.md)
   - [LLM & VLM Paper Notes: Qwen2_5_VLRMSNorm & Qwen2_5_VLMLP / Qwen2_5_VLPatchMerger / Qwen2_5_VLVisionAttention / Qwen2_5_VLVisionBlock / Qwen2_5_VLModel (Qwen2.5-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_07_qwen2.5_vl_源码_part4.md)
   - [LLM & VLM Paper Notes: Qwen2_5_VLTextModel / Qwen2_5_VLDecoderLayer / Qwen2_5_VLForConditionalGeneration (Qwen2.5-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_07_qwen2.5_vl_源码_part5.md)
+  - [LLM & VLM Paper Notes: extract_vision_info / Qwen3VLTextRotaryEmbedding / Qwen3VLVisionModel / Qwen3VLVisionPatchMerger (Qwen3-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_08_qwen3_vl_源码_part1.md)
 ---
 
 - ZJU LLM Notes
