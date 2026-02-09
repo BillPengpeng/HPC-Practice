@@ -128,6 +128,7 @@
   - [LLM & VLM Paper Notes: Qwen2_5_VLTextModel / Qwen2_5_VLDecoderLayer / Qwen2_5_VLForConditionalGeneration (Qwen2.5-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_07_qwen2.5_vl_源码_part5.md)
   - [LLM & VLM Paper Notes: extract_vision_info / Qwen3VLTextRotaryEmbedding / Qwen3VLVisionModel / Qwen3VLVisionPatchMerger (Qwen3-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_08_qwen3_vl_源码_part1.md)
   - [LLM & VLM Paper Notes: Qwen3VLModel / Qwen3VLTextModel (Qwen3-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_08_qwen3_vl_源码_part2.md)
+  - [LLM & VLM Paper Notes: Qwen3VLVideoProcessor / Qwen3VLProcessor (Qwen3-VL开源代码)](./course/AI/LLM_VLM/LLM_VLM_notes_08_qwen3_vl_源码_part3.md)
 ---
 
 - ZJU LLM Notes
